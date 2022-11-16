@@ -14,10 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('destinations', function (Blueprint $table) {
-            $table->id('destination_id');
+            $table->id();
             $table->string('dest_name');
             $table->string('dest_description');
-            $table->foreign('review_id')->references('review_id')->on('reviews')->onDelete('no action')->onUpdate('no action')->nullable();
+            $table->foreignId('review_id')->references('id')->on('reviews')->nullable()->constrained('reviews');
             $table->timestamps();
         });
     }
