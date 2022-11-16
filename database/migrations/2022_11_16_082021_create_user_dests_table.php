@@ -13,10 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('notes', function (Blueprint $table) {
-            $table->id();
-            $table->text('user_name');
-            $table->text('message');
+        Schema::create('user_dests', function (Blueprint $table) {
+            $table->id('user_dest_id');
+            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('no action')->onUpdate('no action');
+            $table->foreign('destination_id')->references('destination_id')->on('destinations')->onDelete('no action')->onUpdate('no action');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('notes');
+        Schema::dropIfExists('user_dests');
     }
 };

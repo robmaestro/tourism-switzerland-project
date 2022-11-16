@@ -28,8 +28,6 @@
         @yield('content')
     </div>
 
-    {{-- Footer --}}
-    @include('includes.footer')
 </body>
 
 </html>
