@@ -14,7 +14,7 @@ return new class extends Migration
     public function up()
     {
         Schema::create('dimages', function (Blueprint $table) {
-            $table->id('dimage_id');
+            $table->id();
             $table->string('image_link');
             $table->timestamps();
         });

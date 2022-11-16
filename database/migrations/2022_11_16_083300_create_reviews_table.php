@@ -14,11 +14,11 @@ return new class extends Migration
     public function up()
     {
         Schema::create('reviews', function (Blueprint $table) {
-            $table->id('review_id');
+            $table->id();
             $table->integer('rating');
             $table->string('message', 1000);
-            $table->foreign('user_id')->references('user_id')->on('users')->onDelete('no action')->onUpdate('no action');
-            $table->foreign('destination_id')->references('destination_id')->on('destinations')->onDelete('no action')->onUpdate('no action');
+            $table->foreign('user_id')->references('id')->on('users')->constrained('users');
+            $table->foreign('destination_id')->references('id')->on('destinations')->constrained('destinations');
             $table->timestamps();
         });
     }
