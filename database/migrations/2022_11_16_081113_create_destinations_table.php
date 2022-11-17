@@ -17,7 +17,6 @@ return new class extends Migration
             $table->id();
             $table->string('dest_name');
             $table->string('dest_description');
-            $table->foreignId('review_id')->references('id')->on('reviews')->nullable()->constrained('reviews');
             $table->timestamps();
         });
     }

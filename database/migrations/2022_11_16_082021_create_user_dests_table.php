@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('user_dests', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->references('id')->constrained('users')->on('users');
-            // $table->foreignId('destination_id')->references('id')->constrained('destinations')->on('destinations');
+            $table->foreignId('destination_id')->references('id')->constrained('destinations')->on('destinations');
             $table->timestamps();
         });
     }
