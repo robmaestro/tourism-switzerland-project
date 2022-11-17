@@ -8,3 +8,8 @@ Route::get('/', function(){
     return view('home');
 });
 
+Route::get('/register', function(){
+    return view('register');
+});
+
+Route::post('register', [AccountController::class, 'postRegister']);
