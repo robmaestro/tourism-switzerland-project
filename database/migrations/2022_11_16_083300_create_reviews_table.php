@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->integer('rating');
             $table->string('message', 1000);
-            $table->foreign('user_id')->references('id')->on('users')->constrained('users');
-            $table->foreign('destination_id')->references('id')->on('destinations')->constrained('destinations');
+            $table->foreignId('user_id')->references('id')->on('users')->constrained('users');
+            $table->foreignId('destination_id')->references('id')->on('destinations')->constrained('destinations');
             $table->timestamps();
         });
     }

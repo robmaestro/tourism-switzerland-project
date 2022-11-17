@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('dimages', function (Blueprint $table) {
             $table->id();
             $table->string('image_link');
+            $table->foreignId('destination_id')->references('id')->on('destinations')->constrained('destinations');
             $table->timestamps();
         });
     }
