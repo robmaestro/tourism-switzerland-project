@@ -1,0 +1,178 @@
+
+.e-container {
+    background-image: url("https://images.unsplash.com/photo-1578181638472-06f922fe6859?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80");
+  height: 110vh;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+   
+
+
+}
+.e-content{
+    border: 1px solid black;
+}
+.e-btnEdit{
+    float: right;
+    width: 80px;
+    height: 50px;
+    margin-right: 50px;
+    
+}
+.e-first{
+    height: 150px;
+    background-color: rgba(255, 255, 255, 0.658);
+    margin-top: 100px !important;
+}
+
+.e-second{
+    height: 68vh;
+    background-color: rgba(255, 255, 255, 0.938);
+}
+.e-userDetails{
+    height: 55vh;
+    background-color:  rgba(255, 255, 255, 0.938);
+}
+.e-user-dp{
+    width: 250px;
+    max-width: 250px;
+    min-width: 250px;
+       border: 5px solid black;
+       border-radius: 50%;
+      margin-top: 40px;
+       margin-left: 85px;
+       position: absolute;
+      
+}
+.e-btnUpload{
+    margin-top: 180px;
+    width: 190px;
+    height: 40px;
+
+}
+.e-col1{
+    text-align: center;
+}
+.e-name{
+    position: relative;
+    top: 200px;
+    position: absolute;
+    left: 750px;
+    
+}
+.e-userdetail{
+    background-color: rgba(255, 255, 255, 0.089);
+    border: none ;
+    border-bottom: 1px solid black;
+    width: 85%;
+    height: auto;
+    font-size: large;
+ }
+ .e-changepass{
+    background-color: rgba(255, 255, 255, 0.089);
+    border: none ;
+    border-bottom: 1px solid black;
+    width: 65%;
+    height: auto;
+    font-size: large;
+ }
+ .e-changepass2{
+    background-color: rgba(255, 255, 255, 0.089);
+    border: none ;
+    border-bottom: 1px solid black;
+    width: 68%;
+    height: auto;
+    font-size: large;
+ }
+ .label{
+    font-size: large;
+    font-weight: 400;
+}
+.e-icon{
+    width: 60px;
+    position: absolute;
+ top: 620px;
+
+}
+
+@media (max-width:1440px){
+    .e-container {
+       
+      height: 170vh;
+        
+    }
+    .e-second{
+        height: 108vh;
+        background-color: white;
+    }
+   
+    
+}
+@media (max-width:768px){
+    .e-container {
+     
+      height: 220vh;
+    
+    }
+    .e-first {
+        height: 150px;
+        background-color: rgba(255, 255, 255, 0.103);
+        margin-top: 100px !important;
+    }
+   
+    
+    .e-content{
+
+        width: 100%;
+        background-color: white;
+        text-align: center;
+    }
+    .e-user-dp{
+        width: 180px;
+        max-width: 180px;
+        min-width: 180px;
+           border: 5px solid black;
+           border-radius: 50%;
+          margin-top: 40px;
+           margin-left: 60px;
+        
+          
+    }
+    .e-btnUpload{
+        margin-top: 90px;
+        width: 190px;
+        height: 40px;
+    
+    }
+    .e-second{
+        text-align: center;
+   
+        height: 162vh;
+    }
+    .e-col2{
+        text-align: center;
+    }
+    .e-userDetails{
+        height: 152vh;
+    }
+    .e-name {
+        display: none;
+    }
+    .e-name2{
+        display: none;
+    }
+}
+/* @media (max-width:768px){
+.e-user-dp{
+    width: 250px;
+    max-width: 250px;
+    min-width: 250px;
+       border: 5px solid black;
+       border-radius: 50%;
+      margin-top: 40px;
+       margin-left: 215px;
+    
+      
+}
+} */

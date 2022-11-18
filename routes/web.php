@@ -3,9 +3,15 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\DestinationController;
+
 
 Route::get('/', function(){
-    return view('home');
+    return view('index');
+});
+
+Route::get('/mobile', function(){
+    return view('mobile');
 });
 
 Route::get('/register', function(){
@@ -14,5 +20,7 @@ Route::get('/register', function(){
 Route::get('/register2', function(){
     return view('register2');
 });
+
+Route::get('/destination',[DestinationController::class, 'show']);
 
 Route::post('register', [AccountController::class, 'postRegister']);
