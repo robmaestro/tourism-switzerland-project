@@ -4,12 +4,14 @@
 
 @section('content')
     <div class='me-cont-svg'>
-        <svg xmlns="http://www.w3.org/2000/svg" baseprofile="tiny" fill="url('#myGradient')" height="643" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" version="1.2" viewbox="0 0 1000 643" width="1000">
+        <svg xmlns="http://www.w3.org/2000/svg" baseprofile="tiny"  height="643" fill="#6a994e" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" version="1.2" viewbox="0 0 1000 643" width="1000">
             <defs>
-                <radialGradient id="myGradient">
-                  <stop offset="10%" stop-color="#6a994e" />
-                  <stop offset="95%" stop-color="green" />
-                </radialGradient>
+                {{--
+                    fill="url('#myGradient')"
+                    <radialGradient id="myGradient">
+                  <stop offset="10%" stop-color="green" />
+                  <stop offset="95%" stop-color="#6a994e" />
+                </radialGradient> --}}
             </defs>
             <path d="M50.2 488.8l-0.2 0.2-3.6 10-1.5 12.1-1.6 1.5-1.3 2-0.9 2.2-0.6 2.7 11-10.9 9.1-17.9 0.7 2 0.1 1.3 2.1 5.3 1 1.4 2.3 1.2 3.7-1.7 1.6 0.6 1.1 7.4-5.7 6.1-14.2 9.4-11.3 13.3-7.1 3.7-7.6-3.4-10 0.4-10.1 2.4-5.3 3.2 2.9-7 1.7-3.2 0.7-2.7-3.9-4.9-2.3-4.4 0.8-3.9 5.4-3.4 13.3-6.5 1.1-0.2 1.8 0.6 1.3 0.2 1.3-0.2 4.8-1.5 1-2.1-0.2-3 0.1-3.5 1.6-9 0.7-2.5 3.2-7.3 12.3 10.2 0.7-0.2z" id="CHE159" name="Genève">
             </path>
@@ -98,4 +100,5 @@
             <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
         </svg>
     </div>
+    <div class="me-title">Welcome to Switzerland</div>
 @endsection
