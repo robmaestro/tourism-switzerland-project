@@ -2,8 +2,8 @@
     box-sizing: border-box;
     width: auto;
     height: auto;
-    border-radius: 10px;
-    border: 1px solid rgb(218, 220, 224);
+    /* border-radius: 10px; */
+    /* border: 1px solid rgb(218, 220, 224); */
     box-shadow: rgb(0 0 0 / 16%) 0px 1px 10px;
     width: auto;
     height: auto;
@@ -11,30 +11,79 @@
 }
 
 .jbody-bg {
-    background-image: url(https://images.unsplash.com/photo-1628415491140-4d1108dc1045?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url(https://images.unsplash.com/photo-1578181638472-06f922fe6859?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80);
+    background-size: cover;
 }
-
+input.form-control::placeholder{
+    color: white;
+}
 @media (max-width: 575px) {
     .jcontainer-signup {
-        min-width: 300px;
+        min-width: 250px;
+        max-width: 400px;
     }
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
     .jcontainer-signup {
-        min-width: 400px;
+        min-width: 300px;
     }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
     .jcontainer-signup {
-        min-width: 500px;
+        min-width: 400px;
     }
 }
 
 @media (min-width: 992px) {
     .jcontainer-signup {
-        text-align: left;
-        min-width: 600px;
+        min-width: 500px;
     }
 }
+.jregister-button {
+    font-size: 18px;
+    letter-spacing: 2px;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.7em 2em;
+    border: 3px solid black;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+    color: black;
+    text-decoration: none;
+    transition: 0.3s ease all;
+    z-index: 1;
+   }
+   
+   .jregister-button:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background-color: #00A619;
+    z-index: -1;
+   }
+   
+   .jregister-button:hover, .jregister-button:focus {
+    color: black;
+   }
+   
+   .jregister-button:hover:before, .jregister-button:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+   }
+   
+   .jregister-button:active {
+    transform: scale(0.9);
+   }
+
