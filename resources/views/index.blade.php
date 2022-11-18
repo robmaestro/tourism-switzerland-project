@@ -8,12 +8,14 @@
 
 @section('content')
     <div class='me-cont-svg'>
-        <svg xmlns="http://www.w3.org/2000/svg" baseprofile="tiny" fill="url('#myGradient')" height="643" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" version="1.2" viewbox="0 0 1000 643" width="1000">
+        <svg xmlns="http://www.w3.org/2000/svg" baseprofile="tiny"  height="643" fill="#6a994e" stroke="#ffffff" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" version="1.2" viewbox="0 0 1000 643" width="1000">
             <defs>
-                <radialGradient id="myGradient">
-                  <stop offset="10%" stop-color="#6a994e" />
-                  <stop offset="95%" stop-color="green" />
-                </radialGradient>
+                {{--
+                    fill="url('#myGradient')"
+                    <radialGradient id="myGradient">
+                  <stop offset="10%" stop-color="green" />
+                  <stop offset="95%" stop-color="#6a994e" />
+                </radialGradient> --}}
             </defs>
             <path d="M50.2 488.8l-0.2 0.2-3.6 10-1.5 12.1-1.6 1.5-1.3 2-0.9 2.2-0.6 2.7 11-10.9 9.1-17.9 0.7 2 0.1 1.3 2.1 5.3 1 1.4 2.3 1.2 3.7-1.7 1.6 0.6 1.1 7.4-5.7 6.1-14.2 9.4-11.3 13.3-7.1 3.7-7.6-3.4-10 0.4-10.1 2.4-5.3 3.2 2.9-7 1.7-3.2 0.7-2.7-3.9-4.9-2.3-4.4 0.8-3.9 5.4-3.4 13.3-6.5 1.1-0.2 1.8 0.6 1.3 0.2 1.3-0.2 4.8-1.5 1-2.1-0.2-3 0.1-3.5 1.6-9 0.7-2.5 3.2-7.3 12.3 10.2 0.7-0.2z" id="CHE159" name="Genève">
             </path>
@@ -128,6 +130,7 @@
             <p>&nbsp;&nbsp;{{$images->image_link}}</p>
         @endforeach
     @endforeach --}}
+
 
 @endsection
 
