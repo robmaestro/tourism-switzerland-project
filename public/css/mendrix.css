@@ -1,0 +1,11 @@
+/* 6a994e */
+
+.me-cont-svg {
+    /* display: flex;
+    align-items: center; */
+    position: relative;
+    max-width: 1000px;
+    max-height: 100vh;
+    margin: auto;
+
+}

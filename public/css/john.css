@@ -1,0 +1,40 @@
+.jcontainer-signup {
+    box-sizing: border-box;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid rgb(218, 220, 224);
+    box-shadow: rgb(0 0 0 / 16%) 0px 1px 10px;
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+
+.jbody-bg {
+    background-image: url(https://images.unsplash.com/photo-1628415491140-4d1108dc1045?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80);
+}
+
+@media (max-width: 575px) {
+    .jcontainer-signup {
+        min-width: 300px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .jcontainer-signup {
+        min-width: 400px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .jcontainer-signup {
+        min-width: 500px;
+    }
+}
+
+@media (min-width: 992px) {
+    .jcontainer-signup {
+        text-align: left;
+        min-width: 600px;
+    }
+}
