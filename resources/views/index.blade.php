@@ -2,6 +2,10 @@
 
 @section('title', 'Home')
 
+@php
+    
+@endphp
+
 @section('content')
     <div class='me-cont-svg'>
         <svg xmlns="http://www.w3.org/2000/svg" baseprofile="tiny" height="643" fill="#6a994e" stroke="#ffffff"
@@ -120,77 +124,88 @@
                 id="CHE3473" name="Appenzell Innerrhoden">
             </path>
         </svg>
-        <svg data='rhine-falls' style="position:absolute;top: -174px;bottom: 0;left: 387px; right:0;" transform="scale(0.1)"
-            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
-            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
-            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
-        </svg>
-        <svg data='zurich' style="position:absolute;top: -73px;bottom:0;left: 368px;right: 0;" transform="scale(0.1)"
-            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
-            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
-            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
-        </svg>
-        <svg data='chillon-castle' style="position:absolute;top: 236px;bottom:0;left: 28px;right: 0;"
+        <svg data-name='{{ $destination[0]->dest_name }}' data-id='{{ $destination[0]->id }}' data-bs-toggle="modal"
+            data-bs-target="#my_modal" style="position:absolute;top: -174px;bottom: 0;left: 387px; right:0;"
             transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px"
             viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
             <path fill="red"
                 d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
-        <svg data='lucerne' style="position:absolute;top: 34px;bottom:0;left: 340px;right: 0;" transform="scale(0.1)"
-            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
-            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
-            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
-        </svg>
-        <svg data='interlaken' style="position:absolute;top: 150px;bottom:0;left: 220px;right: 0;" transform="scale(0.1)"
-            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
-            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
-            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
-        </svg>
-        <svg data='st-moritz' style="position:absolute;top: 226px;bottom:0;left: 668px;right: 0;" transform="scale(0.1)"
-            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
-            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
-            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
-        </svg>
-        <svg data='bern' style="position:absolute;top: 53px;bottom:0;left: 138px;right: 0;" transform="scale(0.1)"
-            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
-            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
-            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
-        </svg>
-        <svg data='matterhorn' style="position:absolute;top: 375px;bottom:0;left: 170px;right: 0;" transform="scale(0.1)"
-            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
-            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
-            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
-        </svg>
-        <svg data='lake-geneva' style="position:absolute;top: 303px;bottom:0;left: -158px;right: 0;"
+        <svg data-name='{{ $destination[1]->dest_name }}' data-id='{{ $destination[1]->id }}' data-bs-toggle="modal"
+            data-bs-target="#my_modal" style="position:absolute;top: -73px;bottom:0;left: 368px;right: 0;"
             transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px"
             viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
             <path fill="red"
                 d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
-        <svg data='swiss-national-park' style="position:absolute;top: 153px;bottom:0;left: 752px;right: 0;"
+        <svg data-name='{{ $destination[2]->dest_name }}' data-id='{{ $destination[2]->id }}' data-bs-toggle="modal"
+            data-bs-target="#my_modal" style="position:absolute;top: 236px;bottom:0;left: 28px;right: 0;"
             transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px"
             viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
             <path fill="red"
                 d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
-        <svg data='jungfraujoch' style="position:absolute;top: 188px;bottom:0;left: 251px;right: 0;"
+        <svg data-name='{{ $destination[3]->dest_name }}' data-id='{{ $destination[3]->id }}' data-bs-toggle="modal"
+            data-bs-target="#my_modal" style="position:absolute;top: 34px;bottom:0;left: 340px;right: 0;"
+            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px"
+            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        </svg>
+        <svg data-name='{{ $destination[4]->dest_name }}' data-id='{{ $destination[4]->id }}' data-bs-toggle="modal"
+            data-bs-target="#my_modal" style="position:absolute;top: 150px;bottom:0;left: 220px;right: 0;"
+            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px"
+            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        </svg>
+        <svg data='{{ $destination[5]->dest_name }}' data-id='{{ $destination[5]->id }}' data-bs-toggle="modal"
+            data-bs-target="#my_modal" style="position:absolute;top: 226px;bottom:0;left: 668px;right: 0;"
+            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px"
+            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        </svg>
+        <svg data='{{ $destination[6]->dest_name }}' data-id='{{ $destination[6]->id }}' data-bs-toggle="modal"
+            data-bs-target="#my_modal" style="position:absolute;top: 53px;bottom:0;left: 138px;right: 0;"
+            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px"
+            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        </svg>
+        <svg data='{{ $destination[7]->dest_name }}' data-id='{{ $destination[7]->id }}' data-bs-toggle="modal"
+            data-bs-target="#my_modal" style="position:absolute;top: 375px;bottom:0;left: 170px;right: 0;"
+            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px"
+            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        </svg>
+        <svg data-name='{{ $destination[8]->dest_name }}' data-id='{{ $destination[8]->id }}' data-bs-toggle="modal"
+            data-bs-target="#my_modal" style="position:absolute;top: 303px;bottom:0;left: -158px;right: 0;"
+            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px"
+            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        </svg>
+        <svg data-name='{{ $destination[9]->dest_name }}' data-id='{{ $destination[9]->id }}' data-bs-toggle="modal"
+            data-bs-target="#my_modal" style="position:absolute;top: 153px;bottom:0;left: 752px;right: 0;"
+            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px"
+            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        </svg>
+        <svg data-name='{{ $destination[10]->dest_name }}' data-id='{{ $destination[10]->id }}' data-bs-toggle="modal"
+            data-bs-target="#my_modal" style="position:absolute;top: 188px;bottom:0;left: 251px;right: 0;"
             transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
             version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px"
             viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
@@ -198,5 +213,40 @@
                 d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
     </div>
-    <div class="me-title">Welcome to Switzerland</div>
+
+    {{-- modal for destination viewing --}}
+    <div class="modal" id="my_modal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- @foreach ($destination as $dest)
+        <p>{{$dest->dest_name}}</p>
+        @foreach ($dest->dimages as $images)
+            <p>&nbsp;&nbsp;{{$images->image_link}}</p>
+        @endforeach
+    @endforeach --}}
+
+
+@endsection
+
+@section('script')
+    <script>
+        $(document).ready(function() {
+
+        });
+    </script>
 @endsection
