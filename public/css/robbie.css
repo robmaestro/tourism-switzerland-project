@@ -1,14 +1,11 @@
 /* 6a994e */
-body {
-    font-family: "Roboto", sans-serif !important;
-    font-weight: 300 !important;
-    overflow-x: hidden !important;
-    background-color: #9cccec !important;
-}
 
 .container-fluid {
     padding: 0 !important;
     margin: 0 !important;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
 }
 
 .footer {
@@ -20,7 +17,6 @@ body {
 }
 
 .navbar-container {
-    display: none !important;
     padding: 10px 12px !important;
     background-color: transparent !important;
 }
@@ -33,9 +29,14 @@ body {
     font-weight: 800;
 }
 
+.switz-logo {
+    max-width: 35px;
+}
+
 .navbar-togglers {
     background-color: transparent;
     border: none;
+    display: none;
 }
 
 .header {
@@ -46,12 +47,20 @@ body {
 
 .bi-person-circle {
     font-size: 25px;
-    padding: 5px 15px;
+    padding: 10px 15px;
 }
 
 @media (max-width: 768px) and (min-width: 426px) {
+    .container-fluid {
+        background-color: #9cccec;
+    }
+
     .navbar-container {
         display: flex !important;
+    }
+
+    .navbar-togglers {
+        display: block;
     }
 
     .mobile-container {
@@ -169,15 +178,15 @@ body {
         flex-direction: row;
         gap: 10px;
     }
-
-    .switz-logo {
-        max-width: 35px;
-    }
 }
 
 @media (max-width: 425px) {
     .navbar-container {
         display: flex !important;
+    }
+
+    .navbar-togglers {
+        display: block;
     }
 
     .mobile-container {
@@ -306,9 +315,5 @@ body {
         display: flex;
         flex-direction: row;
         gap: 10px;
-    }
-
-    .switz-logo {
-        max-width: 35px;
     }
 }
