@@ -23,4 +23,5 @@
             </div>
         </div>
     </nav>
+    <i class="bi bi-person-circle"></i>
 </div>
