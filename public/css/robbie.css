@@ -1,9 +1,319 @@
 /* 6a994e */
-body {
-    font-family: "Roboto", sans-serif !important;
-    font-weight: 300 !important;
+
+.container-fluid {
+    padding: 0 !important;
+    margin: 0 !important;
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
 }
 
-.r-mobile-title {
-    font-size: 30px;
+.footer {
+    display: none;
+}
+
+.mobile-container {
+    display: none;
+}
+
+.navbar-container {
+    padding: 10px 12px !important;
+    background-color: transparent !important;
+}
+
+.r-title-main {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    gap: 5px;
+    font-weight: 800;
+}
+
+.switz-logo {
+    max-width: 35px;
+}
+
+.navbar-togglers {
+    background-color: transparent;
+    border: none;
+    display: none;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.bi-person-circle {
+    font-size: 25px;
+    padding: 10px 15px;
+}
+
+@media (max-width: 768px) and (min-width: 426px) {
+    .container-fluid {
+        background-color: #9cccec;
+    }
+
+    .navbar-container {
+        display: flex !important;
+    }
+
+    .navbar-togglers {
+        display: block;
+    }
+
+    .mobile-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer {
+        display: block;
+    }
+
+    .r-mobile-title {
+        font-size: 30px;
+    }
+
+    .r-image-banner {
+        min-height: 600px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .r-mobile-title > .r-welcome {
+        font-size: 35px;
+    }
+
+    .r-carousel-caption {
+        position: absolute;
+        right: 15%;
+        bottom: 1.25rem;
+        left: 15%;
+        padding-top: 1.25rem;
+        padding-bottom: 20rem;
+        color: #fff;
+        text-align: center;
+        text-shadow: 2px 2px 2px #000000;
+        font-size: 25px;
+    }
+
+    .r-captions {
+        background-color: #6a994e;
+        padding: 25px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30px;
+        flex-direction: column;
+    }
+
+    .spacer {
+        aspect-ratio: 960/300;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .r-content-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .r-content {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        padding: 0 50px;
+    }
+
+    .r-content-description {
+        width: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: justify;
+    }
+
+    .r-content-title {
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    .r-content-image {
+        max-width: 350px;
+        object-fit: cover;
+        height: auto;
+    }
+
+    .r-content-details {
+        font-size: 19px;
+    }
+
+    .footer-container {
+        background-color: #6a994e;
+        padding: 25px;
+        color: white;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: space-evenly;
+        font-size: 13px;
+    }
+
+    .footer-container li,
+    .footer-container ul {
+        list-style: none;
+        padding: 0px;
+    }
+
+    .footer-socials ul {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 425px) {
+    .navbar-container {
+        display: flex !important;
+    }
+
+    .navbar-togglers {
+        display: block;
+    }
+
+    .mobile-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .footer {
+        display: block;
+    }
+
+    .r-mobile-title {
+        font-size: 30px;
+    }
+
+    .r-image-banner {
+        min-height: 600px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .r-mobile-title > .r-welcome {
+        font-size: 35px;
+    }
+
+    .r-carousel-caption {
+        position: absolute;
+        right: 15%;
+        bottom: 1.25rem;
+        left: 15%;
+        padding-top: 1.25rem;
+        padding-bottom: 20rem;
+        color: #fff;
+        text-align: center;
+        text-shadow: 2px 2px 2px #000000;
+        font-size: 25px;
+    }
+
+    .r-captions {
+        background-color: #6a994e;
+        padding: 25px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 25px;
+        flex-direction: column;
+    }
+
+    .spacer {
+        aspect-ratio: 960/300;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+
+    .r-content-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .r-content {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+        padding: 0 50px;
+    }
+
+    .r-image-banner {
+        min-height: 400px;
+        width: 100%;
+    }
+
+    .r-carousel-caption {
+        padding-bottom: 13rem;
+        font-size: 16px;
+    }
+
+    .r-content {
+        display: flex;
+        flex-direction: column;
+        padding: 0 25px;
+    }
+
+    .r-content-image {
+        max-width: 450px;
+        object-fit: cover;
+        height: auto;
+    }
+
+    .r-content-description {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: justify;
+    }
+
+    .r-content-details {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .footer-container {
+        background-color: #6a994e;
+        padding: 25px;
+        color: white;
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+        justify-content: space-evenly;
+        font-size: 13px;
+    }
+
+    .footer-container li,
+    .footer-container ul {
+        list-style: none;
+        padding: 0px;
+    }
+
+    .footer-socials ul {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
 }

@@ -10,7 +10,7 @@ class AccountController extends Controller
 {
     function postRegister(Request $request)
     {
-        $user = User::create($request->fname, $request->lname, $request->username, $request->password, $request->email);
+        $user = User::create($request->fname, $request->lname, $request->gender, $request->nationality, $request->username, $request->password, $request->email);
         return view('/');
     }
 }
