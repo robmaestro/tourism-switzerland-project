@@ -14,7 +14,8 @@ class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
 
-    public static function create($fname, $lname, $gender, $nationality, $username, $password, $email){
+    public static function create($fname, $lname, $gender, $nationality, $username, $password, $email)
+    {
         $user = new User();
         $user->fname = $fname;
         $user->lname = $lname;

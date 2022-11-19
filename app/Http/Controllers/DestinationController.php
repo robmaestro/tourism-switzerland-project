@@ -8,19 +8,38 @@ use App\Models\Destination;
 
 class DestinationController extends Controller
 {
-    function show(){
-        $destination = Destination::get();
+    function show()
+    {
+        // $destination = Destination::get();
+        $destProfile = Destination::with('reviews', 'dimages')->get();
+        // dd($destProfile[0]->reviews[0]);
         $main = array();
-        foreach ($destination as $dest){
+        $review_count = array();
+        $ratings = array();
+        foreach ($destProfile as $dest) {
             $temp = array();
-            foreach ($dest->dimages as $images){
-                array_push($temp,$images->image_link);
+            foreach ($dest->dimages as $images) {
+                array_push($temp, $images->image_link);
             }
+
+            $avg = 'no ratings yet';
+            $len = $dest->reviews->count();
+            array_push($review_count, $len);
+            if ($len > 0) {
+                $sum = 0;
+                foreach ($dest->reviews as $review) {
+                    $sum += $review->rating;
+                }
+                $avg = $sum / $len;
+            }
+            array_push($ratings, $avg);
             $main[$dest->id] = $temp;
         }
         $data = array();
-        $data['destination'] = $destination;  
+        $data['destination'] = $destProfile;
         $data['images'] = $main;
-        return view('index')->with('data',$data);
+        $data['ratings'] = $ratings;
+        $data['review_count'] = $review_count;
+        return view('index')->with('data', $data);
     }
 }
