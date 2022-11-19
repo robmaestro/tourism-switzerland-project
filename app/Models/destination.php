@@ -9,7 +9,12 @@ class Destination extends Model
 {
     use HasFactory;
 
-    function dimages(){
-        return $this->hasMany(dimage::class);
+    function dimages()
+    {
+        return $this->hasMany(Dimage::class);
+    }
+    function reviews()
+    {
+        return $this->hasMany(Review::class);
     }
 }
