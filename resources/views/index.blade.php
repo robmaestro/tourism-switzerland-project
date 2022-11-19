@@ -171,12 +171,12 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body me-dest-body">
-                    <p class="me-dest-description">Modal body text goes here.</p>
-                    <div class='me-reviews'></div>
-                    <div class='me-stars-outer'>
+                    <p class="me-dest-description px-md-4">Modal body text goes here.</p>
+                    <div class='me-reviews px-md-4'></div>
+                    <div class='me-stars-outer px-md-4'>
                         <div class='me-stars-inner'></div>
                     </div>
-                    <div id="carouselExampleIndicators" class="carousel slide me-carousel" data-bs-ride="true">
+                    <div id="carouselExampleIndicators" class="carousel slide me-carousel px-md-4" data-bs-ride="true">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>

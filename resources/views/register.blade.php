@@ -87,15 +87,12 @@
                             </div>
                             <input type="email" class="form-control rounded-0 jinput" aria-label="Username"
                                 placeholder="Email" name="email" aria-describedby="basic-addon1" />
-                        </div>
+                        </div>                      
                         <button type="submit" class="btn btn-md rounded-0 btn-dark jregister-button">Register</button>
                     </form>
                 </div>
             </div>
         </div>
-        <!-- Button trigger modal -->
-        <button type="submit" class="btn btn-md rounded-0 btn-dark jregister-button" data-bs-toggle="modal"
-            data-bs-target="#loginModal">Login</button>
     </div>
 @endsection
 
