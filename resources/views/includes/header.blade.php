@@ -23,5 +23,5 @@
             </div>
         </div>
     </nav>
-    <i class="bi bi-person-circle"></i>
+    <i class="bi bi-person-circle" data-bs-toggle="modal" data-bs-target="#loginModal"></i>
 </div>
