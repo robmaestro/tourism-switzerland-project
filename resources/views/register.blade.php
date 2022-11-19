@@ -1,6 +1,6 @@
 @extends('master')
 
-@section('title', 'Login')
+@section('title', 'Register')
 @section('class', 'jbody-bg')
 @section('content')
     <div class="container">
@@ -48,7 +48,8 @@
                                         <span class="input-group-text bi bi-gender-ambiguous p-0 me-2 jspan-icons"
                                             id="basic-addon1"></span>
                                     </div>
-                                    <select class="form-select rounded-0 jdropdown" aria-label="Default select example" name="gender">
+                                    <select class="form-select rounded-0 jdropdown" aria-label="Default select example"
+                                        name="gender">
                                         <option selected disabled hidden class="joption">Gender</option>
                                         <option class="joption" value="Male">Male</option>
                                         <option class="joption" value="Female">Female</option>
@@ -92,5 +93,16 @@
                 </div>
             </div>
         </div>
+        <!-- Button trigger modal -->
+        <button type="submit" class="btn btn-md rounded-0 btn-dark jregister-button" data-bs-toggle="modal"
+            data-bs-target="#loginModal">Login</button>
     </div>
 @endsection
+
+{{-- @section('script')
+    <script>
+        $('#exampleModal').on('shown.bs.modal', function() {
+            $('#myInput').trigger('focus')
+        })
+    </script>
+@endsection --}}
