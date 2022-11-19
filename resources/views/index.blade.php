@@ -195,43 +195,57 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-                </div>
-            </div>
-        </div>
-      </div>
-      <div class="modal" id="me-login-modal" tabindex="-1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Modal body text goes here.</p>
-                </div>
-                <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                     <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
     </div>
-    
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h1>SWITZ</h1>
+                    <form method="POST" action="/login">
+                        @csrf
+                        <div class="form__group field">
+                            <input type="input" required="" placeholder="Name" name="username"
+                                class="form__field">
+                            <label class="form__label" for="name">Username</label>
+                        </div>
+                        <div class="form__group field">
+                            <input type="password" required="" placeholder="Name" name="password"
+                                class="form__field">
+                            <label class="form__label" for="name">Password</label>
+                        </div>
+                        <p>Remember me</p>
+                        <button type="submit" class="btn btn-md rounded-0 btn-dark jregister-button">Login</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-md rounded-0 btn-dark jregister-button">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 @endsection
 
 @section('script')
     <script>
-        $(document).ready(function(){
-            $('#me-dest-modal').on('show.bs.modal',function(e){
+        $(document).ready(function() {
+            $('#me-dest-modal').on('show.bs.modal', function(e) {
                 var title = e.relatedTarget.getAttribute('data-name')
                 var body = e.relatedTarget.getAttribute('data-desc')
                 var id = e.relatedTarget.getAttribute('data-id')
                 var images = JSON.parse(e.relatedTarget.getAttribute('data-images'))
                 var rating = e.relatedTarget.getAttribute('data-rating')
                 var review_count = e.relatedTarget.getAttribute('data-review')
-
+                
                 var img_cont= '<div class="carousel-inner"><div class="carousel-item active"><img src="'+images[0]+'" class="d-block w-100 me-carousel-image" alt=""></div>'
                 
                 images.slice(1).forEach(function(item){
@@ -245,7 +259,7 @@
                 $('.me-stars-inner')[0].style.width = getRating(rating)
                 $('.me-reviews').text(String(review_count) + ' reviews')
             });
-            $('#me-dest-modal').on('hide.bs.modal',function(e){
+            $('#me-dest-modal').on('hide.bs.modal', function(e) {
                 setTimeout(() => {
                     $('.carousel-inner').remove();
 
