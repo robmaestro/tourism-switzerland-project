@@ -222,7 +222,10 @@
                                 class="form__field">
                             <label class="form__label" for="name">Password</label>
                         </div>
-                        <p>Remember me</p>
+                        <div class="cntr">
+                            <input checked="" type="checkbox" id="cbx" class="hidden-xs-up">
+                            <label for="cbx" class="cbx">Remember</label>
+                          </div>
                         <button type="submit" class="btn btn-md rounded-0 btn-dark jregister-button">Login</button>
                     </form>
                 </div>

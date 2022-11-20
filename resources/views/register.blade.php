@@ -1,7 +1,8 @@
 @extends('master')
-
+@include('countries-array')
 @section('title', 'Register')
 @section('class', 'jbody-bg')
+
 @section('content')
     <div class="container">
         <div class="d-flex flex-column flex-md-row justify-content-evenly py-md-5" style="color: white">
@@ -26,8 +27,8 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="input-group mb-3">
-                                    <div class="input-group-prepend my-auto">
-                                        <span class="input-group-text bi bi-person p-0 me-2 jspan-icons"
+                                    <div class="input-group-prepend" style="border-bottom: 1px solid white">
+                                        <span class="input-group-text bi bi-person p-0 mx-auto jspan-icons"
                                             id="basic-addon1"></span>
                                     </div>
                                     <input type="text" class="form-control rounded-0 jinput" aria-label="First Name"
@@ -36,6 +37,10 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="input-group mb-3">
+                                    <div class="input-group-prepend" style="border-bottom: 1px solid white">
+                                        <span class="input-group-text bi bi-person p-0 mx-auto jspan-icons"
+                                            id="basic-addon1"></span>
+                                    </div>
                                     <input type="text" class="form-control rounded-0 jinput" aria-label="Last Name"
                                         name="lname" placeholder="Last Name" aria-describedby="basic-addon1" />
                                 </div>
@@ -44,8 +49,8 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="input-group mb-3">
-                                    <div class="input-group-prepend my-auto">
-                                        <span class="input-group-text bi bi-gender-ambiguous p-0 me-2 jspan-icons"
+                                    <div class="input-group-prepend" style="border-bottom: 1px solid white">
+                                        <span class="input-group-text bi bi-gender-ambiguous p-0 mx-auto jspan-icons"
                                             id="basic-addon1"></span>
                                     </div>
                                     <select class="form-select rounded-0 jdropdown" aria-label="Default select example"
@@ -58,8 +63,8 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="input-group mb-3">
-                                    <div class="input-group-prepend my-auto">
-                                        <span class="input-group-text bi bi-flag p-0 me-2 jspan-icons"
+                                    <div class="input-group-prepend" style="border-bottom: 1px solid white">
+                                        <span class="input-group-text bi bi-flag p-0 mx-auto jspan-icons"
                                             id="basic-addon1"></span>
                                     </div>
                                     <input type="text" class="form-control rounded-0 jinput" aria-label="Nationality"
@@ -68,26 +73,28 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <div class="input-group-prepend my-auto">
-                                <span class="input-group-text bi bi-person p-0 me-2 jspan-icons" id="basic-addon1"></span>
+                            <div class="input-group-prepend" style="border-bottom: 1px solid white">
+                                <span class="input-group-text bi bi-person p-0 mx-auto jspan-icons"
+                                    id="basic-addon1"></span>
                             </div>
                             <input type="text" class="form-control rounded-0 jinput" aria-label="Username"
                                 placeholder="Username" name="username" aria-describedby="basic-addon1" />
                         </div>
                         <div class="input-group mb-3">
-                            <div class="input-group-prepend my-auto">
-                                <span class="input-group-text bi bi-key p-0 me-2 jspan-icons" id="basic-addon1"></span>
+                            <div class="input-group-prepend" style="border-bottom: 1px solid white">
+                                <span class="input-group-text bi bi-key p-0 mx-auto jspan-icons" id="basic-addon1"></span>
                             </div>
                             <input type="password" class="form-control rounded-0 jinput" aria-label="Password"
                                 placeholder="Password" name="password" aria-describedby="basic-addon1" />
                         </div>
                         <div class="input-group mb-3">
-                            <div class="input-group-prepend my-auto">
-                                <span class="input-group-text bi bi-envelope p-0 me-2 jspan-icons" id="basic-addon1"></span>
+                            <div class="input-group-prepend" style="border-bottom: 1px solid white">
+                                <span class="input-group-text bi bi-envelope p-0 mx-auto jspan-icons"
+                                    id="basic-addon1"></span>
                             </div>
                             <input type="email" class="form-control rounded-0 jinput" aria-label="Username"
                                 placeholder="Email" name="email" aria-describedby="basic-addon1" />
-                        </div>                      
+                        </div>                  
                         <button type="submit" class="btn btn-md rounded-0 btn-dark jregister-button">Register</button>
                     </form>
                 </div>

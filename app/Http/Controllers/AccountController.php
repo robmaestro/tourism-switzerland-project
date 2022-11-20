@@ -11,7 +11,7 @@ class AccountController extends Controller
     function Register(Request $request)
     {
         $user = User::createUser($request->fname, $request->lname, $request->gender, $request->nationality, $request->username, $request->password, $request->email);
-        return view('/index');
+        return redirect()->action([DestinationController::class, 'show']);
     }
     function Login(Request $request)
     {
