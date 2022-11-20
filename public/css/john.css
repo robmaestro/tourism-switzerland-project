@@ -1,0 +1,184 @@
+.jcontainer-signup {
+    box-sizing: border-box;
+    width: auto;
+    height: auto;
+    box-shadow: rgb(0 0 0 / 16%) 0px 1px 10px;
+    width: auto;
+    height: auto;
+    text-align: center;
+}
+
+.jbody-bg {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url(https://images.unsplash.com/photo-1578181638472-06f922fe6859?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80);
+    background-size: cover;
+}
+
+.jspan-icons {
+    font-size: 30px !important;
+    background: none !important;
+    border: 0 !important;
+    color: white !important;
+}
+
+input.jinput {
+    background: none !important;
+    border: 0 !important;
+    color: white !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid white !important;
+}
+
+input.jinput::first-letter {
+    text-transform: capitalize !important;
+}
+
+input.form-control::placeholder {
+    color: white;
+}
+
+select.jdropdown {
+    background: none !important;
+    border: 0 !important;
+    color: white !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid white !important;
+}
+
+option.joption {
+    color: black;
+}
+
+.jregister-button {
+    letter-spacing: 2px;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    padding: 0.7em 2em;
+    border: 3px solid black;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.1);
+    color: black;
+    text-decoration: none;
+    transition: 0.3s ease all;
+    z-index: 1;
+}
+
+.jregister-button:before {
+    transition: 0.5s all ease;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 50%;
+    bottom: 0;
+    opacity: 0;
+    content: '';
+    background-color: #00A619;
+    z-index: -1;
+}
+
+.jregister-button:hover,
+.jregister-button:focus {
+    color: black;
+}
+
+.jregister-button:hover:before,
+.jregister-button:focus:before {
+    transition: 0.5s all ease;
+    left: 0;
+    right: 0;
+    opacity: 1;
+}
+
+.jregister-button:active {
+    transform: scale(0.9);
+}
+
+.form__group {
+    position: relative;
+    padding: 20px 0 0;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 180px;
+}
+
+.form__field {
+    font-family: inherit;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid #9b9b9b;
+    outline: 0;
+    font-size: 17px;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.form__field::placeholder {
+    color: transparent;
+}
+
+.form__field:placeholder-shown~.form__label {
+    font-size: 17px;
+    cursor: text;
+    top: 20px;
+}
+
+.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    pointer-events: none;
+}
+
+.form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #116399, #38caef);
+    border-image-slice: 1;
+}
+
+.form__field:focus~.form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    color: #38caef;
+    font-weight: 700;
+}
+
+/* reset input */
+.form__field:required,
+.form__field:invalid {
+    box-shadow: none;
+}
+
+@media (max-width: 575px) {
+    .jcontainer-signup {
+        min-width: 250px;
+        max-width: 400px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .jcontainer-signup {
+        min-width: 300px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .jcontainer-signup {
+        min-width: 400px;
+    }
+}
+
+@media (min-width: 992px) {
+    .jcontainer-signup {
+        min-width: 500px;
+    }
+}

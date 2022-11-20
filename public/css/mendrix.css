@@ -1,0 +1,45 @@
+/* 6a994e */
+
+.me-cont-svg {
+    /* display: flex;
+    align-items: center; */
+    position: relative;
+    max-width: 1000px;
+    max-height: 100vh;
+    margin: auto;
+
+}
+
+.me-carousel-image {
+    height: 70vh;
+    object-fit: cover;
+}
+
+.me-stars-outer {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.me-stars-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+}
+
+.me-stars-outer::before {
+    content: '\f005 \f005 \f005 \f005 \f005';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: #ccc;
+}
+
+.me-stars-inner::before {
+    content: '\f005 \f005 \f005 \f005 \f005';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: gold;
+}
