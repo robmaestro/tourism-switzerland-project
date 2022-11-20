@@ -8,3 +8,10 @@ Route::get('/', function(){
     return view('home');
 });
 
+Route::get('/userDetails', function(){
+    return view('userDetails');
+});
+Route::get('/editUserDetails', function(){
+    return view('editUserDetails');
+});
+
