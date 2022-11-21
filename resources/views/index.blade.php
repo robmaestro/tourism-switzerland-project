@@ -348,6 +348,7 @@
             }
 
             $('.j-logout').on('click', function() {
+                console.log("clicked")
                 $.ajaxSetup({
                     headers: {
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -360,7 +361,7 @@
                         logout: true
                     },
                     success: function(response) {
-                        console.log(response)
+                        window.location.href = "/";
                     }
                 })
             })
