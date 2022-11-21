@@ -3,11 +3,11 @@
 .me-cont-svg {
     /* display: flex;
     align-items: center; */
+
     position: relative;
     max-width: 1000px;
-    max-height: 100vh;
+    max-height: 120vh;
     margin: auto;
-
 }
 
 .me-carousel-image {
@@ -42,4 +42,61 @@
     font-family: 'Font Awesome 6 Free';
     font-weight: 900;
     color: gold;
+}
+
+.me-location-cont {
+    background-color: #8ebedf;
+    padding-left: 14px;
+    padding-right: 8px;
+}
+
+.me-location {
+    font-weight: bold;
+}
+
+.me-hover-right {
+    transition: transform 0.4s cubic-bezier(0.42, 0, 0.33, 1.2);
+}
+
+.me-gps-0:hover~.me-location-hider-0>.me-location-cont,
+.me-gps-1:hover~.me-location-hider-1>.me-location-cont,
+.me-gps-2:hover~.me-location-hider-2>.me-location-cont,
+.me-gps-3:hover~.me-location-hider-3>.me-location-cont,
+.me-gps-4:hover~.me-location-hider-4>.me-location-cont,
+.me-gps-5:hover~.me-location-hider-5>.me-location-cont,
+.me-gps-6:hover~.me-location-hider-6>.me-location-cont,
+.me-gps-7:hover~.me-location-hider-7>.me-location-cont,
+.me-gps-8:hover~.me-location-hider-8>.me-location-cont,
+.me-gps-9:hover~.me-location-hider-9>.me-location-cont,
+.me-gps-10:hover~.me-location-hider-10>.me-location-cont {
+    transform: translateX(120px);
+}
+
+
+.me-active-location {
+    animation: slide-right 0.5s cubic-bezier(0.42, 0, 0.33, 1.2);
+}
+
+.me-inactive-location {
+    animation: slide-left 0.5s cubic-bezier(0.42, 0, 0.33, 1.2) forwards;
+}
+
+@keyframes slide-right {
+    0% {
+        transform: translateX(0px);
+    }
+
+    50% {
+        transform: translateX(120px);
+    }
+}
+
+@keyframes slide-left {
+    0% {
+        transform: translateX(120px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
 }
