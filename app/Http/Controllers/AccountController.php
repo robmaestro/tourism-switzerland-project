@@ -8,12 +8,12 @@ use App\Models\User;
 use App\Http\Controllers\DestinationController;
 class AccountController extends Controller
 {
-    function Register(Request $request)
+    function register(Request $request)
     {
         $user = User::createUser($request->fname, $request->lname, $request->gender, $request->nationality, $request->username, $request->password, $request->email);
         return redirect()->action([DestinationController::class, 'show']);
     }
-    function Login(Request $request)
+    function login(Request $request)
     {
         $credentials =[
             'username' => $request->username,
@@ -27,5 +27,10 @@ class AccountController extends Controller
             return redirect()->action([DestinationController::class, 'show']);
         }
         return back()->with(['status' => 'The provided credentials do not match our records.']);
+    }
+    function logout(Request $request) {
+        dd($request);
+        // auth()->logout();
+        return redirect()->action([DestinationController::class, 'show']);
     }
 }

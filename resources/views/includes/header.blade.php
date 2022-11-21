@@ -1,3 +1,6 @@
+@php
+    $users = Auth::user();
+@endphp
 <div class="header">
     <nav class="navbar navbar-expand-lg navbar-container">
         <div class="container-fluid">
@@ -23,5 +26,23 @@
             </div>
         </div>
     </nav>
-    <i class="bi bi-person-circle"></i>
+    {{-- login dropdown --}}
+    @if (isset($users))
+        <div class="dropdown">
+            <i class="bi bi-person-circle dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown"></i>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li></li>
+                <li>Profile</li>
+                <li class="j-logout">Logout</li>
+            </ul>
+        </div>
+    @else
+        <div class="dropdown">
+            <i class="bi bi-person-circle dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown"></i>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <li></li>
+                <li>Sign up</li>
+            </ul>
+        </div>
+    @endif
 </div>

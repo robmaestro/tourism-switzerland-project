@@ -25,6 +25,7 @@ Route::get('/editUserDetails', function(){
 
 Route::get('/',[DestinationController::class, 'show']);
 
-Route::post('register', [AccountController::class, 'Register']);
-Route::post('/login', [AccountController::class, 'Login']);
+Route::post('register', [AccountController::class, 'register']);
+Route::post('/login', [AccountController::class, 'login']);
+Route::post("/logout",[AccountController::class, 'logout']);
 
