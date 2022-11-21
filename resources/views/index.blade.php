@@ -11,6 +11,7 @@
 
 @section('content')
     <div class='me-cont-svg'>
+
         <svg xmlns="http://www.w3.org/2000/svg" baseprofile="tiny" height="643" fill="#6a994e" stroke="#ffffff"
             stroke-linecap="round" stroke-linejoin="round" stroke-width="2" version="1.2" viewbox="0 0 1000 643"
             width="1000">
