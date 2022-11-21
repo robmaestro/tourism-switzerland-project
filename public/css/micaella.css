@@ -1,93 +1,109 @@
 
 .e-container {
-    background-image: url("https://images.unsplash.com/photo-1578181638472-06f922fe6859?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80");
-  height: 110vh;
-    width: 100%;
-    background-repeat: no-repeat;
+    background-image: url("/e-containerbg.jpg");
+
     background-size: cover;
-    background-position: center;
-   
-
+ 
 
 }
-.e-content{
-    border: 1px solid black;
-}
+
 .e-btnEdit{
-    float: right;
+    text-align: center;
     width: 80px;
-    height: 50px;
-    margin-right: 50px;
-    
+    height: 40px;
+    margin-bottom: 20px;
+  
+    margin-top: 20px;
 }
 .e-first{
+        
     height: 150px;
-    background-color: rgba(255, 255, 255, 0.658);
+    background-color: rgba(255, 255, 255, 0.075);
     margin-top: 100px !important;
+    border: 1px solid black;
+    border-bottom: none;
+    color: white;
+    text-align: center;
+    margin-left: 250px;
+    margin-right: 250px;
+
 }
 
 .e-second{
-    height: 68vh;
-    background-color: rgba(255, 255, 255, 0.938);
+ 
+  
+    
+    background-color: rgba(255, 255, 255, 0.397);
+    border: 1px solid black;
+    color: white;
+    margin-left: 250px;
+    margin-right: 250px;
 }
 .e-userDetails{
-    height: 55vh;
-    background-color:  rgba(255, 255, 255, 0.938);
+
+
+    background-color:  rgba(255, 255, 255, 0.397);
+    border: 1px solid black;
+    color: white;
+    margin-left: 250px;
+    margin-right: 250px;
 }
 .e-user-dp{
     width: 250px;
     max-width: 250px;
     min-width: 250px;
-       border: 5px solid black;
+       border: 2px solid black;
        border-radius: 50%;
-      margin-top: 40px;
-       margin-left: 85px;
-       position: absolute;
+       margin-top: -100px;
       
 }
-.e-btnUpload{
-    margin-top: 180px;
-    width: 190px;
-    height: 40px;
 
-}
 .e-col1{
     text-align: center;
 }
-.e-name{
-    position: relative;
-    top: 200px;
-    position: absolute;
-    left: 750px;
+.e-button{
+    text-align: right;
+    padding-right: 50px;
     
 }
-.e-userdetail{
-    background-color: rgba(255, 255, 255, 0.089);
+.e-name{
+    position: relative;
+    top: 250px;
+    position: absolute;
+    left: 800px;
+    
+}
+#e-username{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    width: fit-content;
+  text-align: center;
+}
+
+.e-details{
+    background-color: rgb(255, 255, 255);
     border: none ;
-    border-bottom: 1px solid black;
-    width: 85%;
-    height: auto;
-    font-size: large;
+    border-bottom: 1px solid gray;
+    width: 70%;
+    border-radius: 5px;
+
+
+    color: black;
  }
- .e-changepass{
-    background-color: rgba(255, 255, 255, 0.089);
+ .e-detail1{
+    background-color: rgb(255, 255, 255);
     border: none ;
-    border-bottom: 1px solid black;
-    width: 65%;
-    height: auto;
-    font-size: large;
+    border-bottom: 1px solid gray;
+    width: 86%;
+    border-radius: 5px;
+
+    color: black;
  }
- .e-changepass2{
-    background-color: rgba(255, 255, 255, 0.089);
-    border: none ;
-    border-bottom: 1px solid black;
-    width: 68%;
-    height: auto;
-    font-size: large;
- }
+
  .label{
-    font-size: large;
+
     font-weight: 400;
+    color: black;
 }
 .e-icon{
     width: 60px;
@@ -95,84 +111,119 @@
  top: 620px;
 
 }
+.e-pencil{
+    color: black;
+    margin-left: -25px;
+}
 
 @media (max-width:1440px){
-    .e-container {
-       
-      height: 170vh;
+    .e-user-dp{
+        width: 230px;
+        max-width: 230px;
+        min-width: 230px;
+        margin-top: -75px;
+           
+      
+        
+          
+    }
+    
+    .e-first {
+        height: 120px;
+        background-color: rgba(255, 255, 255, 0.103);
+        margin-top: 30px !important;
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    .e-second, .e-userDetails{
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+    
+    .e-name{
+        position: relative;
+        top: 150px;
+        position: absolute;
+        left: 500px;
         
     }
-    .e-second{
-        height: 108vh;
-        background-color: white;
-    }
-   
-    
+   .e-container{
+    margin-bottom: 10px;
+   }
 }
+
+
 @media (max-width:768px){
-    .e-container {
-     
-      height: 220vh;
-    
+    .e-second, .e-userDetails{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .e-button{
+        text-align: center;
+        padding-right: 0px;
+        
     }
     .e-first {
         height: 150px;
         background-color: rgba(255, 255, 255, 0.103);
-        margin-top: 100px !important;
+        margin-top: 50px !important;
+        margin-left: 20px;
+        margin-right: 20px;
+      
     }
-   
-    
-    .e-content{
 
-        width: 100%;
-        background-color: white;
+    .e-detail1, .e-details{
+      
+        width: 80%;
         text-align: center;
     }
+
     .e-user-dp{
-        width: 180px;
-        max-width: 180px;
-        min-width: 180px;
-           border: 5px solid black;
+        width: 200px;
+        max-width: 220px;
+        min-width: 220px;
+     
            border-radius: 50%;
-          margin-top: 40px;
-           margin-left: 60px;
+          margin-top: -80px;
+         
         
           
     }
     .e-btnUpload{
-        margin-top: 90px;
+        margin-top: 110px;
         width: 190px;
         height: 40px;
     
     }
     .e-second{
         text-align: center;
-   
-        height: 162vh;
+    
     }
     .e-col2{
         text-align: center;
     }
     .e-userDetails{
-        height: 152vh;
+    padding-top: 60px;
+;
     }
-    .e-name {
-        display: none;
-    }
-    .e-name2{
-        display: none;
+ .e-name{
+    display: none;
+ }
+  
+}
+@media (max-width:320px){
+    .e-user-dp{
+        width: 180px;
+        max-width: 180px;
+        min-width: 180px;
+     
+           border-radius: 50%;
+          margin-top: -100px;
+         
+        
+          
     }
 }
-/* @media (max-width:768px){
-.e-user-dp{
-    width: 250px;
-    max-width: 250px;
-    min-width: 250px;
-       border: 5px solid black;
-       border-radius: 50%;
-      margin-top: 40px;
-       margin-left: 215px;
+
+
     
-      
-}
-} */

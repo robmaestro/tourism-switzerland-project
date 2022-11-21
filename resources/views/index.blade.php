@@ -11,6 +11,7 @@
 
 @section('content')
     <div class='me-cont-svg'>
+
         <svg xmlns="http://www.w3.org/2000/svg" baseprofile="tiny" height="643" fill="#6a994e" stroke="#ffffff"
             stroke-linecap="round" stroke-linejoin="round" stroke-width="2" version="1.2" viewbox="0 0 1000 643"
             width="1000">
@@ -235,17 +236,23 @@
                     </div>
                     <div id="carouselExampleIndicators" class="carousel slide me-carousel px-md-4" data-bs-ride="true">
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                                aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                                aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                                aria-label="Slide 4"></button>
                         </div>
                         {{-- mapping for carousel --}}
-                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Previous</span>
                         </button>
-                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                            data-bs-slide="next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="visually-hidden">Next</span>
                         </button>
@@ -279,7 +286,11 @@
                                 class="form__field">
                             <label class="form__label" for="name">Password</label>
                         </div>
-                        <p>Remember me</p>
+                        <div class="cntr">
+                            <input checked="" type="checkbox" id="cbx" class="hidden-xs-up">
+                            <label for="cbx" class="cbx"></label>
+                            <label>test</label>
+                        </div>
                         <button type="submit" class="btn btn-md rounded-0 btn-dark jregister-button">Login</button>
                     </form>
                 </div>
@@ -289,6 +300,7 @@
             </div>
         </div>
     </div>
+
 
 @endsection
 
@@ -302,11 +314,13 @@
                 var images = JSON.parse(e.relatedTarget.getAttribute('data-images'))
                 var rating = e.relatedTarget.getAttribute('data-rating')
                 var review_count = e.relatedTarget.getAttribute('data-review')
-                
-                var img_cont= '<div class="carousel-inner"><div class="carousel-item active"><img src="'+images[0]+'" class="d-block w-100 me-carousel-image" alt=""></div>'
-                
-                images.slice(1).forEach(function(item){
-                    img_cont += '<div class="carousel-item"><img src="'+item+'" class="d-block w-100 me-carousel-image" alt=""></div>'
+
+                var img_cont = '<div class="carousel-inner"><div class="carousel-item active"><img src="' +
+                    images[0] + '" class="d-block w-100 me-carousel-image" alt=""></div>'
+
+                images.slice(1).forEach(function(item) {
+                    img_cont += '<div class="carousel-item"><img src="' + item +
+                        '" class="d-block w-100 me-carousel-image" alt=""></div>'
                 })
                 img_cont += '</div>'
 
@@ -322,24 +336,35 @@
 
                 }, 200);
             });
-            
-            // $('.me-gps').on('click',function(e){
-            //     let number = String(e.currentTarget.classList[1].at(-1))
-            //     let string = '.me-location-hider-' + number + '>.me-location-cont'
-            //     $(string).addClass('me-active-location')
-            // });
 
-            
-
-            function getRating(rating){
+            function getRating(rating) {
                 let default_p = "0%";
-                if(!isNaN(rating)){
-                    let starPercentage = (parseFloat(rating)/5)*100
+                if (!isNaN(rating)) {
+                    let starPercentage = (parseFloat(rating) / 5) * 100
                     let roundedPercentage = `${Math.round(starPercentage/10)*10}%`
                     return roundedPercentage
                 }
                 return default_p;
             }
+
+            $('.j-logout').on('click', function() {
+                console.log("clicked")
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    type: "POST",
+                    url: '/logout',
+                    data: {
+                        logout: true
+                    },
+                    success: function(response) {
+                        window.location.href = "/";
+                    }
+                })
+            })
         });
         
     </script>
