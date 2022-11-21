@@ -2,9 +2,17 @@
 
 @section('title', 'Home')
 
+@php
+    $destination = $data['destination'];
+    $main = $data['images'];
+    $ratings = $data['ratings'];
+    $review_count = $data['review_count'];
+@endphp
+
 @section('content')
     <div class='me-cont-svg'>
-        <svg xmlns="http://www.w3.org/2000/svg" baseprofile="tiny" height="643" fill="#81a962" stroke="#ffffff"
+
+        <svg xmlns="http://www.w3.org/2000/svg" baseprofile="tiny" height="643" fill="#6a994e" stroke="#ffffff"
             stroke-linecap="round" stroke-linejoin="round" stroke-width="2" version="1.2" viewbox="0 0 1000 643"
             width="1000">
             <defs>
@@ -120,83 +128,157 @@
                 id="CHE3473" name="Appenzell Innerrhoden">
             </path>
         </svg>
-        <svg data='rhine-falls' style="position:absolute;top: -174px;bottom: 0;left: 387px; right:0;" transform="scale(0.1)"
-            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
-            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
-            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        <svg data-name='{{$destination[0]->dest_name}}' data-id='{{$destination[0]->id}}' data-desc='{{$destination[0]->dest_description}}' data-images='{{json_encode($main["1"])}}' data-rating='{{$ratings[0]}}' data-review='{{$review_count[0]}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: -174px;bottom: 0;left: 387px; right:0;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
         </svg>
-        <svg data='zurich' style="position:absolute;top: -73px;bottom:0;left: 368px;right: 0;" transform="scale(0.1)"
-            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
-            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
-            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        <svg data-name='{{$destination[1]->dest_name}}' data-id='{{$destination[1]->id}}'  data-desc='{{$destination[1]->dest_description}}' data-images='{{json_encode($main["2"])}}' data-rating='{{$ratings[1]}}' data-review='{{$review_count[1]}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: -73px;bottom:0;left: 368px;right: 0;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
         </svg>
-        <svg data='chillon-castle' style="position:absolute;top: 236px;bottom:0;left: 28px;right: 0;"
-            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px"
-            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        <svg data-name='{{$destination[2]->dest_name}}' data-id='{{$destination[2]->id}}' data-desc='{{$destination[2]->dest_description}}' data-images='{{json_encode($main["3"])}}' data-rating='{{$ratings[2]}}' data-review='{{$review_count[2]}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 236px;bottom:0;left: 28px;right: 0;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
         </svg>
-        <svg data='lucerne' style="position:absolute;top: 34px;bottom:0;left: 340px;right: 0;" transform="scale(0.1)"
-            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
-            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
-            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        <svg data-name='{{$destination[3]->dest_name}}' data-id='{{$destination[3]->id}}' data-desc='{{$destination[3]->dest_description}}' data-images='{{json_encode($main["4"])}}' data-rating='{{$ratings[3]}}' data-review='{{$review_count[3]}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 34px;bottom:0;left: 340px;right: 0;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
         </svg>
-        <svg data='interlaken' style="position:absolute;top: 150px;bottom:0;left: 220px;right: 0;" transform="scale(0.1)"
-            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
-            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
-            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        <svg data-name='{{$destination[4]->dest_name}}' data-id='{{$destination[4]->id}}' data-desc='{{$destination[4]->dest_description}}' data-images='{{json_encode($main["5"])}}' data-rating='{{$ratings[4]}}' data-review='{{$review_count[4]}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 150px;bottom:0;left: 220px;right: 0;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
         </svg>
-        <svg data='st-moritz' style="position:absolute;top: 226px;bottom:0;left: 668px;right: 0;" transform="scale(0.1)"
-            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
-            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
-            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        <svg data-name='{{$destination[5]->dest_name}}' data-id='{{$destination[5]->id}}' data-desc='{{$destination[5]->dest_description}}' data-images='{{json_encode($main["6"])}}' data-rating='{{$ratings[5]}}' data-review='{{$review_count[5]}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 226px;bottom:0;left: 668px;right: 0;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
         </svg>
-        <svg data='bern' style="position:absolute;top: 53px;bottom:0;left: 138px;right: 0;" transform="scale(0.1)"
-            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
-            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
-            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        <svg data-name='{{$destination[6]->dest_name}}' data-id='{{$destination[6]->id}}' data-desc='{{$destination[6]->dest_description}}' data-images='{{json_encode($main["7"])}}' data-rating='{{$ratings[6]}}' data-review='{{$review_count[6]}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 53px;bottom:0;left: 138px;right: 0;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
         </svg>
-        <svg data='matterhorn' style="position:absolute;top: 375px;bottom:0;left: 170px;right: 0;" transform="scale(0.1)"
-            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
-            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
-            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        <svg data-name='{{$destination[7]->dest_name}}' data-id='{{$destination[7]->id}}' data-desc='{{$destination[7]->dest_description}}' data-images='{{json_encode($main["8"])}}' data-rating='{{$ratings[7]}}' data-review='{{$review_count[7]}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 375px;bottom:0;left: 170px;right: 0;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
         </svg>
-        <svg data='lake-geneva' style="position:absolute;top: 303px;bottom:0;left: -158px;right: 0;"
-            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px"
-            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        <svg data-name='{{$destination[8]->dest_name}}' data-id='{{$destination[8]->id}}' data-desc='{{$destination[8]->dest_description}}' data-images='{{json_encode($main["9"])}}' data-rating='{{$ratings[8]}}' data-review='{{$review_count[8]}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 303px;bottom:0;left: -158px;right: 0;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
         </svg>
-        <svg data='swiss-national-park' style="position:absolute;top: 153px;bottom:0;left: 752px;right: 0;"
-            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px"
-            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        <svg data-name='{{$destination[9]->dest_name}}' data-id='{{$destination[9]->id}}' data-desc='{{$destination[9]->dest_description}}' data-images='{{json_encode($main["10"])}}' data-rating='{{$ratings[9]}}' data-review='{{$review_count[9]}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 153px;bottom:0;left: 752px;right: 0;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
         </svg>
-        <svg data='jungfraujoch' style="position:absolute;top: 188px;bottom:0;left: 251px;right: 0;"
-            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px"
-            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        <svg data-name='{{$destination[10]->dest_name}}' data-id='{{$destination[10]->id}}' data-desc='{{$destination[10]->dest_description}}' data-images='{{json_encode($main["11"])}}' data-rating='{{$ratings[10]}}' data-review='{{$review_count[10]}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 188px;bottom:0;left: 251px;right: 0;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
         </svg>
     </div>
-    <div class="me-title">Welcome to Switzerland</div>
+
+    {{-- modal for destination viewing --}}
+    <div class="modal fade" id="me-dest-modal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title me-modal-title">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body me-dest-body">
+                    <p class="me-dest-description px-md-4">Modal body text goes here.</p>
+                    <div class='me-reviews px-md-4'></div>
+                    <div class='me-stars-outer px-md-4'>
+                        <div class='me-stars-inner'></div>
+                    </div>
+                    <div id="carouselExampleIndicators" class="carousel slide me-carousel px-md-4" data-bs-ride="true">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                        </div>
+                        {{-- mapping for carousel --}}
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h1>SWITZ</h1>
+                    <form method="POST" action="/login">
+                        @csrf
+                        <div class="form__group field">
+                            <input type="input" required="" placeholder="Name" name="username"
+                                class="form__field">
+                            <label class="form__label" for="name">Username</label>
+                        </div>
+                        <div class="form__group field">
+                            <input type="password" required="" placeholder="Name" name="password"
+                                class="form__field">
+                            <label class="form__label" for="name">Password</label>
+                        </div>
+                        <div class="cntr">
+                            <input checked="" type="checkbox" id="cbx" class="hidden-xs-up">
+                            <label for="cbx" class="cbx">Remember</label>
+                          </div>
+                        <button type="submit" class="btn btn-md rounded-0 btn-dark jregister-button">Login</button>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-md rounded-0 btn-dark jregister-button">Login</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+@endsection
+
+@section('script')
+    <script>
+        $(document).ready(function() {
+            $('#me-dest-modal').on('show.bs.modal', function(e) {
+                var title = e.relatedTarget.getAttribute('data-name')
+                var body = e.relatedTarget.getAttribute('data-desc')
+                var id = e.relatedTarget.getAttribute('data-id')
+                var images = JSON.parse(e.relatedTarget.getAttribute('data-images'))
+                var rating = e.relatedTarget.getAttribute('data-rating')
+                var review_count = e.relatedTarget.getAttribute('data-review')
+                
+                var img_cont= '<div class="carousel-inner"><div class="carousel-item active"><img src="'+images[0]+'" class="d-block w-100 me-carousel-image" alt=""></div>'
+                
+                images.slice(1).forEach(function(item){
+                    img_cont += '<div class="carousel-item"><img src="'+item+'" class="d-block w-100 me-carousel-image" alt=""></div>'
+                })
+                img_cont += '</div>'
+
+                $('.me-modal-title').text(title)
+                $('.me-dest-description').text(body)
+                $('.me-carousel').prepend(img_cont)
+                $('.me-stars-inner')[0].style.width = getRating(rating)
+                $('.me-reviews').text(String(review_count) + ' reviews')
+            });
+            $('#me-dest-modal').on('hide.bs.modal', function(e) {
+                setTimeout(() => {
+                    $('.carousel-inner').remove();
+
+                }, 200);
+            });
+            
+            function getRating(rating){
+                let default_p = "0%";
+                if(!isNaN(rating)){
+                    let starPercentage = (parseFloat(rating)/5)*100
+                    let roundedPercentage = `${Math.round(starPercentage/10)*10}%`
+                    return roundedPercentage
+                }
+                return default_p;
+            }
+        });
+    </script>
 @endsection
