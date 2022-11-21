@@ -18,9 +18,14 @@ Route::get('/register', function(){
 Route::get('/userDetails', function(){
     return view('userDetails');
 });
+
 Route::get('/editUserDetails', function(){
     return view('editUserDetails');
 });
+
+Route::get('userDetails', [AccountController::class, 'getUserDetails']);
+Route::get('editUserDetails', [AccountController::class, 'editUserDetails']);
+Route::post('/userDetails', [AccountController::class, 'update']);
 
 
 Route::get('/',[DestinationController::class, 'show']);
