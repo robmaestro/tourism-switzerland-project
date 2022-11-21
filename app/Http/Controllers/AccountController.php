@@ -77,11 +77,10 @@ class AccountController extends Controller
 
         return view('userDetails',['users'=>$users]);
     }
-}
+
 
     function logout(Request $request) {
         auth()->logout();
         return;
     }
 }
-
