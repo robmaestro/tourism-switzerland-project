@@ -55,7 +55,7 @@
 }
 
 .me-hover-right {
-    transition: transform 0.4s ease-in-out;
+    transition: transform 0.4s cubic-bezier(0.42, 0, 0.33, 1.2);
 }
 
 .me-gps-0:hover~.me-location-hider-0>.me-location-cont,
@@ -74,20 +74,28 @@
 
 
 .me-active-location {
-    animation: slide-right 0.5s ease-in-out forwards;
+    animation: slide-right 0.5s cubic-bezier(0.42, 0, 0.33, 1.2);
 }
 
 .me-inactive-location {
-    animation: slide-left 0.5s ease-in-out forwards;
+    animation: slide-left 0.5s cubic-bezier(0.42, 0, 0.33, 1.2) forwards;
 }
 
 @keyframes slide-right {
-    100% {
-        transform: translateX(82px);
+    0% {
+        transform: translateX(0px);
+    }
+
+    50% {
+        transform: translateX(120px);
     }
 }
 
 @keyframes slide-left {
+    0% {
+        transform: translateX(120px);
+    }
+
     100% {
         transform: translateX(0px);
     }
