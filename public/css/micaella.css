@@ -1,93 +1,103 @@
 
 .e-container {
     background-image: url("/e-containerbg.jpg");
-  height: 100vh;
-    width: 100%;
-    background-repeat: no-repeat;
+
     background-size: cover;
-    background-position: center;
-   
-   
+ 
+
 }
 
-
-
 .e-btnEdit{
-    float: right;
+    text-align: center;
     width: 80px;
     height: 40px;
     margin-bottom: 20px;
-    margin-right: 20px;
+  
     margin-top: 20px;
 }
 .e-first{
+        
     height: 150px;
     background-color: rgba(255, 255, 255, 0.075);
     margin-top: 100px !important;
     border: 1px solid black;
     border-bottom: none;
     color: white;
+    text-align: center;
+    margin-left: 250px;
+    margin-right: 250px;
+
 }
 
 .e-second{
-
+ 
+  
+    
     background-color: rgba(255, 255, 255, 0.397);
     border: 1px solid black;
     color: white;
-
+    margin-left: 250px;
+    margin-right: 250px;
 }
 .e-userDetails{
+
 
     background-color:  rgba(255, 255, 255, 0.397);
     border: 1px solid black;
     color: white;
+    margin-left: 250px;
+    margin-right: 250px;
 }
 .e-user-dp{
     width: 250px;
     max-width: 250px;
     min-width: 250px;
-       border: 5px solid black;
+       border: 2px solid black;
        border-radius: 50%;
-      margin-top: 40px;
-       margin-left: 85px;
-       position: absolute;
+       margin-top: -100px;
       
 }
-.e-btnUpload{
-    margin-top: 180px;
-    width: 190px;
-    height: 40px;
 
-}
 .e-col1{
     text-align: center;
 }
-.e-name{
-    position: relative;
-    top: 200px;
-    position: absolute;
-    left: 750px;
+.e-button{
+    text-align: right;
+    padding-right: 50px;
     
 }
-
+.e-name{
+    position: relative;
+    top: 250px;
+    position: absolute;
+    left: 800px;
+    
+}
+#e-username{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+    width: fit-content;
+  text-align: center;
+}
 
 .e-details{
     background-color: rgb(255, 255, 255);
     border: none ;
     border-bottom: 1px solid gray;
     width: 70%;
+    border-radius: 5px;
 
 
-    color: white;
+    color: black;
  }
  .e-detail1{
     background-color: rgb(255, 255, 255);
     border: none ;
     border-bottom: 1px solid gray;
     width: 86%;
+    border-radius: 5px;
 
-
-    color: white;
+    color: black;
  }
 
  .label{
@@ -101,68 +111,81 @@
  top: 620px;
 
 }
-
+.e-pencil{
+    color: black;
+    margin-left: -25px;
+}
 
 @media (max-width:1440px){
     .e-user-dp{
         width: 230px;
         max-width: 230px;
         min-width: 230px;
+        margin-top: -75px;
            
-          margin-top: 20px;
-           margin-left: 73px;
+      
         
           
     }
+    
     .e-first {
-        height: 100px;
+        height: 120px;
         background-color: rgba(255, 255, 255, 0.103);
-        margin-top: 0px !important;
+        margin-top: 30px !important;
+        margin-left: 100px;
+        margin-right: 100px;
     }
-    .e-container {
-      
-      height: 110vh;
-  
+    .e-second, .e-userDetails{
+        margin-left: 100px;
+        margin-right: 100px;
     }
+    
     .e-name{
         position: relative;
-        top: 80px;
+        top: 150px;
         position: absolute;
         left: 500px;
         
     }
-   
+   .e-container{
+    margin-bottom: 10px;
+   }
 }
 
 
 @media (max-width:768px){
-    .e-container{
-        height: 190vh;
+    .e-second, .e-userDetails{
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .e-button{
+        text-align: center;
+        padding-right: 0px;
+        
     }
     .e-first {
         height: 150px;
         background-color: rgba(255, 255, 255, 0.103);
         margin-top: 50px !important;
+        margin-left: 20px;
+        margin-right: 20px;
+      
     }
-   
+
     .e-detail1, .e-details{
       
         width: 80%;
-    }
-    .e-content{
-
-        width: 100%;
-        background-color: white;
         text-align: center;
     }
+
     .e-user-dp{
         width: 200px;
         max-width: 220px;
         min-width: 220px;
-           border: 5px solid black;
+     
            border-radius: 50%;
-          margin-top: 30px;
-           margin-left: 235px;
+          margin-top: -80px;
+         
         
           
     }
@@ -174,19 +197,18 @@
     }
     .e-second{
         text-align: center;
-   
-      
+    
     }
     .e-col2{
         text-align: center;
     }
     .e-userDetails{
     padding-top: 60px;
-
+;
     }
-    .e-name {
-        display: none;
-    }
+ .e-name{
+    display: none;
+ }
   
 }
 @media (max-width:320px){
@@ -194,10 +216,10 @@
         width: 180px;
         max-width: 180px;
         min-width: 180px;
-           border: 5px solid black;
+     
            border-radius: 50%;
-          margin-top: 40px;
-           margin-left: 60px;
+          margin-top: -100px;
+         
         
           
     }
@@ -205,16 +227,3 @@
 
 
     
-/* @media (max-width:768px){
-.e-user-dp{
-    width: 250px;
-    max-width: 250px;
-    min-width: 250px;
-       border: 5px solid black;
-       border-radius: 50%;
-      margin-top: 40px;
-       margin-left: 215px;
-    
-      
-}
-} */
