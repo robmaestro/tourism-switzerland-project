@@ -29,8 +29,7 @@ class AccountController extends Controller
         return back()->with(['status' => 'The provided credentials do not match our records.']);
     }
     function logout(Request $request) {
-        dd($request);
-        // auth()->logout();
-        return redirect()->action([DestinationController::class, 'show']);
+        auth()->logout();
+        return;
     }
 }
