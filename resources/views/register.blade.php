@@ -4,8 +4,8 @@
 
 @section('content')
     <div class="container">
-        <div class="d-flex flex-column flex-md-row justify-content-evenly py-md-5" style="color: white">
-            <div class="pe-md-5 py-3 pb-md-0">
+        <div class="d-flex flex-column flex-md-row justify-content-evenly py-md-5 j-container">
+            <div class="pe-md-5 py-3 pb-md-0 j">
                 <h1>Sign up now!</h1>
                 <hr>
                 <p>Jobs fill your personal account, but adventures fill your soul. Let's go on an adventure and see some
@@ -20,7 +20,7 @@
                     <i class="bi bi-arrow-left-circle my-auto" style="font-size: 30px;"></i>
                 </div>
                 <hr>
-                <div class="py-4 px-md-5">
+                <div class="py-4 px-md-5 j-container">
                     <form method="POST" action="/register">
                         @csrf
                         <div class="row">
