@@ -252,19 +252,19 @@
     <div class="modal fade" id="me-dest-modal" tabindex="-1">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header  me-dest-header ">
                     <h5 class="modal-title me-modal-title">Modal title</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body me-dest-body">
-                    <p class="me-dest-description px-md-4">Modal body text goes here.</p>
+                    <p class="me-dest-description ">Modal body text goes here.</p>
                     @if (!isset($user))
-                        <div class='me-reviews px-md-4'></div>
+                        <div class='me-reviews '></div>
                         <div class='me-stars-outer mx-md-4'>
                             <div class='me-stars-inner '></div>
                         </div>
                     @endif
-                    <div id="carouselExampleIndicators" class="carousel slide me-carousel px-md-4" data-bs-ride="true">
+                    <div id="carouselExampleIndicators" class="carousel slide me-carousel " data-bs-ride="true">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
                                 class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -288,10 +288,9 @@
                         </button>
                     </div>
                     @if (isset($user))
-                        <div class="me-star-rating px-md-4" data-value='0' data-dest='0'>
+                        <div class="me-star-rating " data-value='0' data-dest='0'>
                             <p>Have you been here before?</p>
-                            <p>Tell us about your experience<p>
-                            <p>Leave a rating below<p>
+                            <span>Leave a rating below</span>
                             <div class="me-user-star-cont">
                                 <i class="fas fa-star me-user-star" data-value='1'></i>
                                 <i class="fas fa-star me-user-star" data-value='2'></i>
@@ -480,39 +479,36 @@
             <div class="r-content">
                 <div class="r-content-description">
                     @foreach ($destination as $key=>$dest)
-                        @php
-                        $temp = $key%2;
-                        @endphp
-                        @if ($temp == 0)
-                        <div class="r-content-info">
-                            <img class="r-content-image order-2" src={{$main[$key+1][0]}}>
-                            <div class="d-flex flex-column align-items-center order-1">
-                                <span class="r-content-title">
-                                    {{ $dest->dest_name }}
-                                </span>
-                                <span class="r-content-details">
-                                    {{ $dest->dest_description }}
-                                </span>
-                            </div>
-                        </div>
-                        @else
-                        <div class="r-content-info">
+                        <div class="r-content-info" data-bs-toggle="modal" data-bs-target="#me-dest-modal"  data-name='{{$dest->dest_name}}' data-id='{{$dest->id}}' data-desc='{{$dest->dest_description}}' data-images='{{json_encode($main[$key+1])}}'>
                             <img class="r-content-image" src={{$main[$key+1][0]}}>
-                            <div class="d-flex flex-column align-items-center">
-                                <span class="r-content-title">
+                            <div class="image-overlay">
+                                <div class="image-overlay-text" >
                                     {{ $dest->dest_name }}
-                                </span>
+                                </div>
+                            </div>
+                            {{-- @foreach ($destination as $key=>$dest)
+                            {{dd($key);}}
+                                <li class="col-md-3" data-bs-toggle="modal" data-bs-target="#me-dest-modal"  data-name='{{$dest->dest_name}}' data-id='{{$dest->id}}' data-desc='{{$dest->dest_description}}' data-images='{{json_encode($main[$key+1])}}'> {{ $dest->dest_name }}</li>
+                            @endforeach --}}
+                            {{-- <span class="r-content-title">
+                                {{ $dest->dest_name }}
+                            </span> --}}
+                            {{-- <div class="d-flex flex-column align-items-center px-2">
+
                                 <span class="r-content-details">
                                     {{ $dest->dest_description }}
                                 </span>
-                            </div>
+                            </div> --}}
                         </div>
-                            
-                        @endif
-                        
                     @endforeach
                 </div>
 
+            </div>
+        </div>
+
+        <div class="r-create-account-container">
+            <div class="r-create-account-text">
+                Don't have an account? Create for <a href={{url('/register')}}>FREE!</a>
             </div>
         </div>
     </div>
