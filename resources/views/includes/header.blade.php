@@ -18,11 +18,13 @@
                         <img class="switz-logo" src="https://cdn.britannica.com/43/4543-004-C0D5C6F4/Flag-Switzerland.jpg">      
                     @endif
                   </div>
-                  <a class="navbar-togglers d-block me-auto" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                  <a class="navbar-togglers d-block me-auto" id="navbar" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
                     {{-- <span class="navbar-toggler-icon"></span> --}}
                     <i class="bi bi-chevron-down"></i>
                   </a>
             </a>
+
+            {{-- @include('sidebar') --}}
 
             <button class="navbar-togglers" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -40,21 +42,29 @@
     </nav>
 
     {{-- <i class="bi bi-person-circle"></i> --}}
-
-    {{-- 767px start ng web --}}
       
       <div class="offcanvas offcanvas-start d-z-index" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
-        <div class="offcanvas-header">
+        <div class="row" style="padding: 10px 0px 20px 0px;">
+          <div class="offcanvas-header col-2" style="margin-left: 15px"> 
             <h5 class="r-title-main" id="offcanvasExampleLabel" >SWITZ</h5>
-            <img class="switz-logo" src="https://cdn.britannica.com/43/4543-004-C0D5C6F4/Flag-Switzerland.jpg">
-          <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
+        <div class="col-2" style="padding-top: 10px; margin-left:10px;">
+          <img class="switz-logo" src="https://cdn.britannica.com/43/4543-004-C0D5C6F4/Flag-Switzerland.jpg">
+        </div>
+
+            <div class="col-7" style="text-align: end; padding-top:15px;">
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        </div>
+
+        
         <hr>
         <div class="offcanvas-body">
           <div>
             <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
               Add Destination
             </button>
+            {{-- @include('togolist') --}}
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <li><a class="dropdown-item" href="#">Rhine Falls</a></li>
               <li><a class="dropdown-item" href="#">Zurich</a></li>

@@ -97,4 +97,9 @@ class AccountController extends Controller
         auth()->logout();
         return;
     }
+
+        function getData(){
+            return 'Data';
+        }
+
 }
