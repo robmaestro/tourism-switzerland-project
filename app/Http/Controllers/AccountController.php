@@ -90,4 +90,9 @@ class AccountController extends Controller
         auth()->logout();
         return;
     }
+
+    function getData(Request $req){
+
+    }
+
 }
