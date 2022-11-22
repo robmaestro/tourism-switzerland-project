@@ -239,8 +239,10 @@
         </div>
         <div class="r-location-list d-flex flex-column ">
             <ul class="row r-list-map">
-                @foreach ($destination as $dest)
-                    <li class="col-md-3" data-id="{{ $dest->id }}"> {{ $dest->dest_name }}</li>
+
+                @foreach ($destination as $key=>$dest)
+                {{-- {{dd($key);}} --}}
+                    <li class="col-md-3" data-bs-toggle="modal" data-bs-target="#me-dest-modal"  data-name='{{$dest->dest_name}}' data-id='{{$dest->id}}' data-desc='{{$dest->dest_description}}' data-images='{{json_encode($main[$key+1])}}'> {{ $dest->dest_name }}</li>
                 @endforeach
             </ul>
         </div>
