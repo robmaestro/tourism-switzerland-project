@@ -707,6 +707,16 @@
                     })
                 });
             @endif
+            const myOffcanvas = document.getElementById('offcanvasExample')
+            $('#offcanvas').on('click',function(){
+                $('.me-cont-svg').addClass('me-negative-index');
+                const offcanvas = new bootstrap.Offcanvas(myOffcanvas);
+                offcanvas.show()
+            });
+            myOffcanvas.addEventListener('hidden.bs.offcanvas', event => {
+                $('.me-cont-svg').removeClass('me-negative-index')
+            })
         });
+        
     </script>
 @endsection
