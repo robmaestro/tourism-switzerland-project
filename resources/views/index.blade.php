@@ -7,6 +7,7 @@
     $main = $data['images'];
     $ratings = $data['ratings'];
     $review_count = $data['review_count'];
+    
 @endphp
 
 @section('content')
@@ -128,97 +129,187 @@
                 id="CHE3473" name="Appenzell Innerrhoden">
             </path>
         </svg>
-        <svg class='me-gps me-gps-0' data-name='{{$destination[0]->dest_name}}' data-id='{{$destination[0]->id}}' data-desc='{{$destination[0]->dest_description}}' data-images='{{json_encode($main["1"])}}' data-rating='{{$ratings[0]}}' data-review='{{$review_count[0]}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: -174px;bottom: 0;left: 387px; right:0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
+        <svg class='me-gps me-gps-0' data-name='{{ $destination[0]->dest_name }}' data-id='{{ $destination[0]->id }}'
+            data-desc='{{ $destination[0]->dest_description }}' data-images='{{ json_encode($main['1']) }}'
+            data-rating='{{ $ratings[0] }}' data-review='{{ $review_count[0] }}' data-bs-toggle="modal"
+            data-bs-target="#me-dest-modal" style="position:absolute;top: -174px;bottom: 0;left: 387px; right:0; z-index:1;"
+            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px"
+            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
-        <svg class='me-gps me-gps-1' data-name='{{$destination[1]->dest_name}}' data-id='{{$destination[1]->id}}'  data-desc='{{$destination[1]->dest_description}}' data-images='{{json_encode($main["2"])}}' data-rating='{{$ratings[1]}}' data-review='{{$review_count[1]}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: -73px;bottom:0;left: 368px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_2" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
+        <svg class='me-gps me-gps-1' data-name='{{ $destination[1]->dest_name }}' data-id='{{ $destination[1]->id }}'
+            data-desc='{{ $destination[1]->dest_description }}' data-images='{{ json_encode($main['2']) }}'
+            data-rating='{{ $ratings[1] }}' data-review='{{ $review_count[1] }}' data-bs-toggle="modal"
+            data-bs-target="#me-dest-modal" style="position:absolute;top: -73px;bottom:0;left: 368px;right: 0; z-index:1;"
+            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1" id="Capa_2" x="0px" y="0px" width="395.71px" height="395.71px"
+            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
-        <svg class='me-gps me-gps-2' data-name='{{$destination[2]->dest_name}}' data-id='{{$destination[2]->id}}' data-desc='{{$destination[2]->dest_description}}' data-images='{{json_encode($main["3"])}}' data-rating='{{$ratings[2]}}' data-review='{{$review_count[2]}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 236px;bottom:0;left: 28px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_3" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
+        <svg class='me-gps me-gps-2' data-name='{{ $destination[2]->dest_name }}' data-id='{{ $destination[2]->id }}'
+            data-desc='{{ $destination[2]->dest_description }}' data-images='{{ json_encode($main['3']) }}'
+            data-rating='{{ $ratings[2] }}' data-review='{{ $review_count[2] }}' data-bs-toggle="modal"
+            data-bs-target="#me-dest-modal" style="position:absolute;top: 236px;bottom:0;left: 28px;right: 0; z-index:1;"
+            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1" id="Capa_3" x="0px" y="0px" width="395.71px" height="395.71px"
+            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
-        <svg class='me-gps me-gps-3' data-name='{{$destination[3]->dest_name}}' data-id='{{$destination[3]->id}}' data-desc='{{$destination[3]->dest_description}}' data-images='{{json_encode($main["4"])}}' data-rating='{{$ratings[3]}}' data-review='{{$review_count[3]}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 34px;bottom:0;left: 340px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_4" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
+        <svg class='me-gps me-gps-3' data-name='{{ $destination[3]->dest_name }}' data-id='{{ $destination[3]->id }}'
+            data-desc='{{ $destination[3]->dest_description }}' data-images='{{ json_encode($main['4']) }}'
+            data-rating='{{ $ratings[3] }}' data-review='{{ $review_count[3] }}' data-bs-toggle="modal"
+            data-bs-target="#me-dest-modal" style="position:absolute;top: 34px;bottom:0;left: 340px;right: 0; z-index:1;"
+            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1" id="Capa_4" x="0px" y="0px" width="395.71px" height="395.71px"
+            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
-        <svg class='me-gps me-gps-4' data-name='{{$destination[4]->dest_name}}' data-id='{{$destination[4]->id}}' data-desc='{{$destination[4]->dest_description}}' data-images='{{json_encode($main["5"])}}' data-rating='{{$ratings[4]}}' data-review='{{$review_count[4]}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 150px;bottom:0;left: 220px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_5" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
+        <svg class='me-gps me-gps-4' data-name='{{ $destination[4]->dest_name }}' data-id='{{ $destination[4]->id }}'
+            data-desc='{{ $destination[4]->dest_description }}' data-images='{{ json_encode($main['5']) }}'
+            data-rating='{{ $ratings[4] }}' data-review='{{ $review_count[4] }}' data-bs-toggle="modal"
+            data-bs-target="#me-dest-modal" style="position:absolute;top: 150px;bottom:0;left: 220px;right: 0; z-index:1;"
+            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1" id="Capa_5" x="0px" y="0px" width="395.71px" height="395.71px"
+            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
-        <svg class='me-gps me-gps-5' data-name='{{$destination[5]->dest_name}}' data-id='{{$destination[5]->id}}' data-desc='{{$destination[5]->dest_description}}' data-images='{{json_encode($main["6"])}}' data-rating='{{$ratings[5]}}' data-review='{{$review_count[5]}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 226px;bottom:0;left: 668px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_6" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
+        <svg class='me-gps me-gps-5' data-name='{{ $destination[5]->dest_name }}' data-id='{{ $destination[5]->id }}'
+            data-desc='{{ $destination[5]->dest_description }}' data-images='{{ json_encode($main['6']) }}'
+            data-rating='{{ $ratings[5] }}' data-review='{{ $review_count[5] }}' data-bs-toggle="modal"
+            data-bs-target="#me-dest-modal" style="position:absolute;top: 226px;bottom:0;left: 668px;right: 0; z-index:1;"
+            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1" id="Capa_6" x="0px" y="0px" width="395.71px" height="395.71px"
+            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
-        <svg class='me-gps me-gps-6' data-name='{{$destination[6]->dest_name}}' data-id='{{$destination[6]->id}}' data-desc='{{$destination[6]->dest_description}}' data-images='{{json_encode($main["7"])}}' data-rating='{{$ratings[6]}}' data-review='{{$review_count[6]}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 53px;bottom:0;left: 138px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_7" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
+        <svg class='me-gps me-gps-6' data-name='{{ $destination[6]->dest_name }}' data-id='{{ $destination[6]->id }}'
+            data-desc='{{ $destination[6]->dest_description }}' data-images='{{ json_encode($main['7']) }}'
+            data-rating='{{ $ratings[6] }}' data-review='{{ $review_count[6] }}' data-bs-toggle="modal"
+            data-bs-target="#me-dest-modal" style="position:absolute;top: 53px;bottom:0;left: 138px;right: 0; z-index:1;"
+            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1" id="Capa_7" x="0px" y="0px" width="395.71px" height="395.71px"
+            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
-        <svg class='me-gps me-gps-7' data-name='{{$destination[7]->dest_name}}' data-id='{{$destination[7]->id}}' data-desc='{{$destination[7]->dest_description}}' data-images='{{json_encode($main["8"])}}' data-rating='{{$ratings[7]}}' data-review='{{$review_count[7]}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 375px;bottom:0;left: 170px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_8" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
+        <svg class='me-gps me-gps-7' data-name='{{ $destination[7]->dest_name }}' data-id='{{ $destination[7]->id }}'
+            data-desc='{{ $destination[7]->dest_description }}' data-images='{{ json_encode($main['8']) }}'
+            data-rating='{{ $ratings[7] }}' data-review='{{ $review_count[7] }}' data-bs-toggle="modal"
+            data-bs-target="#me-dest-modal" style="position:absolute;top: 375px;bottom:0;left: 170px;right: 0; z-index:1;"
+            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1" id="Capa_8" x="0px" y="0px" width="395.71px" height="395.71px"
+            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
-        <svg class='me-gps me-gps-8' data-name='{{$destination[8]->dest_name}}' data-id='{{$destination[8]->id}}' data-desc='{{$destination[8]->dest_description}}' data-images='{{json_encode($main["9"])}}' data-rating='{{$ratings[8]}}' data-review='{{$review_count[8]}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 303px;bottom:0;left: -158px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_9" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
+        <svg class='me-gps me-gps-8' data-name='{{ $destination[8]->dest_name }}' data-id='{{ $destination[8]->id }}'
+            data-desc='{{ $destination[8]->dest_description }}' data-images='{{ json_encode($main['9']) }}'
+            data-rating='{{ $ratings[8] }}' data-review='{{ $review_count[8] }}' data-bs-toggle="modal"
+            data-bs-target="#me-dest-modal"
+            style="position:absolute;top: 303px;bottom:0;left: -158px;right: 0; z-index:1;" transform="scale(0.1)"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_9"
+            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
+            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
-        <svg class='me-gps me-gps-9' data-name='{{$destination[9]->dest_name}}' data-id='{{$destination[9]->id}}' data-desc='{{$destination[9]->dest_description}}' data-images='{{json_encode($main["10"])}}' data-rating='{{$ratings[9]}}' data-review='{{$review_count[9]}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 153px;bottom:0;left: 752px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_10" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
+        <svg class='me-gps me-gps-9' data-name='{{ $destination[9]->dest_name }}' data-id='{{ $destination[9]->id }}'
+            data-desc='{{ $destination[9]->dest_description }}' data-images='{{ json_encode($main['10']) }}'
+            data-rating='{{ $ratings[9] }}' data-review='{{ $review_count[9] }}' data-bs-toggle="modal"
+            data-bs-target="#me-dest-modal" style="position:absolute;top: 153px;bottom:0;left: 752px;right: 0; z-index:1;"
+            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+            version="1.1" id="Capa_10" x="0px" y="0px" width="395.71px" height="395.71px"
+            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
-        <svg class='me-gps me-gps-10' data-name='{{$destination[10]->dest_name}}' data-id='{{$destination[10]->id}}' data-desc='{{$destination[10]->dest_description}}' data-images='{{json_encode($main["11"])}}' data-rating='{{$ratings[10]}}' data-review='{{$review_count[10]}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 188px;bottom:0;left: 251px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_11" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
+        <svg class='me-gps me-gps-10' data-name='{{ $destination[10]->dest_name }}'
+            data-id='{{ $destination[10]->id }}' data-desc='{{ $destination[10]->dest_description }}'
+            data-images='{{ json_encode($main['11']) }}' data-rating='{{ $ratings[10] }}'
+            data-review='{{ $review_count[10] }}' data-bs-toggle="modal" data-bs-target="#me-dest-modal"
+            style="position:absolute;top: 188px;bottom:0;left: 251px;right: 0; z-index:1;" transform="scale(0.1)"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_11"
+            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
+            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
         {{-- divs for aniamtion --}}
-        <div class="me-location-hider-0" style="top: -632px;bottom: 0;left: 591px;right: 0;position:relative;display:inline-block;overflow:hidden;">
+        <div class="me-location-hider-0"
+            style="top: -632px;bottom: 0;left: 591px;right: 0;position:relative;display:inline-block;overflow:hidden;">
             <div class="me-location-cont me-hover-right" style="position:relative;left: -123px;">
-                <div class="me-location ">{{$destination[0]->dest_name}}</div>
+                <div class="me-location ">{{ $destination[0]->dest_name }}</div>
             </div>
         </div>
-        <div class="me-location-hider-1" style="top: -530px;bottom: 0;left: 470px;right: 0;position:relative;display:inline-block;overflow:hidden;">
+        <div class="me-location-hider-1"
+            style="top: -530px;bottom: 0;left: 470px;right: 0;position:relative;display:inline-block;overflow:hidden;">
             <div class="me-location-cont me-hover-right" style="position:relative;left: -120px;">
-                <div class="me-location ">{{$destination[1]->dest_name}}</div>
+                <div class="me-location ">{{ $destination[1]->dest_name }}</div>
             </div>
         </div>
-        <div class="me-location-hider-2" style="top: -221px;bottom: 0;left: 58px;right: 0;position:relative;display:inline-block;overflow:hidden;">
+        <div class="me-location-hider-2"
+            style="top: -221px;bottom: 0;left: 58px;right: 0;position:relative;display:inline-block;overflow:hidden;">
             <div class="me-location-cont me-hover-right" style="position:relative;left: -122px;">
-                <div class="me-location ">{{$destination[2]->dest_name}}</div>
+                <div class="me-location ">{{ $destination[2]->dest_name }}</div>
             </div>
         </div>
-        <div class="me-location-hider-3" style="top: -424px;bottom: 0;left: 244px;right: 0;position:relative;display:inline-block;overflow:hidden;">
+        <div class="me-location-hider-3"
+            style="top: -424px;bottom: 0;left: 244px;right: 0;position:relative;display:inline-block;overflow:hidden;">
             <div class="me-location-cont me-hover-right" style="position:relative;left: -119px;">
-                <div class="me-location ">{{$destination[3]->dest_name}}</div>
+                <div class="me-location ">{{ $destination[3]->dest_name }}</div>
             </div>
         </div>
-        <div class="me-location-hider-4" style="top: -309px;bottom: 0;left: 40px;right: 0;position:relative;display:inline-block;overflow:hidden;">
+        <div class="me-location-hider-4"
+            style="top: -309px;bottom: 0;left: 40px;right: 0;position:relative;display:inline-block;overflow:hidden;">
             <div class="me-location-cont me-hover-right" style="position:relative;left: -119px;">
-                <div class="me-location ">{{$destination[4]->dest_name}}</div>
+                <div class="me-location ">{{ $destination[4]->dest_name }}</div>
             </div>
         </div>
-        <div class="me-location-hider-5" style="top: -232px;bottom: 0;left: 390px;right: 0;position:relative;display:inline-block;overflow:hidden;">
+        <div class="me-location-hider-5"
+            style="top: -232px;bottom: 0;left: 390px;right: 0;position:relative;display:inline-block;overflow:hidden;">
             <div class="me-location-cont me-hover-right" style="position:relative;left: -119px;">
-                <div class="me-location ">{{$destination[5]->dest_name}}</div>
+                <div class="me-location ">{{ $destination[5]->dest_name }}</div>
             </div>
         </div>
-        <div class="me-location-hider-6" style="top: -404px;bottom: 0;left: -236px;right: 0;position:relative;display:inline-block;overflow:hidden;">
+        <div class="me-location-hider-6"
+            style="top: -404px;bottom: 0;left: -236px;right: 0;position:relative;display:inline-block;overflow:hidden;">
             <div class="me-location-cont me-hover-right" style="position:relative;left: -119px;">
-                <div class="me-location ">{{$destination[6]->dest_name}}</div>
+                <div class="me-location ">{{ $destination[6]->dest_name }}</div>
             </div>
         </div>
-        <div class="me-location-hider-7" style="top: -83px;bottom: 0;left: -264px;right: 0;position:relative;display:inline-block;overflow:hidden;">
+        <div class="me-location-hider-7"
+            style="top: -83px;bottom: 0;left: -264px;right: 0;position:relative;display:inline-block;overflow:hidden;">
             <div class="me-location-cont me-hover-right" style="position:relative;left: -119px;">
-                <div class="me-location ">{{$destination[7]->dest_name}}</div>
+                <div class="me-location ">{{ $destination[7]->dest_name }}</div>
             </div>
         </div>
-        <div class="me-location-hider-8" style="top: -153px;bottom: 0;left: -699px;right: 0;position:relative;display:inline-block;overflow:hidden;">
+        <div class="me-location-hider-8"
+            style="top: -153px;bottom: 0;left: -699px;right: 0;position:relative;display:inline-block;overflow:hidden;">
             <div class="me-location-cont me-hover-right" style="position:relative;left: -119px;">
-                <div class="me-location ">{{$destination[8]->dest_name}}</div>
+                <div class="me-location ">{{ $destination[8]->dest_name }}</div>
             </div>
         </div>
-        <div class="me-location-hider-9" style="position: relative;display:inline-block;overflow:hidden;top: -303px;bottom: 0;left: 93px;right: 0;">
+        <div class="me-location-hider-9"
+            style="position: relative;display:inline-block;overflow:hidden;top: -303px;bottom: 0;left: 93px;right: 0;">
             <div class="me-location-cont me-hover-right" style="position:relative;left: -121px;">
                 <div class="me-location ">Swiss Park</div>
             </div>
         </div>
-        <div class="me-location-hider-10" style="position: relative;display:inline-block;overflow:hidden;top: -299px;left: 454px;right: 0;bottom: 0;">
+        <div class="me-location-hider-10"
+            style="position: relative;display:inline-block;overflow:hidden;top: -299px;left: 454px;right: 0;bottom: 0;">
             <div class="me-location-cont me-hover-right" style="position:relative;left: -121px;">
-                <div class="me-location ">{{$destination[10]->dest_name}}</div>
+                <div class="me-location ">{{ $destination[10]->dest_name }}</div>
             </div>
         </div>
     </div>
-    
+
 
     {{-- modal for destination viewing --}}
     <div class="modal fade" id="me-dest-modal" tabindex="-1">
@@ -267,37 +358,62 @@
     </div>
     <!-- Login Modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <h1>SWITZ</h1>
-                    <form method="POST" action="/login">
-                        @csrf
-                        <div class="form__group field">
-                            <input type="input" required="" placeholder="Name" name="username"
-                                class="form__field">
-                            <label class="form__label" for="name">Username</label>
-                        </div>
-                        <div class="form__group field">
-                            <input type="password" required="" placeholder="Name" name="password"
-                                class="form__field">
-                            <label class="form__label" for="name">Password</label>
-                        </div>
-                        <div class="cntr">
-                            <input checked="" type="checkbox" id="cbx" class="hidden-xs-up">
-                            <label for="cbx" class="cbx"></label>
-                            <label>test</label>
-                        </div>
-                        <button type="submit" class="btn btn-md rounded-0 btn-dark jregister-button">Login</button>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="submit" class="btn btn-md rounded-0 btn-dark jregister-button">Login</button>
+        <div class="row modal-dialog-centered">
+            <div class="d-none d-md-block col-md-2"></div>
+            <div class="container-fluid  d-none d-md-block col-md-4" style="background-color: transparent;">
+                <div class="modal-dialog modal-md me-0">
+                    <div class="modal-content rounded-0"
+                        style="background-image: url('https://images.unsplash.com/photo-1508166093217-f35d00c95fca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'); background-size: cover; width:100%; height: 450px;">
+                    </div>
                 </div>
             </div>
+            <div class="container-fluid col-md-4" style="background-color: transparent;">
+                <div class="modal-dialog p-5 p-md-0 modal-md ms-md-0">
+                    <div class="modal-content rounded-0" style="height: 450px; width: 100%;">
+                        <div class="modal-header" style="border-bottom: none;">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="jlogin-title justify-content-center">
+                                <span class="my-auto" style="font-weight: 800; font-size: 30px;">SWITZ</span>
+                                <img class="switz-logo"
+                                    src="https://cdn.britannica.com/43/4543-004-C0D5C6F4/Flag-Switzerland.jpg">
+                            </div>
+                            <div class="container_fluid">
+                                <form method="POST" action="/login" class="pt-3 ps-md-5">
+                                    @csrf
+                                    <div class="text-center">
+                                        <div class="form__group field">
+                                            <input type="input" required="" placeholder="Name" name="username"
+                                                class="form__field">
+                                            <label class="form__label" for="name">Username</label>
+                                        </div>
+                                        <div class="form__group field">
+                                            <input type="password" required="" placeholder="Name" name="password"
+                                                class="form__field">
+                                            <label class="form__label" for="name">Password</label>
+                                        </div>
+                                    </div>
+                                    <div class="cntr pt-2">
+                                        <input checked="" type="checkbox" id="cbx" class="hidden-xs-up">
+                                        <label for="cbx" class="cbx"></label>
+                                        <label>Remember</label>
+                                    </div>
+                                    <button type="submit"
+                                        class="btn btn-md rounded-0 btn-dark jregister-button mt-4">Login</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <label>New to Switz?</label>
+                            <button type="submit" class="btn btn-md rounded-0 btn-dark jregister-button"
+                                onclick="window.location='{{ url('/register') }}'">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-none d-md-block col-md-2"></div>
         </div>
     </div>
 
@@ -354,18 +470,29 @@
                         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     }
                 });
-                $.ajax({
-                    type: "POST",
-                    url: '/logout',
-                    data: {
-                        logout: true
-                    },
-                    success: function(response) {
-                        window.location.href = "/";
+                Swal.fire({
+                    title: 'Do you want to Logout?',
+                    showCancelButton: true,
+                    confirmButtonText: 'Logout'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: 'Logout Successfully!', 
+                            timer: 3000, 
+                            icon: 'success'}),
+                        $.ajax({
+                            type: "POST",
+                            url: '/logout',
+                            data: {
+                                logout: true
+                            },
+                            success: function(response) {
+                                window.location.href = "/";
+                            }
+                        })
                     }
                 })
             })
         });
-        
     </script>
 @endsection
