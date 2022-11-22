@@ -14,7 +14,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
+                <div class="navbar-nav d-lg-none">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                     <a class="nav-link" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a>
                     <a class="nav-link" href="#">Register</a>
