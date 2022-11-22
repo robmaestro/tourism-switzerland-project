@@ -85,6 +85,12 @@
 }
 
 
+@media(max-width:768px){
+.img-profile{
+    display: none;
+}
 
 
-    
+}
+
+
