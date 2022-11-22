@@ -23,6 +23,11 @@ class AccountController extends Controller
     function login(Request $request)
 
     {
+        // $credentials = $request->validate([
+        //     'username' => ['required', 'unique:posts', 'min:8'],
+        //     'password' => ['required', 'min:8'],
+        // ]);
+
         $credentials =[
             'username' => $request->username,
             'password' => $request->password
