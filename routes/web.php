@@ -10,23 +10,17 @@ Route::get('/mobile', function () {
     return view('mobile');
 });
 
-Route::get('/register', function () {
-    return view('register');
+Route::get('/register', function(){
+    return view('register',["isWhite" => true]);
 });
-
 
 Route::get('/userDetails', function () {
     return view('userDetails');
 });
 
-Route::get('/editUserDetails', function () {
-    return view('editUserDetails');
-});
-
 Route::get('userDetails', [AccountController::class, 'getUserDetails']);
-Route::get('editUserDetails', [AccountController::class, 'editUserDetails']);
-Route::post('/userDetails', [AccountController::class, 'update']);
-
+Route::post('/editDetails', [AccountController::class, 'updateUser']);
+Route::post('deleteUser', [AccountController::class, 'deleteUser']);
 
 Route::get('/', [DestinationController::class, 'show']);
 

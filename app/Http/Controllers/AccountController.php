@@ -23,6 +23,11 @@ class AccountController extends Controller
     function login(Request $request)
 
     {
+        // $credentials = $request->validate([
+        //     'username' => ['required', 'unique:posts', 'min:8'],
+        //     'password' => ['required', 'min:8'],
+        // ]);
+
         $credentials =[
             'username' => $request->username,
             'password' => $request->password
@@ -48,26 +53,20 @@ class AccountController extends Controller
         }
     
     }
-    function editUserDetails(Request $request){
-        $id = Auth::id();
-        if(Auth::check()){
-          
-            $select = 'select * from users where id ='.$id;
-            $users = DB::select($select);
-         
-            return view('editUserDetails',['users'=>$users]);
-        }
-    
-    }
+
    
 
-  public function update(Request $request)
+  public function updateUser(Request $request)
     {
-      
+        
+     
         $id = Auth::id(); 
         $user = User::find($id);
-       
         $user->username = $request->username;
+        $user->fname = $request->fname;
+        $user->lname = $request->lname;
+        $user->gender = $request->gender;
+        $user->nationality = $request->nationality;
         $user->email = $request->email;
         // $user->password = $request->password;
        
@@ -76,6 +75,14 @@ class AccountController extends Controller
         $users = DB::select($select);
 
         return view('userDetails',['users'=>$users]);
+    }
+
+    function deleteUser (Request $request) {
+      dd('ok');
+        $id = Auth::id(); 
+        $user = User::find($id);
+        $user->delete();
+        return view('register');
     }
 
 

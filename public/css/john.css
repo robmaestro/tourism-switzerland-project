@@ -20,6 +20,11 @@
     border: 0 !important;
     color: white !important;
 }
+.jspan-icons-dropdown {
+    font-size: 20px !important;
+    background: none !important;
+    border: 0 !important;
+}
 
 input.jinput {
     background: none !important;
@@ -27,10 +32,6 @@ input.jinput {
     color: white !important;
     box-shadow: none !important;
     border-bottom: 1px solid white !important;
-}
-
-input.jinput::first-letter {
-    text-transform: capitalize !important;
 }
 
 input.form-control::placeholder {
@@ -43,6 +44,14 @@ select.jdropdown {
     color: white !important;
     box-shadow: none !important;
     border-bottom: 1px solid white !important;
+}
+
+.jlogin-title {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    gap: 5px;
+    font-weight: 800;
 }
 
 option.joption {
@@ -74,7 +83,7 @@ option.joption {
     bottom: 0;
     opacity: 0;
     content: '';
-    background-color: #00A619;
+    background-color: #6a994e;
     z-index: -1;
 }
 
@@ -105,7 +114,7 @@ option.joption {
 
 .form__field {
     font-family: inherit;
-    width: 100%;
+    width: auto;
     border: none;
     border-bottom: 2px solid #9b9b9b;
     outline: 0;
@@ -137,7 +146,7 @@ option.joption {
 .form__field:focus {
     padding-bottom: 6px;
     border-width: 3px;
-    border-image: linear-gradient(to right, #116399, #38caef);
+    border-image: linear-gradient(to right, black);
     border-image-slice: 1;
 }
 
@@ -147,7 +156,8 @@ option.joption {
     display: block;
     transition: 0.2s;
     font-size: 17px;
-    color: #38caef;
+    color: black;
+    /* #38caef */
     font-weight: 700;
 }
 
@@ -157,90 +167,40 @@ option.joption {
     box-shadow: none;
 }
 
-.cbx {
-    position: relative;
-    top: 1px;
-    width: 27px;
-    height: 27px;
-    border: 1px solid #c8ccd4;
-    border-radius: 3px;
-    vertical-align: middle;
-    transition: background 0.1s ease;
-    cursor: pointer;
-    display: block;
-   }
-   
-   .cbx:after {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 8px;
-    width: 7px;
-    height: 14px;
-    opacity: 0;
-    transform: rotate(45deg) scale(0);
-    border-right: 2px solid #fff;
-    border-bottom: 2px solid #fff;
-    transition: all 0.3s ease;
-    transition-delay: 0.15s;
-   }
-   
-   .lbl {
-    margin-left: 5px;
-    vertical-align: middle;
-    cursor: pointer;
-   }
-   
-   #cbx:checked ~ .cbx {
-    border-color: transparent;
-    background: #6871f1;
-    animation: jelly 0.6s ease;
-   }
-   
-   #cbx:checked ~ .cbx:after {
-    opacity: 1;
-    transform: rotate(45deg) scale(1);
-   }
-   
-   .cntr {
-    position: relative;
-   }
-   
-   @keyframes jelly {
-    from {
-     transform: scale(1, 1);
-    }
-   
-    30% {
-     transform: scale(1.25, 0.75);
-    }
-   
-    40% {
-     transform: scale(0.75, 1.25);
-    }
-   
-    50% {
-     transform: scale(1.15, 0.85);
-    }
-   
-    65% {
-     transform: scale(0.95, 1.05);
-    }
-   
-    75% {
-     transform: scale(1.05, 0.95);
-    }
-   
-    to {
-     transform: scale(1, 1);
-    }
-   }
-   
-   .hidden-xs-up {
-    display: none!important;
-   }
-   
+.dropdown-toggle:after {
+    content: none !important;
+  }
 
+  .dropdown-menu-arrow {
+    top: -25px;
+    left: 50%;
+    width: 0;
+    height: 0;
+    position: relative;
+  }
+  .dropdown-menu-arrow:before,
+  .dropdown-menu-arrow:after {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-width: 7px 8px;
+    border-style: solid;
+    border-color: transparent;
+    z-index: 1001;
+  }
+  .dropdown-menu-arrow:after {
+    bottom: -18px;
+    left: 45px;
+    border-bottom-color: #fff;
+  }
+  .dropdown-menu-arrow:before {
+    bottom: -17px;
+    left: 45px;
+    border-bottom-color: rgba(0,0,0,.15);
+  }
+  
 @media (max-width: 575px) {
     .jcontainer-signup {
         min-width: 250px;
