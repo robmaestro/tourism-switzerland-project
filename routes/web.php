@@ -10,13 +10,13 @@ Route::get('/mobile', function () {
     return view('mobile');
 });
 
-Route::get('/register', function(){
-    return view('register',["isWhite" => true]);
+Route::get('/register', function () {
+    return view('register', ["isWhite" => true]);
 });
 
 
 
-Route::get('/profile', function(){
+Route::get('/profile', function () {
     return view('profile');
 });
 
@@ -34,3 +34,4 @@ Route::post("/logout", [AccountController::class, 'logout']);
 
 Route::post('/editRating', [ReviewController::class, 'editRating']);
 Route::post('/getRating', [ReviewController::class, 'getRating']);
+Route::post('/getRatingAvg', [ReviewController::class, 'getRatingAvg']);
