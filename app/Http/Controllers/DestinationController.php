@@ -8,7 +8,7 @@ use App\Models\Destination;
 
 class DestinationController extends Controller
 {
-    function show()
+    function show(Request $request)
     {
         // $destination = Destination::get();
         $destProfile = Destination::with('reviews', 'dimages')->get();

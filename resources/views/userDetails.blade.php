@@ -64,9 +64,10 @@
                                 </div>
 
                                 <div class="e-button">
+                                
                                     <form method="POST" action="deleteUser" > 
                                         @csrf
-                                      
+                           
                                         <button type="submit" class="btn btn-dark e-btnEdit" >DELETE</button>
                                     </form>
                                     <button type="button" class="btn btn-dark e-btnEdit"
@@ -170,26 +171,37 @@
 
 @section('script')
     <script>
-        $(document).ready(function() {
-            $('.j-logout').on('click', function() {
-                console.log("clicked")
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
-                $.ajax({
-                    type: "POST",
-                    url: '/logout',
-                    data: {
-                        logout: true
-                    },
-                    success: function(response) {
-                        window.location.href = "/";
-                    }
-                })
+        $('.j-logout').on('click', function() {
+            console.log("clicked")
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            Swal.fire({
+                title: 'Do you want to Logout?',
+                showCancelButton: true,
+                confirmButtonText: 'Logout'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                            title: 'Logout Successfully!',
+                            timer: 3000,
+                            icon: 'success',
+                            showConfirmButton: false
+                        }),
+                        $.ajax({
+                            type: "POST",
+                            url: '/logout',
+                            data: {
+                                logout: true
+                            },
+                            success: function(response) {
+                                window.location.href = "/";
+                            }
+                        })
+                }
             })
-
         })
 
         //save
@@ -216,8 +228,6 @@
             editDetail.style.display = "none";
 
         }
-
-
 
         //nationality
         const nationalityList = [
