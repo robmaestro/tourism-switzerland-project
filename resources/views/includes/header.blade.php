@@ -10,14 +10,20 @@
                         <span style="color: white">
                             SWITZ
                         </span>
+                        <img class="switz-logo" src="https://cdn.britannica.com/43/4543-004-C0D5C6F4/Flag-Switzerland.jpg">      
                     @else
                         <span>
                             SWITZ
                         </span>
+                        <img class="switz-logo" src="https://cdn.britannica.com/43/4543-004-C0D5C6F4/Flag-Switzerland.jpg">      
                     @endif
-                    <img class="switz-logo" src="https://cdn.britannica.com/43/4543-004-C0D5C6F4/Flag-Switzerland.jpg">
-                </div>
+                  </div>
+                  <a class="navbar-togglers d-block me-auto" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+                    {{-- <span class="navbar-toggler-icon"></span> --}}
+                    <i class="bi bi-chevron-down"></i>
+                  </a>
             </a>
+
             <button class="navbar-togglers" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
                 aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -37,7 +43,7 @@
 
     {{-- 767px start ng web --}}
       
-      <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas offcanvas-start d-z-index" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
         <div class="offcanvas-header">
             <h5 class="r-title-main" id="offcanvasExampleLabel" >SWITZ</h5>
             <img class="switz-logo" src="https://cdn.britannica.com/43/4543-004-C0D5C6F4/Flag-Switzerland.jpg">
@@ -66,7 +72,7 @@
       </div>
 
       {{-- Dropdown Profile Darkmode--}}
-      <div class="dropdown">
+      {{-- <div class="dropdown">
         <i type="button" class="bi bi-person-circle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
         </i>
         <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="dropdownMenuButton1">
@@ -75,7 +81,7 @@
           <li><a class="dropdown-item" href="/userDetails">Profile</a></li>
           <li><a class="dropdown-item" href="#">Logout</a></li>
         </ul>
-      </div>
+      </div> --}}
 
     {{-- login dropdown --}}
     @if (isset($user))
