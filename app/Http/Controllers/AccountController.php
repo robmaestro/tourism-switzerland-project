@@ -51,21 +51,9 @@ class AccountController extends Controller
 
     }
     
-    function editUserDetails(Request $request)
-    {
-        $id = Auth::id();
-        if (Auth::check()) {
-
-            $select = 'select * from users where id =' . $id;
-            $users = DB::select($select);
-
-            return view('editUserDetails', ['users' => $users]);
-        }
-
-    }
-    
   public function updateUser(Request $request)
     {
+        dd('ok');
         $id = Auth::id(); 
         $user = User::find($id);
         $user->username = $request->username;
@@ -83,15 +71,20 @@ class AccountController extends Controller
         return view('userDetails', ['users' => $users]);
     }
 
-    function deleteUser (Request $request) {
-      dd('ok');
-        $id = Auth::id(); 
-        $user = User::find($id);
-        $user->delete();
+    public function deleteUser (Request $request) {
+       
+        // $id = Auth::id(); 
+        // $user = User::find($id);
+        // $user->destroy();
+
+        $user = User::find(Auth::user()->user_id);
+        $user = DB::delete('delete from users')->user(id);
         return view('register');
+
+        
     }
 
-
+  
     function logout(Request $request)
     {
         auth()->logout();

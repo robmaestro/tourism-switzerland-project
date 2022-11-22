@@ -27,9 +27,7 @@
                         </div>
                     </div>
                     <div class="col-lg-8 e-col2">
-                        <form>
-                            @csrf
-
+                       
                             <div class="row mt-5">
 
                                 <div class="col-lg-6">
@@ -66,9 +64,10 @@
                                 </div>
 
                                 <div class="e-button">
-                                    <form action="deleteUser" method="POST">
-
-                                        <button type="submit" class="btn btn-dark e-btnEdit">DELETE</button>
+                                    <form method="POST" action="deleteUser" > 
+                                        @csrf
+                                      
+                                        <button type="submit" class="btn btn-dark e-btnEdit" >DELETE</button>
                                     </form>
                                     <button type="button" class="btn btn-dark e-btnEdit"
                                         onclick="editDetails()">EDIT</button>
@@ -79,7 +78,7 @@
                     </div>
                 </div>
 
-                </form>
+           
             </div>
         </div>
 
