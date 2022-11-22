@@ -1,5 +1,4 @@
 @extends('master')
-@include('countries-array')
 @section('title', 'Register')
 @section('class', 'jbody-bg')
 
@@ -67,8 +66,9 @@
                                         <span class="input-group-text bi bi-flag p-0 mx-auto jspan-icons"
                                             id="basic-addon1"></span>
                                     </div>
-                                    <input type="text" class="form-control rounded-0 jinput" aria-label="Nationality"
-                                        name="nationality" placeholder="Nationality" aria-describedby="basic-addon1" />
+                                    <select class="form-select rounded-0 jdropdown pe-0" aria-label="Default select example"
+                                        name="nationality" id="selectNationality" >
+                                    </select>
                                 </div>
                             </div>
                         </div>
@@ -92,9 +92,9 @@
                                 <span class="input-group-text bi bi-envelope p-0 mx-auto jspan-icons"
                                     id="basic-addon1"></span>
                             </div>
-                            <input type="email" class="form-control rounded-0 jinput" aria-label="Username"
+                            <input type="email" class="form-control rounded-0 jinput" aria-label="Email"
                                 placeholder="Email" name="email" aria-describedby="basic-addon1" />
-                        </div>                  
+                        </div>
                         <button type="submit" class="btn btn-md rounded-0 btn-dark jregister-button">Register</button>
                     </form>
                 </div>
@@ -103,10 +103,205 @@
     </div>
 @endsection
 
-{{-- @section('script')
+@section('script')
     <script>
-        $('#exampleModal').on('shown.bs.modal', function() {
-            $('#myInput').trigger('focus')
+        const nationalityList = [
+            'Afghan',
+            'Albanian',
+            'Algerian',
+            'American',
+            'Andorran',
+            'Angolan',
+            'Antiguans',
+            'Argentinean',
+            'Armenian',
+            'Australian',
+            'Austrian',
+            'Azerbaijani',
+            'Aahamian',
+            'Bahraini',
+            'Bangladeshi',
+            'Barbadian',
+            'Barbudans',
+            'Batswana',
+            'Belarusian',
+            'Belgian',
+            'Belizean',
+            'Bninese',
+            'Bhutanese',
+            'Bolivian',
+            'Bosnian',
+            'Brazilian',
+            'British',
+            'Bruneian',
+            'Bulgarian',
+            'Burkinabe',
+            'Burmese',
+            'Burundian',
+            'Cambodian',
+            'Cameroonian',
+            'Canadian',
+            'Cape verdean',
+            'Central african',
+            'Chadian',
+            'Chilean',
+            'Chinese',
+            'Colombian',
+            'Comoran',
+            'Congolese',
+            'Costa rican',
+            'Croatian',
+            'Cuban',
+            'Cypriot',
+            'Czech',
+            'Danish',
+            'Djibouti',
+            'Dominican',
+            'Dutch',
+            'East timorese',
+            'Ecuadorean',
+            'Egyptian',
+            'Emirian',
+            'Equatorial guinean',
+            'Eritrean',
+            'Estonian',
+            'Ethiopian',
+            'Fijian',
+            'Filipino',
+            'Finnish',
+            'French',
+            'Gabonese',
+            'Gambian',
+            'Georgian',
+            'German',
+            'Ghanaian',
+            'Greek',
+            'Grenadian',
+            'Guatemalan',
+            'Guinea-bissauan',
+            'Guinean',
+            'Guyanese',
+            'Gaitian',
+            'Gerzegovinian',
+            'Gonduran',
+            'Gungarian',
+            'Icelander',
+            'Indian',
+            'Indonesian',
+            'Iranian',
+            'Iraqi',
+            'Irish',
+            'Israeli',
+            'Italian',
+            'Ivorian',
+            'Jamaican',
+            'Japanese',
+            'Jordanian',
+            'Kazakhstani',
+            'Kenyan',
+            'Kittian and nevisian',
+            'Kuwaiti',
+            'Kyrgyz',
+            'Laotian',
+            'Latvian',
+            'Lebanese',
+            'Liberian',
+            'Libyan',
+            'Liechtensteiner',
+            'Lithuanian',
+            'Luxembourger',
+            'Macedonian',
+            'Malagasy',
+            'Malawian',
+            'Malaysian',
+            'Maldivan',
+            'Malian',
+            'Maltese',
+            'Marshallese',
+            'Mauritanian',
+            'Mauritian',
+            'Mexican',
+            'Micronesian',
+            'Moldovan',
+            'Monacan',
+            'Mongolian',
+            'Moroccan',
+            'Mosotho',
+            'Motswana',
+            'Mozambican',
+            'Namibian',
+            'Nauruan',
+            'Nepalese',
+            'New zealander',
+            'Ni-vanuatu',
+            'Nicaraguan',
+            'Nigerien',
+            'North korean',
+            'Northern irish',
+            'Norwegian',
+            'Omani',
+            'Pakistani',
+            'Palauan',
+            'Panamanian',
+            'Papua new guinean',
+            'Paraguayan',
+            'Peruvian',
+            'Polish',
+            'Portuguese',
+            'Qatari',
+            'Romanian',
+            'Russian',
+            'Rwandan',
+            'Saint lucian',
+            'Salvadoran',
+            'Samoan',
+            'San marinese',
+            'Sao tomean',
+            'Saudi',
+            'Scottish',
+            'Senegalese',
+            'Serbian',
+            'Seychellois',
+            'Sierra leonean',
+            'Singaporean',
+            'Slovakian',
+            'Slovenian',
+            'Solomon islander',
+            'Somali',
+            'South african',
+            'South korean',
+            'Spanish',
+            'Sri lankan',
+            'Sudanese',
+            'Surinamer',
+            'Swazi',
+            'Swedish',
+            'Swiss',
+            'Syrian',
+            'Taiwanese',
+            'Tajik',
+            'Tanzanian',
+            'Thai',
+            'Togolese',
+            'Tongan',
+            'Trinidadian or tobagonian',
+            'Tunisian',
+            'Turkish',
+            'Tuvaluan',
+            'Ugandan',
+            'Ukrainian',
+            'Uruguayan',
+            'Uzbekistani',
+            'Venezuelan',
+            'Vietnamese',
+            'Welsh',
+            'Yemenite',
+            'Zambian',
+            'Zimbabwean',
+        ]
+        var options = nationalityList.map(nationality => {
+            return `<option class="joption" value="${nationality}">${nationality}</option>`
         })
+        document.getElementById("selectNationality").innerHTML = options
     </script>
-@endsection --}}
+@endsection
