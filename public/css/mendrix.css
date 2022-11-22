@@ -9,6 +9,7 @@
     /* max-height: 120vh; */
     height: 100%;
     margin: auto;
+    z-index: -10;
 }
 
 @media (max-width:1015px) {
