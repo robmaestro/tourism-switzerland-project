@@ -1,229 +1,90 @@
-
 .e-container {
     background-image: url("/e-containerbg.jpg");
-
     background-size: cover;
- 
-
 }
 
 .e-btnEdit{
-    text-align: center;
+
     width: 80px;
     height: 40px;
     margin-bottom: 20px;
-  
     margin-top: 20px;
 }
-.e-first{
-        
-    height: 150px;
-    background-color: rgba(255, 255, 255, 0.075);
-    margin-top: 100px !important;
-    border: 1px solid black;
-    border-bottom: none;
+.e-first{    
+    height: auto;
+    background-color: rgba(210, 222, 228, 0.1);
+    margin-top: 50px !important;
+    border: none;
+    border-bottom: 1px solid gray;
     color: white;
-    text-align: center;
-    margin-left: 250px;
-    margin-right: 250px;
-
+    text-align: left;
+    max-width: 750px;
+    padding: 20px;
+    margin: auto;
 }
-
 .e-second{
- 
-  
-    
-    background-color: rgba(255, 255, 255, 0.397);
-    border: 1px solid black;
+    width: 75%;
+    padding: 30px;
+    background-color: rgba(210, 222, 228, 0.1);
+    border: none;
     color: white;
-    margin-left: 250px;
-    margin-right: 250px;
+    margin: auto;
+    max-width: 750px;
 }
-.e-userDetails{
 
-
-    background-color:  rgba(255, 255, 255, 0.397);
-    border: 1px solid black;
-    color: white;
-    margin-left: 250px;
-    margin-right: 250px;
+.e-initial{
+    font-size: 10vh ;
+    font-weight: 300;
 }
+
 .e-user-dp{
-    width: 250px;
-    max-width: 250px;
-    min-width: 250px;
-       border: 2px solid black;
-       border-radius: 50%;
-       margin-top: -100px;
-      
+    max-width: 150px;
+    max-height: 150px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #B6E388;    
 }
 
 .e-col1{
     text-align: center;
 }
+
 .e-button{
     text-align: right;
-    padding-right: 50px;
-    
+   
 }
-.e-name{
-    position: relative;
-    top: 250px;
-    position: absolute;
-    left: 800px;
-    
-}
+
 #e-username{
-    background-color: rgba(255, 255, 255, 0);
-    border: none;
-    width: fit-content;
+   font-size: x-large;
   text-align: center;
 }
-
 .e-details{
-    background-color: rgb(255, 255, 255);
-    border: none ;
-    border-bottom: 1px solid gray;
-    width: 70%;
-    border-radius: 5px;
-
-
-    color: black;
+    background: none !important;
+    border: 0 !important;
+    color: white !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid white !important;
+    width: 100% !important;
+    margin-bottom: 10px;
  }
  .e-detail1{
-    background-color: rgb(255, 255, 255);
-    border: none ;
-    border-bottom: 1px solid gray;
-    width: 86%;
-    border-radius: 5px;
-
-    color: black;
+    background: none !important;
+    border: 0 !important;
+    color: white !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    text-align: center;
  }
 
  .label{
-
-    font-weight: 400;
+    font-weight: 600;
+    color: white;
+}
+.e-option {
     color: black;
 }
-.e-icon{
-    width: 60px;
-    position: absolute;
- top: 620px;
-
-}
-.e-pencil{
-    color: black;
-    margin-left: -25px;
-}
-
-@media (max-width:1440px){
-    .e-user-dp{
-        width: 230px;
-        max-width: 230px;
-        min-width: 230px;
-        margin-top: -75px;
-           
-      
-        
-          
-    }
-    
-    .e-first {
-        height: 120px;
-        background-color: rgba(255, 255, 255, 0.103);
-        margin-top: 30px !important;
-        margin-left: 100px;
-        margin-right: 100px;
-    }
-    .e-second, .e-userDetails{
-        margin-left: 100px;
-        margin-right: 100px;
-    }
-    
-    .e-name{
-        position: relative;
-        top: 150px;
-        position: absolute;
-        left: 500px;
-        
-    }
-   .e-container{
-    margin-bottom: 10px;
-   }
-}
 
 
-@media (max-width:768px){
-    .e-second, .e-userDetails{
-        margin-left: 20px;
-        margin-right: 20px;
-    }
-    .e-button{
-        text-align: center;
-        padding-right: 0px;
-        
-    }
-    .e-first {
-        height: 150px;
-        background-color: rgba(255, 255, 255, 0.103);
-        margin-top: 50px !important;
-        margin-left: 20px;
-        margin-right: 20px;
-      
-    }
-
-    .e-detail1, .e-details{
-      
-        width: 80%;
-        text-align: center;
-    }
-
-    .e-user-dp{
-        width: 200px;
-        max-width: 220px;
-        min-width: 220px;
-     
-           border-radius: 50%;
-          margin-top: -80px;
-         
-        
-          
-    }
-    .e-btnUpload{
-        margin-top: 110px;
-        width: 190px;
-        height: 40px;
-    
-    }
-    .e-second{
-        text-align: center;
-    
-    }
-    .e-col2{
-        text-align: center;
-    }
-    .e-userDetails{
-    padding-top: 60px;
-;
-    }
- .e-name{
-    display: none;
- }
-  
-}
-@media (max-width:320px){
-    .e-user-dp{
-        width: 180px;
-        max-width: 180px;
-        min-width: 180px;
-     
-           border-radius: 50%;
-          margin-top: -100px;
-         
-        
-          
-    }
-}
 
 
     
