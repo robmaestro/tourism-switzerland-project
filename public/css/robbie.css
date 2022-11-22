@@ -141,7 +141,7 @@ body {
     .navbar-container {
         width: 100%;
         display: flex !important;
-        background-color: rgba(242, 232, 232, 0.77);
+        background-color: rgb(242, 232, 232);
     }
 
     .navbar-togglers {
@@ -303,9 +303,11 @@ body {
         font-size:16px;
     }
 
-    .e-userDetails{
-        color:black !important;
+    .e-second{
+        padding: 10px 0px !important;
     }
+
+
 }
 
 @media (max-width: 425px) {
@@ -324,7 +326,7 @@ body {
     .navbar-container {
         width: 100%;
         display: flex !important;
-        background-color: rgba(242, 232, 232, 0.77);
+        background-color: rgb(242, 232, 232);
     }
 
     .navbar-togglers {
@@ -501,7 +503,4 @@ body {
         font-size:16px;
     }
 
-    #e-userDetails{
-        color:black !important;
-    }
 }
