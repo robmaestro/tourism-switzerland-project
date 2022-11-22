@@ -4,11 +4,11 @@
 @section('content')
 
     @foreach ($users as $user)
-        <div class="" id="e-userDetails">
+        <div id="e-userDetails">
 
             <div class="e-first">
                 <div>
-                    <h1 class="e-title"> <span class="bi bi-person"> </span> PROFILE</h1>
+                    <h2 class="mb-0"> <span class="bi bi-person"> </span> PROFILE</h2>
                 </div>
             </div>
             <div class="e-second">
@@ -27,9 +27,7 @@
                         </div>
                     </div>
                     <div class="col-lg-8 e-col2">
-                        <form>
-                            @csrf
-
+                       
                             <div class="row mt-5">
 
                                 <div class="col-lg-6">
@@ -66,11 +64,11 @@
                                 </div>
 
                                 <div class="e-button">
-                                    <form action="deleteUser" method="POST">
+                                    <form method="POST" action="deleteUser" > 
+                                        @csrf
                                       
-                                    <button type="submit" class="btn btn-dark e-btnEdit"
-                                    >DELETE</button>
-                                </form>
+                                        <button type="submit" class="btn btn-dark e-btnEdit" >DELETE</button>
+                                    </form>
                                     <button type="button" class="btn btn-dark e-btnEdit"
                                         onclick="editDetails()">EDIT</button>
                                 </div>
@@ -80,7 +78,7 @@
                     </div>
                 </div>
 
-                </form>
+           
             </div>
         </div>
 
@@ -88,13 +86,13 @@
         <div id="e-editdetails" style="display: none">
             <div class=" e-first">
                 <div>
-                    <h1 class="e-title"><span class="bi bi-pencil-square"> </span> EDIT PROFILE</h1>
+                    <h2 class="mb-0"><span class="bi bi-pencil-square"> </span> EDIT PROFILE</h2>
 
 
                 </div>
             </div>
 
-            <form action="editDetails" method="POST">
+            <form action="profile" method="POST">
                 @csrf
                 <div class="e-second">
                     <div class="row">
@@ -139,16 +137,13 @@
                                     </select>
                                 </div>
 
-
                                 <div class="col-lg-6">
-
-
                                     <label for="nationality" class="form-label label">Nationality:</label> <br>
-                                    <select class="form-select rounded-0 e-details ps-0" aria-label="Default select example"
-                                        name="nationality" id="selectNationality">
-                                        <option selected disabled hidden class="e-option">{{$user->nationality}}</option>
+                                    <select class="form-select rounded-0 e-details ps-0"
+                                        aria-label="Default select example" name="nationality" id="selectNationality">
+                                        <option selected disabled hidden class="e-option">{{ $user->nationality }}
+                                        </option>
                                     </select>
-
                                 </div>
                             </div>
 
@@ -196,18 +191,21 @@
             })
 
         })
+
+        //save
+
+
         //editDetails
 
         function editDetails() {
             var editDetail = document.getElementById('e-editdetails');
             var Detail = document.getElementById('e-userDetails');
             Detail.style.display = "none";
-
             editDetail.style.display = "block";
 
         }
-//delete
-        function deleteUser(){
+        //delete
+        function deleteUser() {
 
         }
         //close
@@ -215,20 +213,11 @@
             var editDetail = document.getElementById('e-editdetails');
             var Detail = document.getElementById('e-userDetails');
             Detail.style.display = "block";
-
             editDetail.style.display = "none";
 
         }
 
-        function btnsave() {
-            Swal.fire({
-            
-                icon: 'success',
-                title: 'Your work has been saved',
-                showConfirmButton: false,
-                timer: 1000
-            })
-        }
+
 
         //nationality
         const nationalityList = [
@@ -433,5 +422,5 @@
         document.getElementById("selectNationality").innerHTML = options
     </script>
 
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @endsection

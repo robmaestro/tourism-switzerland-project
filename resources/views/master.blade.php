@@ -13,6 +13,7 @@
     <link href={{ asset('css/micaella.css') }} rel="stylesheet" type="text/css">
     <link href={{ asset('css/doms.css') }} rel="stylesheet" type="text/css">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -37,6 +38,7 @@
 <body class=@yield('class')>
     {{-- Header --}}
     @include('includes.header')
+
     {{-- Body --}}
     <div class="container-fluid">
         @yield('content')
