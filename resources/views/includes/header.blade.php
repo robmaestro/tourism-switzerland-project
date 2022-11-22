@@ -35,15 +35,16 @@
     {{-- login dropdown --}}
     @if (isset($user))
         <div class="dropdown">
+            <span>Welcome {{ $user->fname }}!</span>
             <i class="bi bi-person-circle dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" style="cursor: pointer;"></i>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" class="p-5">
-                <li>Welcome {{ $user->username }}</li>
+            <ul class="dropdown-menu rounded-0" aria-labelledby="dropdownMenuButton1" class="p-5">
+                <span class="dropdown-menu-arrow"></span>
                 <li style="cursor: pointer;">Profile</li>
                 <li class="j-logout" style="cursor: pointer;">Logout</li>
             </ul>
         </div>
     @else
-        <div class="dropdown rounded-0 p-2">
+        <div class="dropdown p-2">
             <i class="bi bi-person-circle dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" style="cursor: pointer;"></i>
             <ul class="dropdown-menu rounded-0" aria-labelledby="dropdownMenuButton1">
                 <span class="dropdown-menu-arrow"></span>
