@@ -11,6 +11,12 @@
     margin: auto;
 }
 
+@media (max-width:1015px) {
+    .me-cont-svg {
+        overflow-x: visible;
+    }
+}
+
 .me-carousel-image {
     height: 70vh;
     object-fit: cover;
@@ -100,3 +106,21 @@
         transform: translateX(0px);
     }
 }
+
+.me-user-star,
+.me-user-star-cont {
+    cursor: pointer;
+}
+
+.me-active-star {
+    color: gold;
+}
+
+.me-hover-star {
+    color: rgba(255, 217, 0, 0.562) !important;
+}
+
+.me-inactive-star {
+    color: gray;
+}
+

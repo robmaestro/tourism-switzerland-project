@@ -7,7 +7,8 @@
     $main = $data['images'];
     $ratings = $data['ratings'];
     $review_count = $data['review_count'];
-    
+    $user = Auth::user();
+
 @endphp
 
 @section('content')
@@ -133,117 +134,38 @@
                 id="CHE3473" name="Appenzell Innerrhoden">
             </path>
         </svg>
-        <svg class='me-gps me-gps-0' data-name='{{ $destination[0]->dest_name }}' data-id='{{ $destination[0]->id }}'
-            data-desc='{{ $destination[0]->dest_description }}' data-images='{{ json_encode($main['1']) }}'
-            data-rating='{{ $ratings[0] }}' data-review='{{ $review_count[0] }}' data-bs-toggle="modal"
-            data-bs-target="#me-dest-modal" style="position:absolute;top: -174px;bottom: 0;left: 387px; right:0; z-index:1;"
-            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px"
-            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        <svg class='me-gps me-gps-0' data-name='{{$destination[0]->dest_name}}' data-id='{{$destination[0]->id}}' data-desc='{{$destination[0]->dest_description}}' data-images='{{json_encode($main["1"])}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: -174px;bottom: 0;left: 387px; right:0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
         </svg>
-        <svg class='me-gps me-gps-1' data-name='{{ $destination[1]->dest_name }}' data-id='{{ $destination[1]->id }}'
-            data-desc='{{ $destination[1]->dest_description }}' data-images='{{ json_encode($main['2']) }}'
-            data-rating='{{ $ratings[1] }}' data-review='{{ $review_count[1] }}' data-bs-toggle="modal"
-            data-bs-target="#me-dest-modal" style="position:absolute;top: -73px;bottom:0;left: 368px;right: 0; z-index:1;"
-            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            version="1.1" id="Capa_2" x="0px" y="0px" width="395.71px" height="395.71px"
-            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        <svg class='me-gps me-gps-1' data-name='{{$destination[1]->dest_name}}' data-id='{{$destination[1]->id}}'  data-desc='{{$destination[1]->dest_description}}' data-images='{{json_encode($main["2"])}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: -73px;bottom:0;left: 368px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_2" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
         </svg>
-        <svg class='me-gps me-gps-2' data-name='{{ $destination[2]->dest_name }}' data-id='{{ $destination[2]->id }}'
-            data-desc='{{ $destination[2]->dest_description }}' data-images='{{ json_encode($main['3']) }}'
-            data-rating='{{ $ratings[2] }}' data-review='{{ $review_count[2] }}' data-bs-toggle="modal"
-            data-bs-target="#me-dest-modal" style="position:absolute;top: 236px;bottom:0;left: 28px;right: 0; z-index:1;"
-            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            version="1.1" id="Capa_3" x="0px" y="0px" width="395.71px" height="395.71px"
-            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        <svg class='me-gps me-gps-2' data-name='{{$destination[2]->dest_name}}' data-id='{{$destination[2]->id}}' data-desc='{{$destination[2]->dest_description}}' data-images='{{json_encode($main["3"])}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 236px;bottom:0;left: 28px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_3" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
         </svg>
-        <svg class='me-gps me-gps-3' data-name='{{ $destination[3]->dest_name }}' data-id='{{ $destination[3]->id }}'
-            data-desc='{{ $destination[3]->dest_description }}' data-images='{{ json_encode($main['4']) }}'
-            data-rating='{{ $ratings[3] }}' data-review='{{ $review_count[3] }}' data-bs-toggle="modal"
-            data-bs-target="#me-dest-modal" style="position:absolute;top: 34px;bottom:0;left: 340px;right: 0; z-index:1;"
-            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            version="1.1" id="Capa_4" x="0px" y="0px" width="395.71px" height="395.71px"
-            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        <svg class='me-gps me-gps-3' data-name='{{$destination[3]->dest_name}}' data-id='{{$destination[3]->id}}' data-desc='{{$destination[3]->dest_description}}' data-images='{{json_encode($main["4"])}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 34px;bottom:0;left: 340px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_4" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
         </svg>
-        <svg class='me-gps me-gps-4' data-name='{{ $destination[4]->dest_name }}' data-id='{{ $destination[4]->id }}'
-            data-desc='{{ $destination[4]->dest_description }}' data-images='{{ json_encode($main['5']) }}'
-            data-rating='{{ $ratings[4] }}' data-review='{{ $review_count[4] }}' data-bs-toggle="modal"
-            data-bs-target="#me-dest-modal" style="position:absolute;top: 150px;bottom:0;left: 220px;right: 0; z-index:1;"
-            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            version="1.1" id="Capa_5" x="0px" y="0px" width="395.71px" height="395.71px"
-            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        <svg class='me-gps me-gps-4' data-name='{{$destination[4]->dest_name}}' data-id='{{$destination[4]->id}}' data-desc='{{$destination[4]->dest_description}}' data-images='{{json_encode($main["5"])}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 150px;bottom:0;left: 220px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_5" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
         </svg>
-        <svg class='me-gps me-gps-5' data-name='{{ $destination[5]->dest_name }}' data-id='{{ $destination[5]->id }}'
-            data-desc='{{ $destination[5]->dest_description }}' data-images='{{ json_encode($main['6']) }}'
-            data-rating='{{ $ratings[5] }}' data-review='{{ $review_count[5] }}' data-bs-toggle="modal"
-            data-bs-target="#me-dest-modal" style="position:absolute;top: 226px;bottom:0;left: 668px;right: 0; z-index:1;"
-            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            version="1.1" id="Capa_6" x="0px" y="0px" width="395.71px" height="395.71px"
-            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        <svg class='me-gps me-gps-5' data-name='{{$destination[5]->dest_name}}' data-id='{{$destination[5]->id}}' data-desc='{{$destination[5]->dest_description}}' data-images='{{json_encode($main["6"])}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 226px;bottom:0;left: 668px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_6" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
         </svg>
-        <svg class='me-gps me-gps-6' data-name='{{ $destination[6]->dest_name }}' data-id='{{ $destination[6]->id }}'
-            data-desc='{{ $destination[6]->dest_description }}' data-images='{{ json_encode($main['7']) }}'
-            data-rating='{{ $ratings[6] }}' data-review='{{ $review_count[6] }}' data-bs-toggle="modal"
-            data-bs-target="#me-dest-modal" style="position:absolute;top: 53px;bottom:0;left: 138px;right: 0; z-index:1;"
-            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            version="1.1" id="Capa_7" x="0px" y="0px" width="395.71px" height="395.71px"
-            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        <svg class='me-gps me-gps-6' data-name='{{$destination[6]->dest_name}}' data-id='{{$destination[6]->id}}' data-desc='{{$destination[6]->dest_description}}' data-images='{{json_encode($main["7"])}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 53px;bottom:0;left: 138px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_7" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
         </svg>
-        <svg class='me-gps me-gps-7' data-name='{{ $destination[7]->dest_name }}' data-id='{{ $destination[7]->id }}'
-            data-desc='{{ $destination[7]->dest_description }}' data-images='{{ json_encode($main['8']) }}'
-            data-rating='{{ $ratings[7] }}' data-review='{{ $review_count[7] }}' data-bs-toggle="modal"
-            data-bs-target="#me-dest-modal" style="position:absolute;top: 375px;bottom:0;left: 170px;right: 0; z-index:1;"
-            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            version="1.1" id="Capa_8" x="0px" y="0px" width="395.71px" height="395.71px"
-            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        <svg class='me-gps me-gps-7' data-name='{{$destination[7]->dest_name}}' data-id='{{$destination[7]->id}}' data-desc='{{$destination[7]->dest_description}}' data-images='{{json_encode($main["8"])}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 375px;bottom:0;left: 170px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_8" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
         </svg>
-        <svg class='me-gps me-gps-8' data-name='{{ $destination[8]->dest_name }}' data-id='{{ $destination[8]->id }}'
-            data-desc='{{ $destination[8]->dest_description }}' data-images='{{ json_encode($main['9']) }}'
-            data-rating='{{ $ratings[8] }}' data-review='{{ $review_count[8] }}' data-bs-toggle="modal"
-            data-bs-target="#me-dest-modal"
-            style="position:absolute;top: 303px;bottom:0;left: -158px;right: 0; z-index:1;" transform="scale(0.1)"
-            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_9"
-            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
-            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        <svg class='me-gps me-gps-8' data-name='{{$destination[8]->dest_name}}' data-id='{{$destination[8]->id}}' data-desc='{{$destination[8]->dest_description}}' data-images='{{json_encode($main["9"])}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 303px;bottom:0;left: -158px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_9" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
         </svg>
-        <svg class='me-gps me-gps-9' data-name='{{ $destination[9]->dest_name }}' data-id='{{ $destination[9]->id }}'
-            data-desc='{{ $destination[9]->dest_description }}' data-images='{{ json_encode($main['10']) }}'
-            data-rating='{{ $ratings[9] }}' data-review='{{ $review_count[9] }}' data-bs-toggle="modal"
-            data-bs-target="#me-dest-modal" style="position:absolute;top: 153px;bottom:0;left: 752px;right: 0; z-index:1;"
-            transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-            version="1.1" id="Capa_10" x="0px" y="0px" width="395.71px" height="395.71px"
-            viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        <svg class='me-gps me-gps-9' data-name='{{$destination[9]->dest_name}}' data-id='{{$destination[9]->id}}' data-desc='{{$destination[9]->dest_description}}' data-images='{{json_encode($main["10"])}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 153px;bottom:0;left: 752px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_10" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
         </svg>
-        <svg class='me-gps me-gps-10' data-name='{{ $destination[10]->dest_name }}'
-            data-id='{{ $destination[10]->id }}' data-desc='{{ $destination[10]->dest_description }}'
-            data-images='{{ json_encode($main['11']) }}' data-rating='{{ $ratings[10] }}'
-            data-review='{{ $review_count[10] }}' data-bs-toggle="modal" data-bs-target="#me-dest-modal"
-            style="position:absolute;top: 188px;bottom:0;left: 251px;right: 0; z-index:1;" transform="scale(0.1)"
-            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_11"
-            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
-            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red"
-                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
+        <svg class='me-gps me-gps-10' data-name='{{$destination[10]->dest_name}}' data-id='{{$destination[10]->id}}' data-desc='{{$destination[10]->dest_description}}' data-images='{{json_encode($main["11"])}}' ddata-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 188px;bottom:0;left: 251px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_11" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
         </svg>
         {{-- divs for aniamtion --}}
         <div class="me-location-hider-0"
@@ -324,7 +246,6 @@
         </div>
     </div>
 
-
     {{-- modal for destination viewing --}}
     <div class="modal fade" id="me-dest-modal" tabindex="-1">
         <div class="modal-dialog modal-lg">
@@ -335,10 +256,12 @@
                 </div>
                 <div class="modal-body me-dest-body">
                     <p class="me-dest-description px-md-4">Modal body text goes here.</p>
-                    <div class='me-reviews px-md-4'></div>
-                    <div class='me-stars-outer px-md-4'>
-                        <div class='me-stars-inner'></div>
-                    </div>
+                    @if (!isset($user))
+                        <div class='me-reviews px-md-4'></div>
+                        <div class='me-stars-outer mx-md-4'>
+                            <div class='me-stars-inner '></div>
+                        </div>
+                    @endif
                     <div id="carouselExampleIndicators" class="carousel slide me-carousel px-md-4" data-bs-ride="true">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
@@ -362,10 +285,23 @@
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
+                    @if (isset($user))
+                        <div class="me-star-rating px-md-4" data-value='0' data-dest='0'>
+                            <p>Have you been here before?</p>
+                            <p>Tell us about your experience<p>
+                            <p>Leave a rating below<p>
+                            <div class="me-user-star-cont">
+                                <i class="fas fa-star me-user-star" data-value='1'></i>
+                                <i class="fas fa-star me-user-star" data-value='2'></i>
+                                <i class="fas fa-star me-user-star" data-value='3'></i>
+                                <i class="fas fa-star me-user-star" data-value='4'></i>
+                                <i class="fas fa-star me-user-star" data-value='5'></i>
+                            </div>
+                        </div>
+                    @endif
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
                 </div>
             </div>
         </div>
@@ -485,7 +421,7 @@
         </div>
 
         <div class="spacer layer1">
-            <svg id="visual" viewBox="0 0 768 300" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg"
+            <svg id="visual" viewBox="0 0 768 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
                 <path
                     d="M0 238L6.8 243.5C13.7 249 27.3 260 41 255.3C54.7 250.7 68.3 230.3 82 227.3C95.7 224.3 109.3 238.7 123 245.7C136.7 252.7 150.3 252.3 164 256.7C177.7 261 191.3 270 204.8 270.8C218.3 271.7 231.7 264.3 245.2 262.2C258.7 260 272.3 263 286 261.5C299.7 260 313.3 254 327 248.3C340.7 242.7 354.3 237.3 368 238.5C381.7 239.7 395.3 247.3 409 254.2C422.7 261 436.3 267 450 265.3C463.7 263.7 477.3 254.3 491 251.5C504.7 248.7 518.3 252.3 532 251.8C545.7 251.3 559.3 246.7 573 249.7C586.7 252.7 600.3 263.3 614 260.7C627.7 258 641.3 242 654.8 239C668.3 236 681.7 246 695.2 254C708.7 262 722.3 268 736 266C749.7 264 763.3 254 777 254.8C790.7 255.7 804.3 267.3 818 269C831.7 270.7 845.3 262.3 859 255.3C872.7 248.3 886.3 242.7 893.2 239.8L900 237L900 301L893.2 301C886.3 301 872.7 301 859 301C845.3 301 831.7 301 818 301C804.3 301 790.7 301 777 301C763.3 301 749.7 301 736 301C722.3 301 708.7 301 695.2 301C681.7 301 668.3 301 654.8 301C641.3 301 627.7 301 614 301C600.3 301 586.7 301 573 301C559.3 301 545.7 301 532 301C518.3 301 504.7 301 491 301C477.3 301 463.7 301 450 301C436.3 301 422.7 301 409 301C395.3 301 381.7 301 368 301C354.3 301 340.7 301 327 301C313.3 301 299.7 301 286 301C272.3 301 258.7 301 245.2 301C231.7 301 218.3 301 204.8 301C191.3 301 177.7 301 164 301C150.3 301 136.7 301 123 301C109.3 301 95.7 301 82 301C68.3 301 54.7 301 41 301C27.3 301 13.7 301 6.8 301L0 301Z"
@@ -512,7 +448,7 @@
         </div>
 
         <div class="spacer layer1">
-            <svg id="visual" viewBox="0 0 768 300" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg"
+            <svg id="visual" viewBox="0 0 768 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
                 <path
                     d="M0 40L6.8 45.8C13.7 51.7 27.3 63.3 41 70.8C54.7 78.3 68.3 81.7 82 79.2C95.7 76.7 109.3 68.3 123 57.8C136.7 47.3 150.3 34.7 164 29.2C177.7 23.7 191.3 25.3 204.8 36C218.3 46.7 231.7 66.3 245.2 72.3C258.7 78.3 272.3 70.7 286 62.2C299.7 53.7 313.3 44.3 327 39.7C340.7 35 354.3 35 368 43.3C381.7 51.7 395.3 68.3 409 74.5C422.7 80.7 436.3 76.3 450 65.7C463.7 55 477.3 38 491 33.7C504.7 29.3 518.3 37.7 532 45.7C545.7 53.7 559.3 61.3 573 65.7C586.7 70 600.3 71 614 64.5C627.7 58 641.3 44 654.8 40.3C668.3 36.7 681.7 43.3 695.2 48.5C708.7 53.7 722.3 57.3 736 63.3C749.7 69.3 763.3 77.7 777 81.5C790.7 85.3 804.3 84.7 818 77.3C831.7 70 845.3 56 859 56C872.7 56 886.3 70 893.2 77L900 84L900 0L893.2 0C886.3 0 872.7 0 859 0C845.3 0 831.7 0 818 0C804.3 0 790.7 0 777 0C763.3 0 749.7 0 736 0C722.3 0 708.7 0 695.2 0C681.7 0 668.3 0 654.8 0C641.3 0 627.7 0 614 0C600.3 0 586.7 0 573 0C559.3 0 545.7 0 532 0C518.3 0 504.7 0 491 0C477.3 0 463.7 0 450 0C436.3 0 422.7 0 409 0C395.3 0 381.7 0 368 0C354.3 0 340.7 0 327 0C313.3 0 299.7 0 286 0C272.3 0 258.7 0 245.2 0C231.7 0 218.3 0 204.8 0C191.3 0 177.7 0 164 0C150.3 0 136.7 0 123 0C109.3 0 95.7 0 82 0C68.3 0 54.7 0 41 0C27.3 0 13.7 0 6.8 0L0 0Z"
@@ -612,7 +548,7 @@
         </div>
 
         <div class="spacer layer1">
-            <svg id="visual" viewBox="0 0 768 300" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg"
+            <svg id="visual" viewBox="0 0 768 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
                 <path
                     d="M0 238L6.8 243.5C13.7 249 27.3 260 41 255.3C54.7 250.7 68.3 230.3 82 227.3C95.7 224.3 109.3 238.7 123 245.7C136.7 252.7 150.3 252.3 164 256.7C177.7 261 191.3 270 204.8 270.8C218.3 271.7 231.7 264.3 245.2 262.2C258.7 260 272.3 263 286 261.5C299.7 260 313.3 254 327 248.3C340.7 242.7 354.3 237.3 368 238.5C381.7 239.7 395.3 247.3 409 254.2C422.7 261 436.3 267 450 265.3C463.7 263.7 477.3 254.3 491 251.5C504.7 248.7 518.3 252.3 532 251.8C545.7 251.3 559.3 246.7 573 249.7C586.7 252.7 600.3 263.3 614 260.7C627.7 258 641.3 242 654.8 239C668.3 236 681.7 246 695.2 254C708.7 262 722.3 268 736 266C749.7 264 763.3 254 777 254.8C790.7 255.7 804.3 267.3 818 269C831.7 270.7 845.3 262.3 859 255.3C872.7 248.3 886.3 242.7 893.2 239.8L900 237L900 301L893.2 301C886.3 301 872.7 301 859 301C845.3 301 831.7 301 818 301C804.3 301 790.7 301 777 301C763.3 301 749.7 301 736 301C722.3 301 708.7 301 695.2 301C681.7 301 668.3 301 654.8 301C641.3 301 627.7 301 614 301C600.3 301 586.7 301 573 301C559.3 301 545.7 301 532 301C518.3 301 504.7 301 491 301C477.3 301 463.7 301 450 301C436.3 301 422.7 301 409 301C395.3 301 381.7 301 368 301C354.3 301 340.7 301 327 301C313.3 301 299.7 301 286 301C272.3 301 258.7 301 245.2 301C231.7 301 218.3 301 204.8 301C191.3 301 177.7 301 164 301C150.3 301 136.7 301 123 301C109.3 301 95.7 301 82 301C68.3 301 54.7 301 41 301C27.3 301 13.7 301 6.8 301L0 301Z"
@@ -639,7 +575,7 @@
         </div>
 
         <div class="spacer layer1">
-            <svg id="visual" viewBox="0 0 768 300" width="100%" height="auto" xmlns="http://www.w3.org/2000/svg"
+            <svg id="visual" viewBox="0 0 768 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
                 xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
                 <path
                     d="M0 40L6.8 45.8C13.7 51.7 27.3 63.3 41 70.8C54.7 78.3 68.3 81.7 82 79.2C95.7 76.7 109.3 68.3 123 57.8C136.7 47.3 150.3 34.7 164 29.2C177.7 23.7 191.3 25.3 204.8 36C218.3 46.7 231.7 66.3 245.2 72.3C258.7 78.3 272.3 70.7 286 62.2C299.7 53.7 313.3 44.3 327 39.7C340.7 35 354.3 35 368 43.3C381.7 51.7 395.3 68.3 409 74.5C422.7 80.7 436.3 76.3 450 65.7C463.7 55 477.3 38 491 33.7C504.7 29.3 518.3 37.7 532 45.7C545.7 53.7 559.3 61.3 573 65.7C586.7 70 600.3 71 614 64.5C627.7 58 641.3 44 654.8 40.3C668.3 36.7 681.7 43.3 695.2 48.5C708.7 53.7 722.3 57.3 736 63.3C749.7 69.3 763.3 77.7 777 81.5C790.7 85.3 804.3 84.7 818 77.3C831.7 70 845.3 56 859 56C872.7 56 886.3 70 893.2 77L900 84L900 0L893.2 0C886.3 0 872.7 0 859 0C845.3 0 831.7 0 818 0C804.3 0 790.7 0 777 0C763.3 0 749.7 0 736 0C722.3 0 708.7 0 695.2 0C681.7 0 668.3 0 654.8 0C641.3 0 627.7 0 614 0C600.3 0 586.7 0 573 0C559.3 0 545.7 0 532 0C518.3 0 504.7 0 491 0C477.3 0 463.7 0 450 0C436.3 0 422.7 0 409 0C395.3 0 381.7 0 368 0C354.3 0 340.7 0 327 0C313.3 0 299.7 0 286 0C272.3 0 258.7 0 245.2 0C231.7 0 218.3 0 204.8 0C191.3 0 177.7 0 164 0C150.3 0 136.7 0 123 0C109.3 0 95.7 0 82 0C68.3 0 54.7 0 41 0C27.3 0 13.7 0 6.8 0L0 0Z"
@@ -692,13 +628,13 @@
     <script>
         $(document).ready(function() {
             $('#me-dest-modal').on('show.bs.modal', function(e) {
+                
                 var title = e.relatedTarget.getAttribute('data-name')
                 var body = e.relatedTarget.getAttribute('data-desc')
                 var id = e.relatedTarget.getAttribute('data-id')
                 var images = JSON.parse(e.relatedTarget.getAttribute('data-images'))
-                var rating = e.relatedTarget.getAttribute('data-rating')
                 var review_count = e.relatedTarget.getAttribute('data-review')
-
+                var rating = 0;
                 var img_cont = '<div class="carousel-inner"><div class="carousel-item active"><img src="' +
                     images[0] + '" class="d-block w-100 me-carousel-image" alt=""></div>'
 
@@ -711,13 +647,52 @@
                 $('.me-modal-title').text(title)
                 $('.me-dest-description').text(body)
                 $('.me-carousel').prepend(img_cont)
-                $('.me-stars-inner')[0].style.width = getRating(rating)
-                $('.me-reviews').text(String(review_count) + ' reviews')
+                $('.me-star-rating').data('value',id)
+
+                @if(!isset($user))
+                    $('.me-stars-inner')[0].style.width = getRating(rating)
+                    $('.me-reviews').text(String(review_count) + ' review/s')
+                @else
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        type: "POST",
+                        url: '/getRating',
+                        data: {
+                            user_id: {{$user->id}},
+                            destination_id: id
+                        },
+                        success: function(response) {
+                            if(response.length>0){
+                                rating = response[0].rating; 
+                                $('.me-star-rating').data('value',rating);
+                                var starRatings = [...document.getElementsByClassName('me-user-star')]
+                                starRatings.forEach(element => {
+                                    var elem = $(element)
+                                    if(elem.data('value') <= rating){
+                                        elem.addClass('me-active-star')
+                                    }
+                                })
+                                $('.me-star-rating').data('dest',id)
+                            }else{
+                                $('.me-star-rating').data('dest',id)
+                                rating=0;
+                            }
+                        }
+                    })
+                    
+                @endif
+
+                
             });
+
             $('#me-dest-modal').on('hide.bs.modal', function(e) {
                 setTimeout(() => {
                     $('.carousel-inner').remove();
-
+                    $('.me-user-star').removeClass('me-inactive-star me-hover-star me-active-star')
                 }, 200);
             });
 
@@ -762,6 +737,68 @@
                     }
                 })
             })
+            
+            @if (isset($user))
+                $('.me-user-star').on('click',function(){
+                    var id = $('.me-star-rating').data('dest');
+                    var nthStar = $(this).data('value');
+
+                    var starRatings = [...document.getElementsByClassName('me-user-star')]
+                    var results = starRatings.map(element =>{
+                        var elem = $(element)
+                        if(elem.data('value') <= nthStar){
+                            elem.addClass('me-active-star')
+                            elem.removeClass('me-inactive-star')
+                            elem.removeClass('me-hover-star')
+                        }
+                        else{
+                            elem.removeClass('me-active-star')
+                            elem.addClass('me-inactive-star')
+                            elem.removeClass('me-hover-star')
+                        }
+                    });
+                    console.log(id)
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        type: "POST",
+                        url: '/editRating',
+                        data: {
+                            user_id:{{$user->id}},
+                            destination_id:id,
+                            rating:nthStar
+                        },
+                        success: function(response) {
+                            console.log(response)
+                            // $('this').parent().data('value',nthStar)
+                        }
+                    })
+                }).hover(function(){
+                    var id = $('.me-star-rating').data('value');
+                    var nthStar = $(this).data('value');
+
+                    var starRatings = [...document.getElementsByClassName('me-user-star')]
+                    var results = starRatings.map(element =>{
+                        var elem = $(element)
+                        if (!elem.hasClass('me-active-star')&& elem.data('value') <= nthStar){
+                            // elem.removeClass('me-inactive-star')
+                            elem.addClass('me-hover-star')
+                        }else{
+                            elem.removeClass('me-hover-star')
+                        }
+                    })
+                });
+                $('.me-user-star-cont').mouseleave(function(){
+                    var starRatings = [...document.getElementsByClassName('me-user-star')]
+                    var results = starRatings.map(element =>{
+                        var elem = $(element)
+                        elem.removeClass('me-hover-star')
+                    })
+                });
+            @endif
         });
     </script>
 @endsection
