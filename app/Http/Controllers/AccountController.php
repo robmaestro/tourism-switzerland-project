@@ -25,17 +25,23 @@ class AccountController extends Controller
                 'password' => 'required'
             ],
             [
-                'name.required' => 'Name field is required.',
+                'username.required' => 'username field is required.',
                 'password.required' => 'Password field is required.',
             ]
         );
 
+        session(['prompt' => true]);
         $loginAttempt = Auth::attempt($credentials);
         if ($loginAttempt) {
             $request->session()->regenerate();
+            session(['text' => 'Login successful', 'icon' => 'success']);
             return redirect()->action([DestinationController::class, 'show']);
+        } else {
+            session(['prompt' => true]);
+            session(['text' => 'Login failed!', 'icon' => 'error']);
+            return redirect()->action([DestinationController::class, 'show'])->with(['status' => 'The provided credentials do not match our records.']);
         }
-        return back()->with(['status' => 'The provided credentials do not match our records.']);
+        // return back()->with(['status' => 'The provided credentials do not match our records.']);
     }
 
 

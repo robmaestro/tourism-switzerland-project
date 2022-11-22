@@ -20,6 +20,7 @@
     border: 0 !important;
     color: white !important;
 }
+
 .jspan-icons-dropdown {
     font-size: 20px !important;
     background: none !important;
@@ -27,6 +28,14 @@
 }
 
 input.jinput {
+    background: none !important;
+    border: 0 !important;
+    color: white !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid white !important;
+}
+
+input.jinput:-webkit-autofill {
     background: none !important;
     border: 0 !important;
     color: white !important;
@@ -114,7 +123,7 @@ option.joption {
 
 .form__field {
     font-family: inherit;
-    width: auto;
+    width: 100;
     border: none;
     border-bottom: 2px solid #9b9b9b;
     outline: 0;
@@ -169,17 +178,18 @@ option.joption {
 
 .dropdown-toggle:after {
     content: none !important;
-  }
+}
 
-  .dropdown-menu-arrow {
+.dropdown-menu-arrow {
     top: -25px;
     left: 50%;
     width: 0;
     height: 0;
     position: relative;
-  }
-  .dropdown-menu-arrow:before,
-  .dropdown-menu-arrow:after {
+}
+
+.dropdown-menu-arrow:before,
+.dropdown-menu-arrow:after {
     content: "";
     position: absolute;
     display: block;
@@ -189,18 +199,38 @@ option.joption {
     border-style: solid;
     border-color: transparent;
     z-index: 1001;
-  }
-  .dropdown-menu-arrow:after {
-    bottom: -18px;
-    left: 45px;
+}
+
+.dropdown-menu-arrow:after {
+    bottom: -25px;
+    left: 52px;
     border-bottom-color: #fff;
-  }
-  .dropdown-menu-arrow:before {
-    bottom: -17px;
-    left: 45px;
-    border-bottom-color: rgba(0,0,0,.15);
-  }
-  
+
+}
+
+.dropdown-menu-arrow:before {
+    bottom: -25px;
+    left: 52px;
+    border-bottom-color: rgba(0, 0, 0, .15);
+}
+
+.tchHover {
+    position: relative;
+    color: black;
+}
+
+
+.tchHover:hover {
+    right: 0;
+    left: auto;
+    width: 100%;
+    background: #D3D3D3;
+}
+
+.tchHover:hover .dropdown-menu-arrow{
+    background: #D3D3D3;
+}
+
 @media (max-width: 575px) {
     .jcontainer-signup {
         min-width: 250px;
@@ -208,9 +238,13 @@ option.joption {
     }
 }
 
-@media (min-width: 576px) and (max-width: 767px) {
+@media (min-width: 426px) and (max-width: 768px) {
     .jcontainer-signup {
         min-width: 300px;
+    }
+
+    .j-container{
+        color:black !important;
     }
 }
 
@@ -218,10 +252,18 @@ option.joption {
     .jcontainer-signup {
         min-width: 400px;
     }
+
+    .j-container{
+        color:black !important;
+    }
 }
 
 @media (min-width: 992px) {
     .jcontainer-signup {
         min-width: 500px;
+    }
+
+    .j-container{
+        color:black !important;
     }
 }

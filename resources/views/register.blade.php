@@ -4,8 +4,8 @@
 
 @section('content')
     <div class="container">
-        <div class="d-flex flex-column flex-md-row justify-content-evenly py-md-5" style="color: white">
-            <div class="pe-md-5 py-3 pb-md-0">
+        <div class="d-flex flex-column flex-md-row justify-content-evenly py-md-5 j-container">
+            <div class="pe-md-5 py-3 pb-md-0 j">
                 <h1>Sign up now!</h1>
                 <hr>
                 <p>Jobs fill your personal account, but adventures fill your soul. Let's go on an adventure and see some
@@ -20,7 +20,7 @@
                     <i class="bi bi-arrow-left-circle my-auto" style="font-size: 30px;"></i>
                 </div>
                 <hr>
-                <div class="py-4 px-md-5">
+                <div class="py-4 px-md-5 j-container">
                     <form method="POST" action="/register">
                         @csrf
                         <div class="row">
@@ -68,7 +68,7 @@
                                             id="basic-addon1"></span>
                                     </div>
                                     <select class="form-select rounded-0 jdropdown pe-0" aria-label="Default select example"
-                                        name="nationality" id="selectNationality" >
+                                        name="nationality" id="selectNationality">
                                     </select>
                                 </div>
                             </div>
@@ -102,10 +102,105 @@
             </div>
         </div>
     </div>
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="row modal-dialog-centered">
+            <div class="d-none d-md-block col-md-2"></div>
+            <div class="container-fluid  d-none d-md-block col-md-4" style="background-color: transparent;">
+                <div class="modal-dialog modal-md me-0">
+                    <div class="modal-content rounded-0"
+                        style="background-image: url('https://images.unsplash.com/photo-1508166093217-f35d00c95fca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'); background-size: cover; width:100%; height: 450px;">
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid col-md-4" style="background-color: transparent;">
+                <div class="modal-dialog p-5 p-md-0 modal-md ms-md-0">
+                    <div class="modal-content rounded-0" style="height: 450px; width: 100%;">
+                        <div class="modal-header" style="border-bottom: none;">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="jlogin-title justify-content-center">
+                                <span class="my-auto" style="font-weight: 800; font-size: 30px;">SWITZ</span>
+                                <img class="switz-logo"
+                                    src="https://cdn.britannica.com/43/4543-004-C0D5C6F4/Flag-Switzerland.jpg">
+                            </div>
+                            <div class="container_fluid">
+                                <form method="POST" action="/login" class="pt-3 ps-md-5">
+                                    @csrf
+                                    <div class="text-center">
+                                        <div class="form__group field">
+                                            <input type="input" required="" placeholder="Name" name="username"
+                                                class="form__field">
+                                            <label class="form__label" for="name">Username</label>
+                                            @error('username')
+                                                <span class="text-danger">{{ $error }}</span>
+                                            @enderror
+                                        </div>
+                                        <div class="form__group field">
+                                            <input type="password" required="" placeholder="Name" name="password"
+                                                class="form__field">
+                                            <label class="form__label" for="name">Password</label>
+                                        </div>
+                                    </div>
+                                    <div class="cntr pt-2">
+                                        <input checked="" type="checkbox" id="cbx" class="hidden-xs-up">
+                                        <label for="cbx" class="cbx"></label>
+                                        <label>Remember</label>
+                                    </div>
+                                    <button type="submit"
+                                        class="btn btn-md rounded-0 btn-dark jregister-button mt-4">Login</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <label>New to Switz?</label>
+                            <button type="submit" class="btn btn-md rounded-0 btn-dark jregister-button"
+                                onclick="window.location='{{ url('/register') }}'">Register</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-none d-md-block col-md-2"></div>
+        </div>
+    </div>
 @endsection
 
 @section('script')
     <script>
+        $('.j-logout').on('click', function() {
+            console.log("clicked")
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            Swal.fire({
+                title: 'Do you want to Logout?',
+                showCancelButton: true,
+                confirmButtonText: 'Logout'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                            title: 'Logout Successfully!',
+                            timer: 3000,
+                            icon: 'success',
+                            showConfirmButton: false
+                        }),
+                        $.ajax({
+                            type: "POST",
+                            url: '/logout',
+                            data: {
+                                logout: true
+                            },
+                            success: function(response) {
+                                window.location.href = "/";
+                            }
+                        })
+                }
+            })
+        })
         const nationalityList = [
             'Afghan',
             'Albanian',

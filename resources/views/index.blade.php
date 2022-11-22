@@ -8,7 +8,6 @@
     $ratings = $data['ratings'];
     $review_count = $data['review_count'];
     $user = Auth::user();
-
 @endphp
 
 @section('content')
@@ -134,36 +133,107 @@
                 id="CHE3473" name="Appenzell Innerrhoden">
             </path>
         </svg>
-        <svg class='me-gps me-gps-0' data-name='{{$destination[0]->dest_name}}' data-id='{{$destination[0]->id}}' data-desc='{{$destination[0]->dest_description}}' data-images='{{json_encode($main["1"])}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: -174px;bottom: 0;left: 387px; right:0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
+        <svg class='me-gps me-gps-0' data-name='{{ $destination[0]->dest_name }}' data-id='{{ $destination[0]->id }}'
+            data-desc='{{ $destination[0]->dest_description }}' data-images='{{ json_encode($main['1']) }}'
+            data-bs-toggle="modal" data-bs-target="#me-dest-modal"
+            style="position:absolute;top: -174px;bottom: 0;left: 387px; right:0; z-index:1;" transform="scale(0.1)"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1"
+            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
+            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
-        <svg class='me-gps me-gps-1' data-name='{{$destination[1]->dest_name}}' data-id='{{$destination[1]->id}}'  data-desc='{{$destination[1]->dest_description}}' data-images='{{json_encode($main["2"])}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: -73px;bottom:0;left: 368px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_2" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
+        <svg class='me-gps me-gps-1' data-name='{{ $destination[1]->dest_name }}' data-id='{{ $destination[1]->id }}'
+            data-desc='{{ $destination[1]->dest_description }}' data-images='{{ json_encode($main['2']) }}'
+            data-bs-toggle="modal" data-bs-target="#me-dest-modal"
+            style="position:absolute;top: -73px;bottom:0;left: 368px;right: 0; z-index:1;" transform="scale(0.1)"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_2"
+            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
+            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
-        <svg class='me-gps me-gps-2' data-name='{{$destination[2]->dest_name}}' data-id='{{$destination[2]->id}}' data-desc='{{$destination[2]->dest_description}}' data-images='{{json_encode($main["3"])}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 236px;bottom:0;left: 28px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_3" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
+        <svg class='me-gps me-gps-2' data-name='{{ $destination[2]->dest_name }}' data-id='{{ $destination[2]->id }}'
+            data-desc='{{ $destination[2]->dest_description }}' data-images='{{ json_encode($main['3']) }}'
+            data-bs-toggle="modal" data-bs-target="#me-dest-modal"
+            style="position:absolute;top: 236px;bottom:0;left: 28px;right: 0; z-index:1;" transform="scale(0.1)"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_3"
+            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
+            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
-        <svg class='me-gps me-gps-3' data-name='{{$destination[3]->dest_name}}' data-id='{{$destination[3]->id}}' data-desc='{{$destination[3]->dest_description}}' data-images='{{json_encode($main["4"])}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 34px;bottom:0;left: 340px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_4" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
+        <svg class='me-gps me-gps-3' data-name='{{ $destination[3]->dest_name }}' data-id='{{ $destination[3]->id }}'
+            data-desc='{{ $destination[3]->dest_description }}' data-images='{{ json_encode($main['4']) }}'
+            data-bs-toggle="modal" data-bs-target="#me-dest-modal"
+            style="position:absolute;top: 34px;bottom:0;left: 340px;right: 0; z-index:1;" transform="scale(0.1)"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_4"
+            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
+            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
-        <svg class='me-gps me-gps-4' data-name='{{$destination[4]->dest_name}}' data-id='{{$destination[4]->id}}' data-desc='{{$destination[4]->dest_description}}' data-images='{{json_encode($main["5"])}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 150px;bottom:0;left: 220px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_5" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
+        <svg class='me-gps me-gps-4' data-name='{{ $destination[4]->dest_name }}' data-id='{{ $destination[4]->id }}'
+            data-desc='{{ $destination[4]->dest_description }}' data-images='{{ json_encode($main['5']) }}'
+            data-bs-toggle="modal" data-bs-target="#me-dest-modal"
+            style="position:absolute;top: 150px;bottom:0;left: 220px;right: 0; z-index:1;" transform="scale(0.1)"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_5"
+            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
+            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
-        <svg class='me-gps me-gps-5' data-name='{{$destination[5]->dest_name}}' data-id='{{$destination[5]->id}}' data-desc='{{$destination[5]->dest_description}}' data-images='{{json_encode($main["6"])}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 226px;bottom:0;left: 668px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_6" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
+        <svg class='me-gps me-gps-5' data-name='{{ $destination[5]->dest_name }}' data-id='{{ $destination[5]->id }}'
+            data-desc='{{ $destination[5]->dest_description }}' data-images='{{ json_encode($main['6']) }}'
+            data-bs-toggle="modal" data-bs-target="#me-dest-modal"
+            style="position:absolute;top: 226px;bottom:0;left: 668px;right: 0; z-index:1;" transform="scale(0.1)"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_6"
+            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
+            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
-        <svg class='me-gps me-gps-6' data-name='{{$destination[6]->dest_name}}' data-id='{{$destination[6]->id}}' data-desc='{{$destination[6]->dest_description}}' data-images='{{json_encode($main["7"])}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 53px;bottom:0;left: 138px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_7" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
+        <svg class='me-gps me-gps-6' data-name='{{ $destination[6]->dest_name }}' data-id='{{ $destination[6]->id }}'
+            data-desc='{{ $destination[6]->dest_description }}' data-images='{{ json_encode($main['7']) }}'
+            data-bs-toggle="modal" data-bs-target="#me-dest-modal"
+            style="position:absolute;top: 53px;bottom:0;left: 138px;right: 0; z-index:1;" transform="scale(0.1)"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_7"
+            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
+            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
-        <svg class='me-gps me-gps-7' data-name='{{$destination[7]->dest_name}}' data-id='{{$destination[7]->id}}' data-desc='{{$destination[7]->dest_description}}' data-images='{{json_encode($main["8"])}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 375px;bottom:0;left: 170px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_8" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
+        <svg class='me-gps me-gps-7' data-name='{{ $destination[7]->dest_name }}' data-id='{{ $destination[7]->id }}'
+            data-desc='{{ $destination[7]->dest_description }}' data-images='{{ json_encode($main['8']) }}'
+            data-bs-toggle="modal" data-bs-target="#me-dest-modal"
+            style="position:absolute;top: 375px;bottom:0;left: 170px;right: 0; z-index:1;" transform="scale(0.1)"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_8"
+            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
+            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
-        <svg class='me-gps me-gps-8' data-name='{{$destination[8]->dest_name}}' data-id='{{$destination[8]->id}}' data-desc='{{$destination[8]->dest_description}}' data-images='{{json_encode($main["9"])}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 303px;bottom:0;left: -158px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_9" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
+        <svg class='me-gps me-gps-8' data-name='{{ $destination[8]->dest_name }}' data-id='{{ $destination[8]->id }}'
+            data-desc='{{ $destination[8]->dest_description }}' data-images='{{ json_encode($main['9']) }}'
+            data-bs-toggle="modal" data-bs-target="#me-dest-modal"
+            style="position:absolute;top: 303px;bottom:0;left: -158px;right: 0; z-index:1;" transform="scale(0.1)"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_9"
+            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
+            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
-        <svg class='me-gps me-gps-9' data-name='{{$destination[9]->dest_name}}' data-id='{{$destination[9]->id}}' data-desc='{{$destination[9]->dest_description}}' data-images='{{json_encode($main["10"])}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 153px;bottom:0;left: 752px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_10" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
+        <svg class='me-gps me-gps-9' data-name='{{ $destination[9]->dest_name }}' data-id='{{ $destination[9]->id }}'
+            data-desc='{{ $destination[9]->dest_description }}' data-images='{{ json_encode($main['10']) }}'
+            data-bs-toggle="modal" data-bs-target="#me-dest-modal"
+            style="position:absolute;top: 153px;bottom:0;left: 752px;right: 0; z-index:1;" transform="scale(0.1)"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_10"
+            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
+            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
+
         <svg class='me-gps me-gps-10' data-name='{{$destination[10]->dest_name}}' data-id='{{$destination[10]->id}}' data-desc='{{$destination[10]->dest_description}}' data-images='{{json_encode($main["11"])}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 188px;bottom:0;left: 251px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_11" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
             <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
         </svg>
@@ -252,19 +322,19 @@
     <div class="modal fade" id="me-dest-modal" tabindex="-1">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-header">
+                <div class="modal-header  me-dest-header ">
                     <h5 class="modal-title me-modal-title">Modal title</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body me-dest-body">
-                    <p class="me-dest-description px-md-4">Modal body text goes here.</p>
+                    <p class="me-dest-description ">Modal body text goes here.</p>
                     @if (!isset($user))
-                        <div class='me-reviews px-md-4'></div>
+                        <div class='me-reviews '></div>
                         <div class='me-stars-outer mx-md-4'>
                             <div class='me-stars-inner '></div>
                         </div>
                     @endif
-                    <div id="carouselExampleIndicators" class="carousel slide me-carousel px-md-4" data-bs-ride="true">
+                    <div id="carouselExampleIndicators" class="carousel slide me-carousel " data-bs-ride="true">
                         <div class="carousel-indicators">
                             <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
                                 class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -288,10 +358,9 @@
                         </button>
                     </div>
                     @if (isset($user))
-                        <div class="me-star-rating px-md-4" data-value='0' data-dest='0'>
+                        <div class="me-star-rating " data-value='0' data-dest='0'>
                             <p>Have you been here before?</p>
-                            <p>Tell us about your experience<p>
-                            <p>Leave a rating below<p>
+                            <span>Leave a rating below</span>
                             <div class="me-user-star-cont">
                                 <i class="fas fa-star me-user-star" data-value='1'></i>
                                 <i class="fas fa-star me-user-star" data-value='2'></i>
@@ -308,6 +377,7 @@
             </div>
         </div>
     </div>
+
     <!-- Login Modal -->
     <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="row modal-dialog-centered">
@@ -315,13 +385,13 @@
             <div class="container-fluid  d-none d-md-block col-md-4" style="background-color: transparent;">
                 <div class="modal-dialog modal-md me-0">
                     <div class="modal-content rounded-0"
-                        style="background-image: url('https://images.unsplash.com/photo-1508166093217-f35d00c95fca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'); background-size: cover; width:100%; height: 450px;">
+                        style="background-image: url('https://images.unsplash.com/photo-1508166093217-f35d00c95fca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'); background-size: cover; width:100%; height: 500px;">
                     </div>
                 </div>
             </div>
             <div class="container-fluid col-md-4" style="background-color: transparent;">
                 <div class="modal-dialog p-5 p-md-0 modal-md ms-md-0">
-                    <div class="modal-content rounded-0" style="height: 450px; width: 100%;">
+                    <div class="modal-content rounded-0" style="height: 500px; width: 100%;">
                         <div class="modal-header" style="border-bottom: none;">
                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                 aria-label="Close"></button>
@@ -333,16 +403,13 @@
                                     src="https://cdn.britannica.com/43/4543-004-C0D5C6F4/Flag-Switzerland.jpg">
                             </div>
                             <div class="container_fluid">
-                                <form method="POST" action="/login" class="pt-3 ps-md-5">
+                                <form method="POST" action="/login" class="pt-3 px-md-5">
                                     @csrf
-                                    <div class="text-center">
+                                    <div class="row">
                                         <div class="form__group field">
                                             <input type="input" required="" placeholder="Name" name="username"
                                                 class="form__field">
                                             <label class="form__label" for="name">Username</label>
-                                            @error('username')
-                                                <span class="text-danger">{{ $error }}</span>
-                                            @enderror
                                         </div>
                                         <div class="form__group field">
                                             <input type="password" required="" placeholder="Name" name="password"
@@ -350,11 +417,16 @@
                                             <label class="form__label" for="name">Password</label>
                                         </div>
                                     </div>
-                                    <div class="cntr pt-2">
+                                    {{-- <div class="cntr pt-2">
                                         <input checked="" type="checkbox" id="cbx" class="hidden-xs-up">
                                         <label for="cbx" class="cbx"></label>
                                         <label>Remember</label>
-                                    </div>
+                                    </div> --}}
+                                    @if (session('status'))
+                                        <div class="alert alert danger p-0 mb-0">
+                                            <span class="bi bi-exclamation-diamond" style="color: red; font-size: 12px;">{{session('status')}}</span>
+                                        </div>
+                                    @endif
                                     <button type="submit"
                                         class="btn btn-md rounded-0 btn-dark jregister-button mt-4">Login</button>
                                 </form>
@@ -480,39 +552,36 @@
             <div class="r-content">
                 <div class="r-content-description">
                     @foreach ($destination as $key=>$dest)
-                        @php
-                        $temp = $key%2;
-                        @endphp
-                        @if ($temp == 0)
-                        <div class="r-content-info">
-                            <img class="r-content-image order-2" src={{$main[$key+1][0]}}>
-                            <div class="d-flex flex-column align-items-center order-1">
-                                <span class="r-content-title">
-                                    {{ $dest->dest_name }}
-                                </span>
-                                <span class="r-content-details">
-                                    {{ $dest->dest_description }}
-                                </span>
-                            </div>
-                        </div>
-                        @else
-                        <div class="r-content-info">
+                        <div class="r-content-info" data-bs-toggle="modal" data-bs-target="#me-dest-modal"  data-name='{{$dest->dest_name}}' data-id='{{$dest->id}}' data-desc='{{$dest->dest_description}}' data-images='{{json_encode($main[$key+1])}}'>
                             <img class="r-content-image" src={{$main[$key+1][0]}}>
-                            <div class="d-flex flex-column align-items-center">
-                                <span class="r-content-title">
+                            <div class="image-overlay">
+                                <div class="image-overlay-text" >
                                     {{ $dest->dest_name }}
-                                </span>
+                                </div>
+                            </div>
+                            {{-- @foreach ($destination as $key=>$dest)
+                            {{dd($key);}}
+                                <li class="col-md-3" data-bs-toggle="modal" data-bs-target="#me-dest-modal"  data-name='{{$dest->dest_name}}' data-id='{{$dest->id}}' data-desc='{{$dest->dest_description}}' data-images='{{json_encode($main[$key+1])}}'> {{ $dest->dest_name }}</li>
+                            @endforeach --}}
+                            {{-- <span class="r-content-title">
+                                {{ $dest->dest_name }}
+                            </span> --}}
+                            {{-- <div class="d-flex flex-column align-items-center px-2">
+
                                 <span class="r-content-details">
                                     {{ $dest->dest_description }}
                                 </span>
-                            </div>
+                            </div> --}}
                         </div>
-                            
-                        @endif
-                        
                     @endforeach
                 </div>
 
+            </div>
+        </div>
+
+        <div class="r-create-account-container">
+            <div class="r-create-account-text">
+                Don't have an account? Create for <a href={{url('/register')}}>FREE!</a>
             </div>
         </div>
     </div>
@@ -523,6 +592,7 @@
     <script>
         $(document).ready(function() {
             $('#me-dest-modal').on('show.bs.modal', function(e) {
+
                 var title = e.relatedTarget.getAttribute('data-name')
                 var body = e.relatedTarget.getAttribute('data-desc')
                 var id = e.relatedTarget.getAttribute('data-id')
@@ -560,7 +630,6 @@
                             $('.me-reviews').text(String(response.reviewCount) + ' review/s');
                         }
                     })
-                    
                 @else
                     $.ajaxSetup({
                         headers: {
@@ -571,31 +640,31 @@
                         type: "POST",
                         url: '/getRating',
                         data: {
-                            user_id: {{$user->id}},
+                            user_id: {{ $user->id }},
                             destination_id: id
                         },
                         success: function(response) {
-                            if(response.length>0){
-                                rating = response[0].rating; 
-                                $('.me-star-rating').data('value',rating);
-                                var starRatings = [...document.getElementsByClassName('me-user-star')]
+                            if (response.length > 0) {
+                                rating = response[0].rating;
+                                $('.me-star-rating').data('value', rating);
+                                var starRatings = [...document.getElementsByClassName(
+                                    'me-user-star')]
                                 starRatings.forEach(element => {
                                     var elem = $(element)
-                                    if(elem.data('value') <= rating){
+                                    if (elem.data('value') <= rating) {
                                         elem.addClass('me-active-star')
                                     }
                                 })
-                                $('.me-star-rating').data('dest',id)
-                            }else{
-                                $('.me-star-rating').data('dest',id)
-                                rating=0;
+                                $('.me-star-rating').data('dest', id)
+                            } else {
+                                $('.me-star-rating').data('dest', id)
+                                rating = 0;
                             }
                         }
                     })
-                    
                 @endif
 
-                
+
             });
 
             $('#me-dest-modal').on('hide.bs.modal', function(e) {
@@ -629,37 +698,38 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                         Swal.fire({
-                            title: 'Logout Successfully!', 
-                            timer: 3000, 
-                            icon: 'success'}),
-                        $.ajax({
-                            type: "POST",
-                            url: '/logout',
-                            data: {
-                                logout: true
-                            },
-                            success: function(response) {
-                                window.location.href = "/";
-                            }
-                        })
+                                title: 'Logout Successfully!',
+                                timer: 3000,
+                                icon: 'success',
+                                showConfirmButton: false
+                            }),
+                            $.ajax({
+                                type: "POST",
+                                url: '/logout',
+                                data: {
+                                    logout: true
+                                },
+                                success: function(response) {
+                                    window.location.href = "/";
+                                }
+                            })
                     }
                 })
             })
-            
+
             @if (isset($user))
-                $('.me-user-star').on('click',function(){
+                $('.me-user-star').on('click', function() {
                     var id = $('.me-star-rating').data('dest');
                     var nthStar = $(this).data('value');
 
                     var starRatings = [...document.getElementsByClassName('me-user-star')]
-                    var results = starRatings.map(element =>{
+                    var results = starRatings.map(element => {
                         var elem = $(element)
-                        if(elem.data('value') <= nthStar){
+                        if (elem.data('value') <= nthStar) {
                             elem.addClass('me-active-star')
                             elem.removeClass('me-inactive-star')
                             elem.removeClass('me-hover-star')
-                        }
-                        else{
+                        } else {
                             elem.removeClass('me-active-star')
                             elem.addClass('me-inactive-star')
                             elem.removeClass('me-hover-star')
@@ -675,33 +745,33 @@
                         type: "POST",
                         url: '/editRating',
                         data: {
-                            user_id:{{$user->id}},
-                            destination_id:id,
-                            rating:nthStar
+                            user_id: {{ $user->id }},
+                            destination_id: id,
+                            rating: nthStar
                         },
                         success: function(response) {
                             console.log(response)
                             // $('this').parent().data('value',nthStar)
                         }
                     })
-                }).hover(function(){
+                }).hover(function() {
                     var id = $('.me-star-rating').data('value');
                     var nthStar = $(this).data('value');
 
                     var starRatings = [...document.getElementsByClassName('me-user-star')]
-                    var results = starRatings.map(element =>{
+                    var results = starRatings.map(element => {
                         var elem = $(element)
-                        if (!elem.hasClass('me-active-star')&& elem.data('value') <= nthStar){
+                        if (!elem.hasClass('me-active-star') && elem.data('value') <= nthStar) {
                             // elem.removeClass('me-inactive-star')
                             elem.addClass('me-hover-star')
-                        }else{
+                        } else {
                             elem.removeClass('me-hover-star')
                         }
                     })
                 });
-                $('.me-user-star-cont').mouseleave(function(){
+                $('.me-user-star-cont').mouseleave(function() {
                     var starRatings = [...document.getElementsByClassName('me-user-star')]
-                    var results = starRatings.map(element =>{
+                    var results = starRatings.map(element => {
                         var elem = $(element)
                         elem.removeClass('me-hover-star')
                     })
