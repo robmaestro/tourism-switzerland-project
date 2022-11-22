@@ -98,8 +98,8 @@ class AccountController extends Controller
         return;
     }
 
-        function getData(){
-            return 'Data';
-        }
+    function getData(Request $req){
+        return $req;
+    }
 
 }

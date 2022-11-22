@@ -18,7 +18,8 @@ Route::get('/userDetails', function () {
     return view('userDetails');
 });
 
-Route::get('', [AccountController::class,'getData']);
+Route::get('offcanvas', [AccountController::class,'getData']);
+Route::view('offcanvas', 'offcanvas');
 
 Route::get('userDetails', [AccountController::class, 'getUserDetails']);
 Route::post('/editDetails', [AccountController::class, 'updateUser']);
