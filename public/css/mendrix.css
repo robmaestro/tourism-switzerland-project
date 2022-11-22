@@ -123,3 +123,7 @@
 .me-inactive-star {
     color: gray;
 }
+
+.me-negative-index {
+    z-index: -10;
+}
