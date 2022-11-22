@@ -99,7 +99,7 @@ class AccountController extends Controller
     }
 
     function getData(Request $req){
-        return $req;
+
     }
 
 }
