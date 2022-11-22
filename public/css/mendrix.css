@@ -6,8 +6,16 @@
 
     position: relative;
     max-width: 1000px;
-    max-height: 120vh;
+    /* max-height: 120vh; */
+    height: 100%;
     margin: auto;
+    z-index: -10;
+}
+
+@media (max-width:1015px) {
+    .me-cont-svg {
+        overflow-x: visible;
+    }
 }
 
 .me-carousel-image {
@@ -31,21 +39,21 @@
 }
 
 .me-stars-outer::before {
-    content: '\f005 \f005 \f005 \f005 \f005';
-    font-family: 'Font Awesome 6 Free';
+    content: "\f005 \f005 \f005 \f005 \f005";
+    font-family: "Font Awesome 6 Free";
     font-weight: 900;
     color: #ccc;
 }
 
 .me-stars-inner::before {
-    content: '\f005 \f005 \f005 \f005 \f005';
-    font-family: 'Font Awesome 6 Free';
+    content: "\f005 \f005 \f005 \f005 \f005";
+    font-family: "Font Awesome 6 Free";
     font-weight: 900;
     color: gold;
 }
 
 .me-location-cont {
-    background-color: #8ebedf;
+    background-color: #ffffff;
     padding-left: 14px;
     padding-right: 8px;
 }
@@ -58,20 +66,19 @@
     transition: transform 0.4s cubic-bezier(0.42, 0, 0.33, 1.2);
 }
 
-.me-gps-0:hover~.me-location-hider-0>.me-location-cont,
-.me-gps-1:hover~.me-location-hider-1>.me-location-cont,
-.me-gps-2:hover~.me-location-hider-2>.me-location-cont,
-.me-gps-3:hover~.me-location-hider-3>.me-location-cont,
-.me-gps-4:hover~.me-location-hider-4>.me-location-cont,
-.me-gps-5:hover~.me-location-hider-5>.me-location-cont,
-.me-gps-6:hover~.me-location-hider-6>.me-location-cont,
-.me-gps-7:hover~.me-location-hider-7>.me-location-cont,
-.me-gps-8:hover~.me-location-hider-8>.me-location-cont,
-.me-gps-9:hover~.me-location-hider-9>.me-location-cont,
-.me-gps-10:hover~.me-location-hider-10>.me-location-cont {
+.me-gps-0:hover ~ .me-location-hider-0 > .me-location-cont,
+.me-gps-1:hover ~ .me-location-hider-1 > .me-location-cont,
+.me-gps-2:hover ~ .me-location-hider-2 > .me-location-cont,
+.me-gps-3:hover ~ .me-location-hider-3 > .me-location-cont,
+.me-gps-4:hover ~ .me-location-hider-4 > .me-location-cont,
+.me-gps-5:hover ~ .me-location-hider-5 > .me-location-cont,
+.me-gps-6:hover ~ .me-location-hider-6 > .me-location-cont,
+.me-gps-7:hover ~ .me-location-hider-7 > .me-location-cont,
+.me-gps-8:hover ~ .me-location-hider-8 > .me-location-cont,
+.me-gps-9:hover ~ .me-location-hider-9 > .me-location-cont,
+.me-gps-10:hover ~ .me-location-hider-10 > .me-location-cont {
     transform: translateX(120px);
 }
-
 
 .me-active-location {
     animation: slide-right 0.5s cubic-bezier(0.42, 0, 0.33, 1.2);
@@ -100,3 +107,21 @@
         transform: translateX(0px);
     }
 }
+
+.me-user-star,
+.me-user-star-cont {
+    cursor: pointer;
+}
+
+.me-active-star {
+    color: gold;
+}
+
+.me-hover-star {
+    color: rgba(255, 217, 0, 0.562) !important;
+}
+
+.me-inactive-star {
+    color: gray;
+}
+

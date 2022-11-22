@@ -57,6 +57,7 @@
                                         <option selected disabled hidden class="joption">Gender</option>
                                         <option class="joption" value="Male">Male</option>
                                         <option class="joption" value="Female">Female</option>
+                                        <option class="joption" value="Others">Others</option>
                                     </select>
                                 </div>
                             </div>

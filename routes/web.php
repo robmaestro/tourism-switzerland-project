@@ -4,15 +4,16 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\DestinationController;
+use App\Http\Controllers\ReviewController;
 
-
-Route::get('/mobile', function(){
+Route::get('/mobile', function () {
     return view('mobile');
 });
 
 Route::get('/register', function(){
     return view('register',["isWhite" => true]);
 });
+
 
 
 Route::get('/profile', function(){
@@ -22,11 +23,14 @@ Route::get('/profile', function(){
 
 Route::get('profile', [AccountController::class, 'getUserDetails']);
 Route::post('/profile', [AccountController::class, 'updateUser']);
+
 Route::post('deleteUser', [AccountController::class, 'deleteUser']);
 
-Route::get('/',[DestinationController::class, 'show']);
+Route::get('/', [DestinationController::class, 'show']);
 
 Route::post('register', [AccountController::class, 'register']);
 Route::post('/login', [AccountController::class, 'login']);
-Route::post("/logout",[AccountController::class, 'logout']);
+Route::post("/logout", [AccountController::class, 'logout']);
 
+Route::post('/editRating', [ReviewController::class, 'editRating']);
+Route::post('/getRating', [ReviewController::class, 'getRating']);
