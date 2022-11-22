@@ -205,6 +205,7 @@ option.joption {
     bottom: -25px;
     left: 52px;
     border-bottom-color: #fff;
+
 }
 
 .dropdown-menu-arrow:before {
@@ -237,9 +238,13 @@ option.joption {
     }
 }
 
-@media (min-width: 576px) and (max-width: 767px) {
+@media (min-width: 426px) and (max-width: 768px) {
     .jcontainer-signup {
         min-width: 300px;
+    }
+
+    .j-container{
+        color:black !important;
     }
 }
 
@@ -247,10 +252,18 @@ option.joption {
     .jcontainer-signup {
         min-width: 400px;
     }
+
+    .j-container{
+        color:black !important;
+    }
 }
 
 @media (min-width: 992px) {
     .jcontainer-signup {
         min-width: 500px;
+    }
+
+    .j-container{
+        color:black !important;
     }
 }
