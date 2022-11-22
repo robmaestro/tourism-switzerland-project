@@ -67,10 +67,9 @@
 
                                 <div class="e-button">
                                     <form action="deleteUser" method="POST">
-                                      
-                                    <button type="submit" class="btn btn-dark e-btnEdit"
-                                    >DELETE</button>
-                                </form>
+
+                                        <button type="submit" class="btn btn-dark e-btnEdit">DELETE</button>
+                                    </form>
                                     <button type="button" class="btn btn-dark e-btnEdit"
                                         onclick="editDetails()">EDIT</button>
                                 </div>
@@ -144,9 +143,10 @@
 
 
                                     <label for="nationality" class="form-label label">Nationality:</label> <br>
-                                    <select class="form-select rounded-0 e-details ps-0" aria-label="Default select example"
-                                        name="nationality" id="selectNationality">
-                                        <option selected disabled hidden class="e-option">{{$user->nationality}}</option>
+                                    <select class="form-select rounded-0 e-details ps-0"
+                                        aria-label="Default select example" name="nationality" id="selectNationality">
+                                        <option selected disabled hidden class="e-option">{{ $user->nationality }}
+                                        </option>
                                     </select>
 
                                 </div>
@@ -175,26 +175,37 @@
 
 @section('script')
     <script>
-        $(document).ready(function() {
-            $('.j-logout').on('click', function() {
-                console.log("clicked")
-                $.ajaxSetup({
-                    headers: {
-                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                    }
-                });
-                $.ajax({
-                    type: "POST",
-                    url: '/logout',
-                    data: {
-                        logout: true
-                    },
-                    success: function(response) {
-                        window.location.href = "/";
-                    }
-                })
+        $('.j-logout').on('click', function() {
+            console.log("clicked")
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            Swal.fire({
+                title: 'Do you want to Logout?',
+                showCancelButton: true,
+                confirmButtonText: 'Logout'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    Swal.fire({
+                            title: 'Logout Successfully!',
+                            timer: 3000,
+                            icon: 'success',
+                            showConfirmButton: false
+                        }),
+                        $.ajax({
+                            type: "POST",
+                            url: '/logout',
+                            data: {
+                                logout: true
+                            },
+                            success: function(response) {
+                                window.location.href = "/";
+                            }
+                        })
+                }
             })
-
         })
         //editDetails
 
@@ -206,8 +217,8 @@
             editDetail.style.display = "block";
 
         }
-//delete
-        function deleteUser(){
+        //delete
+        function deleteUser() {
 
         }
         //close
@@ -222,7 +233,7 @@
 
         function btnsave() {
             Swal.fire({
-            
+
                 icon: 'success',
                 title: 'Your work has been saved',
                 showConfirmButton: false,
@@ -433,5 +444,5 @@
         document.getElementById("selectNationality").innerHTML = options
     </script>
 
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 @endsection

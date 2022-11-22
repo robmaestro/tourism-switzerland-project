@@ -25,17 +25,23 @@ class AccountController extends Controller
                 'password' => 'required'
             ],
             [
-                'name.required' => 'Name field is required.',
+                'username.required' => 'username field is required.',
                 'password.required' => 'Password field is required.',
             ]
         );
 
+        session(['prompt' => true]);
         $loginAttempt = Auth::attempt($credentials);
         if ($loginAttempt) {
             $request->session()->regenerate();
+            session(['text' => 'Login successful', 'icon' => 'success']);
             return redirect()->action([DestinationController::class, 'show']);
+        } else {
+            session(['prompt' => true]);
+            session(['text' => 'Login failed!', 'icon' => 'error']);
+            return redirect()->action([DestinationController::class, 'show'])->with(['status' => 'The provided credentials do not match our records.']);
         }
-        return back()->with(['status' => 'The provided credentials do not match our records.']);
+        // return back()->with(['status' => 'The provided credentials do not match our records.']);
     }
 
 
@@ -50,7 +56,7 @@ class AccountController extends Controller
         }
 
     }
-    
+
     function editUserDetails(Request $request)
     {
         $id = Auth::id();
@@ -63,10 +69,10 @@ class AccountController extends Controller
         }
 
     }
-    
-  public function updateUser(Request $request)
+
+    public function updateUser(Request $request)
     {
-        $id = Auth::id(); 
+        $id = Auth::id();
         $user = User::find($id);
         $user->username = $request->username;
         $user->fname = $request->fname;
@@ -83,9 +89,10 @@ class AccountController extends Controller
         return view('userDetails', ['users' => $users]);
     }
 
-    function deleteUser (Request $request) {
-      dd('ok');
-        $id = Auth::id(); 
+    function deleteUser(Request $request)
+    {
+        dd('ok');
+        $id = Auth::id();
         $user = User::find($id);
         $user->delete();
         return view('register');
