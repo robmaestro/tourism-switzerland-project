@@ -338,6 +338,9 @@
                                             <input type="input" required="" placeholder="Name" name="username"
                                                 class="form__field">
                                             <label class="form__label" for="name">Username</label>
+                                            @error('username')
+                                                <span class="text-danger">{{ $error }}</span>
+                                            @enderror
                                         </div>
                                         <div class="form__group field">
                                             <input type="password" required="" placeholder="Name" name="password"
@@ -720,7 +723,6 @@
                 }).then((result) => {
                     if (result.isConfirmed) {
                         Swal.fire({
-
                             title: 'Logout Successfully!', 
                             timer: 3000, 
                             icon: 'success'}),
