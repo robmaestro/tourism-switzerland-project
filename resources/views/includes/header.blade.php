@@ -35,7 +35,8 @@
     {{-- login dropdown --}}
     @if (isset($user))
         <div class="dropdown">
-            <i class="bi bi-person-circle dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" style="cursor: pointer;"></i>
+            <i class="dropdown-toggle " id="dropdownMenuButton1" data-bs-toggle="dropdown" style="cursor: pointer;"><img src="https://ui-avatars.com/api/?name={{ $user->fname }}+{{ $user->lname }}&background=random"
+                class="img-profile rounded-circle mx-3" alt="User Image" width="35" height="35"></i>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" class="p-5">
                 <li>Welcome {{ $user->username }}</li>
                 <li style="cursor: pointer;">Profile</li>

@@ -15,13 +15,13 @@ Route::get('/register', function(){
 });
 
 
-Route::get('/userDetails', function(){
-    return view('userDetails');
+Route::get('/profile', function(){
+    return view('profile');
 });
 
 
-Route::get('userDetails', [AccountController::class, 'getUserDetails']);
-Route::post('/editDetails', [AccountController::class, 'updateUser']);
+Route::get('profile', [AccountController::class, 'getUserDetails']);
+Route::post('/profile', [AccountController::class, 'updateUser']);
 Route::post('deleteUser', [AccountController::class, 'deleteUser']);
 
 Route::get('/',[DestinationController::class, 'show']);
