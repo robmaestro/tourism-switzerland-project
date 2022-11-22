@@ -21,16 +21,8 @@ Route::get('/profile', function () {
 });
 
 
-
 Route::get('profile', [AccountController::class, 'getUserDetails']);
 Route::post('/profile', [AccountController::class, 'updateUser']);
-
-
-Route::get('offcanvas', [AccountController::class,'getData']);
-Route::view('offcanvas', 'offcanvas');
-
-Route::get('userDetails', [AccountController::class, 'getUserDetails']);
-Route::post('/editDetails', [AccountController::class, 'updateUser']);
 
 Route::post('deleteUser', [AccountController::class, 'deleteUser']);
 
