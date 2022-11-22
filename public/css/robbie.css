@@ -407,4 +407,8 @@ body {
     .bi-person-circle {
         display: none;
     }
+
+    .r-content-info{
+        padding:0 10px;
+    }
 }
