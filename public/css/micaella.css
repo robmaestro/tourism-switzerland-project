@@ -1,0 +1,90 @@
+.e-container {
+    background-image: url("/e-containerbg.jpg");
+    background-size: cover;
+}
+
+.e-btnEdit{
+
+    width: 80px;
+    height: 40px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+.e-first{    
+    height: auto;
+    background-color: rgba(210, 222, 228, 0.1);
+    margin-top: 50px !important;
+    border: none;
+    border-bottom: 1px solid gray;
+    color: white;
+    text-align: left;
+    max-width: 750px;
+    padding: 20px;
+    margin: auto;
+}
+.e-second{
+    width: 75%;
+    padding: 30px;
+    background-color: rgba(210, 222, 228, 0.1);
+    border: none;
+    color: white;
+    margin: auto;
+    max-width: 750px;
+}
+
+.e-initial{
+    font-size: 10vh ;
+    font-weight: 300;
+}
+
+.e-user-dp{
+    max-width: 150px;
+    max-height: 150px;
+    text-align: center;
+    border-radius: 50%;
+    background-color: #B6E388;    
+}
+
+.e-col1{
+    text-align: center;
+}
+
+.e-button{
+    text-align: right;
+   
+}
+
+#e-username{
+   font-size: x-large;
+  text-align: center;
+}
+.e-details{
+    background: none !important;
+    border: 0 !important;
+    color: white !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid white !important;
+    width: 100% !important;
+    margin-bottom: 10px;
+ }
+ .e-detail1{
+    background: none !important;
+    border: 0 !important;
+    color: white !important;
+    box-shadow: none !important;
+    width: 100% !important;
+    text-align: center;
+ }
+
+ .label{
+    font-weight: 600;
+    color: white;
+}
+.e-option {
+    color: black;
+}
+
+
+
+
+    

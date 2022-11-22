@@ -3,17 +3,30 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\AccountController;
+use App\Http\Controllers\DestinationController;
+use App\Http\Controllers\ReviewController;
 
-Route::get('/', function(){
-    return view('index');
-});
-
-Route::get('/mobile', function(){
+Route::get('/mobile', function () {
     return view('mobile');
 });
 
 Route::get('/register', function(){
-    return view('register');
+    return view('register',["isWhite" => true]);
 });
 
-Route::post('register', [AccountController::class, 'postRegister']);
+Route::get('/userDetails', function () {
+    return view('userDetails');
+});
+
+Route::get('userDetails', [AccountController::class, 'getUserDetails']);
+Route::post('/editDetails', [AccountController::class, 'updateUser']);
+Route::post('deleteUser', [AccountController::class, 'deleteUser']);
+
+Route::get('/', [DestinationController::class, 'show']);
+
+Route::post('register', [AccountController::class, 'register']);
+Route::post('/login', [AccountController::class, 'login']);
+Route::post("/logout", [AccountController::class, 'logout']);
+
+Route::post('/editRating', [ReviewController::class, 'editRating']);
+Route::post('/getRating', [ReviewController::class, 'getRating']);
