@@ -84,6 +84,9 @@
     color: black;
 }
 
+.img-profile{
+    border: 1px solid rgba(0, 0, 0, 0.473);
+}
 
 @media(max-width:768px){
 .img-profile{
