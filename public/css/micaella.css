@@ -27,10 +27,11 @@
     padding: 30px;
     background-color: rgba(210, 222, 228, 0.1);
     border: none;
-    color: white;
+    color: white !important;
     margin: auto;
     max-width: 750px;
 }
+
 
 .e-initial{
     font-size: 10vh ;
@@ -50,8 +51,9 @@
 }
 
 .e-button{
-    text-align: right;
-   
+    display:flex;
+    justify-content: flex-end;
+    gap:10px;
 }
 
 #e-username{
@@ -93,6 +95,38 @@
     display: none;
 }
 
+
+@media(max-width: 768px) and (min-width: 426px){
+    
+
+    .e-second{
+        padding: 10px 0px !important;
+    }
+
+    #e-userDetails > *, .e-details, #e-username, .e-user-content{
+        color:black !important;
+    }
+
+    .e-details{
+        border-bottom: grey solid 1px !important;
+    }
+
+}
+
+@media(max-width: 425px){
+    .e-second{
+        padding: 10px 0px !important;
+    }
+
+    #e-userDetails > *, .e-details, #e-username, .e-user-content{
+        color:black !important;
+    }
+
+    .e-details{
+        border-bottom: grey solid 1px !important;
+    }
+
+}
 
 }
 

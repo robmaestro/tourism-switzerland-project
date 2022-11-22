@@ -26,40 +26,40 @@
                                 value={{ $user->username }} readonly>
                         </div>
                     </div>
-                    <div class="col-lg-8 e-col2">
+                    <div class="col-lg-8 e-col2 e-user-content">
                        
-                            <div class="row mt-5">
+                            <div class="row mt-5 e-user-content">
 
                                 <div class="col-lg-6">
-                                    <label for="fname" class="form-label label"></span>First Name:</label> <br>
-                                    <input type="text" class="form-control rounded-0 e-details ps-0"
+                                    <label for="fname" class="form-label label e-user-content ">First Name:</label> <br>
+                                    <input type="text" class="form-control rounded-0 e-details ps-0 e-user-content"
                                         aria-label="Last Name" name="fname" value={{ $user->fname }} readonly />
 
                                 </div>
 
                                 <div class="col-lg-6">
-                                    <label for="lname" class="form-label label">Last Name:</label> <br>
-                                    <input type="text" class="form-control rounded-0 e-details ps-0"
+                                    <label for="lname" class="form-label label e-user-content">Last Name:</label> <br>
+                                    <input type="text" class="form-control rounded-0 e-details ps-0 e-user-content"
                                         aria-label="Last Name" name="lname" value={{ $user->lname }} readonly />
 
                                 </div>
 
                                 <div class="col-lg-6">
-                                    <label for="nationality" class="form-label label">Gender:</label> <br>
-                                    <input type="text" class="form-control rounded-0 e-details ps-0"
+                                    <label for="nationality" class="form-label label e-user-content">Gender:</label> <br>
+                                    <input type="text" class="form-control rounded-0 e-details ps-0 e-user-content"
                                         aria-label="Last Name" name="gender" value={{ $user->gender }} readonly />
 
                                 </div>
 
                                 <div class="col-lg-6">
-                                    <label for="nationality" class="form-label label">Nationality:</label> <br>
-                                    <input type="text" class="form-control rounded-0 e-details ps-0"
+                                    <label for="nationality" class="form-label label e-user-content">Nationality:</label> <br>
+                                    <input type="text" class="form-control rounded-0 e-details ps-0 e-user-content"
                                         aria-label="Last Name" name="nationality" value={{ $user->nationality }} readonly />
                                 </div>
 
                                 <div class="col-lg-12">
-                                    <label for="email" class="form-label label">Email Address:</label> <br>
-                                    <input type="text" class="form-control rounded-0 e-details ps-0"
+                                    <label for="email" class="form-label label e-user-content">Email Address:</label> <br>
+                                    <input type="text" class="form-control rounded-0 e-details ps-0 e-user-content"
                                         aria-label="Last Name" name="email" value={{ $user->email }} readonly />
                                 </div>
 
@@ -115,21 +115,21 @@
                             <div class="row mt-5">
 
                                 <div class="col-lg-6">
-                                    <label for="fname" class="form-label label"></span>First Name:</label> <br>
-                                    <input type="text" class="form-control rounded-0 e-details ps-0"
+                                    <label for="fname" class="form-label label e-user-content"></span>First Name:</label> <br>
+                                    <input type="text" class="form-control rounded-0 e-details ps-0 e-user-content"
                                         aria-label="Last Name" name="fname" value={{ $user->fname }}
                                         aria-describedby="basic-addon1" />
                                 </div>
 
                                 <div class="col-lg-6">
-                                    <label for="lname" class="form-label label">Last Name:</label> <br>
-                                    <input type="text" class="form-control rounded-0 e-details ps-0"
+                                    <label for="lname" class="form-label label e-user-content">Last Name:</label> <br>
+                                    <input type="text" class="form-control rounded-0 e-details ps-0 e-user-content"
                                         aria-label="Last Name" name="lname" value={{ $user->lname }}
                                         aria-describedby="basic-addon1" />
                                 </div>
 
                                 <div class="col-lg-6">
-                                    <label class="form-label label">Gender:</label> <br>
+                                    <label class="form-label label e-user-content">Gender:</label> <br>
                                     <select class="form-select rounded-0  e-details ps-0" name="gender">
                                         <option class="e-option" value="Male">{{ $user->gender }}</option>
                                         <option class="e-option" value="Male">Male</option>
@@ -138,7 +138,7 @@
                                 </div>
 
                                 <div class="col-lg-6">
-                                    <label for="nationality" class="form-label label">Nationality:</label> <br>
+                                    <label for="nationality" class="form-label label e-user-content">Nationality:</label> <br>
                                     <select class="form-select rounded-0 e-details ps-0"
                                         aria-label="Default select example" name="nationality" id="selectNationality">
                                         <option selected disabled hidden class="e-option">{{ $user->nationality }}
@@ -148,8 +148,8 @@
                             </div>
 
                             <div class="col-lg-12">
-                                <label for="email" class="form-label label">Email Address:</label> <br>
-                                <input type="text" class="form-control rounded-0 e-details ps-0"
+                                <label for="email" class="form-label label e-user-content">Email Address:</label> <br>
+                                <input type="text" class="form-control rounded-0 e-details ps-0 e-user-content"
                                     aria-label="Last Name" name="email" value={{ $user->email }}
                                     aria-describedby="basic-addon1" />
                             </div>
