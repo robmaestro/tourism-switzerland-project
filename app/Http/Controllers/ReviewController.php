@@ -24,4 +24,19 @@ class ReviewController extends Controller
         $selected = DB::table('reviews')->where('user_id', $request->user_id)->where('destination_id', $request->destination_id)->get();
         return $selected;
     }
+
+    function getRatingAvg(Request $request)
+    {
+        $ratings = DB::table('reviews')->where('destination_id', $request->destination_id)->get();
+        $sum = 0;
+        if (!$ratings->isEmpty()) {
+            foreach ($ratings as $rating) {
+                $sum += $rating->rating;
+            }
+            $avg = $sum / count($ratings);
+            return ['avg' => $avg, 'reviewCount' => count($ratings)];
+        } else {
+            return ['avg' => 0, 'reviewCount' => 0];
+        }
+    }
 }
