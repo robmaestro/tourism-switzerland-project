@@ -107,7 +107,7 @@
 
     @if (isset($user))
         <div class="dropdown p-2 my-auto">
-            <div class="d-flex gap-3">
+            <div class="d-flex gap-2">
                 <span class="d-none d-lg-block my-auto">Welcome {{ $user->fname }}!</span>
                  <i class=" dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown"
                 style="cursor: pointer;"> <img src="https://ui-avatars.com/api/?name={{ $user->fname }}+{{ $user->lname }}&background=random"

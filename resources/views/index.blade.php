@@ -377,9 +377,11 @@
                                 <i class="fas fa-star me-user-star" data-value='3'></i>
                                 <i class="fas fa-star me-user-star" data-value='4'></i>
                                 <i class="fas fa-star me-user-star" data-value='5'></i>
+                                {{-- <i type="button" id="d-remove-rating" class="bi bi-x-circle-fill mt-2"></i> --}}
                             </div>
                         </div>
-                        <button type="button" id="d-remove-rating" class="btn btn-outline-danger">Remove rating</button>
+                        <i type="button" id="d-remove-rating" class="mt-2">Remove</i>
+                        {{-- <button type="button" id="d-remove-rating" class="btn btn-outline-danger mt-2">Remove rating</button> --}}
                         {{-- <div class="j-remove-rating mt-5">remove rating</div> --}}
                     @endif
                 </div>
@@ -814,7 +816,7 @@
                     Swal.fire({
                         title: 'Do you want to delete your rating?',
                         showCancelButton: true,
-                        confirmButtonText: 'delete',
+                        confirmButtonText: 'Delete',
                         confirmButtonColor: 'red',
                         icon: 'warning'
                     }).then((result) => {
