@@ -65,11 +65,7 @@
 
                                 <div class="e-button">
                                 
-                                    <form method="POST" action="deleteUser" > 
-                                        @csrf
-                           
-                                        <button type="submit" class="btn btn-dark e-btnEdit" >DELETE</button>
-                                    </form>
+                                
                                     <button type="button" class="btn btn-dark e-btnEdit"
                                         onclick="editDetails()">EDIT</button>
                                 </div>

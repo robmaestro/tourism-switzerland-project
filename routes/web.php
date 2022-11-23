@@ -14,17 +14,12 @@ Route::get('/register', function () {
     return view('register', ["isWhite" => true]);
 });
 
-
-
 Route::get('/profile', function () {
     return view('profile');
 });
 
-
 Route::get('profile', [AccountController::class, 'getUserDetails']);
 Route::post('/profile', [AccountController::class, 'updateUser']);
-
-Route::post('deleteUser', [AccountController::class, 'deleteUser']);
 
 Route::get('/', [DestinationController::class, 'show']);
 
