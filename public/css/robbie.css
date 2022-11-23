@@ -134,10 +134,10 @@ body {
 }
 
 .r-image-banner {
-    min-height: 1080px;
+    min-height: 100vh;
     width: 100%;
     object-fit: cover;
-    background-image: url("https://images.wallpapersden.com/image/download/brissago-switzerland-town_bGlqZmaUmZqaraWkpJRmbmdlrWZlbWU.jpg");
+    background-image: url("../assets/1680167.png");
     background-repeat: no-repeat;
 }
 
@@ -606,7 +606,7 @@ body {
     }
 
     .r-image-banner {
-        min-height: 600px;
+        min-height: 100vh;
         width: 100%;
         object-fit: cover;
     }
@@ -664,7 +664,7 @@ body {
     }
 
     .r-image-banner {
-        min-height: 400px;
+        min-height: 100vh;
         width: 100%;
     }
 
