@@ -14,9 +14,6 @@ Route::get('/register', function () {
     return view('register', ["isWhite" => true]);
 });
 
-Route::get('/profile', function () {
-    return view('profile');
-});
 
 
 Route::get('profile', [AccountController::class, 'getUserDetails']);
@@ -32,3 +29,5 @@ Route::post('/editRating', [ReviewController::class, 'editRating']);
 Route::post('/getRating', [ReviewController::class, 'getRating']);
 Route::post('/getRatingAvg', [ReviewController::class, 'getRatingAvg']);
 Route::post('/deleteRating', [ReviewController::class, 'deleteRating']);
+
+Route::post('/addComment', [ReviewController::class, 'addComment']);

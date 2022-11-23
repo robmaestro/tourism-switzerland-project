@@ -86,7 +86,11 @@
 .e-avatar{
     margin-right: 13px !important;
 }
+.e-pencil{
+    margin-left: -10px;
+    margin-top: 5px;
 
+}
 @media(max-width:768px){
 .img-profile{
     display: none;

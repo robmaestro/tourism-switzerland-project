@@ -132,13 +132,8 @@
         </div>
     @else
         <div class="dropdown p-2 my-auto">
-            @if (isset($isWhite))
-                <i class="bi bi-person-circle dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                    style="cursor: pointer; color:white;"></i>
-            @else
-                <i class="bi bi-person-circle dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                    style="cursor: pointer;"></i>
-            @endif
+            <i class="bi bi-person-circle dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                style="cursor: pointer;"></i>
             <ul class="dropdown-menu rounded-0 py-0 me-2" aria-labelledby="dropdownMenuButton1" class="p-5">
                 <div class="d-flex px-3 tchHover" data-bs-toggle="modal" data-bs-target="#loginModal">
                     <span class="dropdown-menu-arrow"></span>
