@@ -33,34 +33,34 @@
                                 <div class="col-lg-6">
                                     <label for="fname" class="form-label label e-user-content ">First Name:</label> <br>
                                     <input type="text" class="form-control rounded-0 e-details ps-0 e-user-content"
-                                        aria-label="Last Name" name="fname" value={{ $user->fname }} readonly />
+                                        aria-label="Last Name" name="fname" value="{{ $user->fname }}" readonly />
 
                                 </div>
 
                                 <div class="col-lg-6">
                                     <label for="lname" class="form-label label e-user-content">Last Name:</label> <br>
                                     <input type="text" class="form-control rounded-0 e-details ps-0 e-user-content"
-                                        aria-label="Last Name" name="lname" value={{ $user->lname }} readonly />
+                                        aria-label="Last Name" name="lname" value="{{ $user->lname }} " readonly />
 
                                 </div>
 
                                 <div class="col-lg-6">
                                     <label for="nationality" class="form-label label e-user-content">Gender:</label> <br>
                                     <input type="text" class="form-control rounded-0 e-details ps-0 e-user-content"
-                                        aria-label="Last Name" name="gender" value={{ $user->gender }} readonly />
+                                        aria-label="Last Name" name="gender" value="{{ $user->gender }}" readonly />
 
                                 </div>
 
                                 <div class="col-lg-6">
                                     <label for="nationality" class="form-label label e-user-content">Nationality:</label> <br>
                                     <input type="text" class="form-control rounded-0 e-details ps-0 e-user-content"
-                                        aria-label="Last Name" name="nationality" value={{ $user->nationality }} readonly />
+                                        aria-label="Last Name" name="nationality" value="{{ $user->nationality }}" readonly />
                                 </div>
 
                                 <div class="col-lg-12">
                                     <label for="email" class="form-label label e-user-content">Email Address:</label> <br>
                                     <input type="text" class="form-control rounded-0 e-details ps-0 e-user-content"
-                                        aria-label="Last Name" name="email" value={{ $user->email }} readonly />
+                                        aria-label="Last Name" name="email" value="{{ $user->email }}" readonly />
                                 </div>
 
                                 <div class="e-button">
@@ -101,8 +101,10 @@
                             </div>
 
                             <div class="mt-2 d-flex justify-content-center">
+
                                 <input type="text" name="username" id="e-username"
-                                    class="form-control rounded-0 e-detail1 ps-0" value={{ $user->username }}>
+                                    class="form-control rounded-0 e-detail1 ps-0" value={{ $user->username }}> 
+                                    <span class="bi bi-pencil e-pencil"></span>
                             </div>
                         </div>
 
@@ -110,49 +112,64 @@
                             <div class="row mt-5">
 
                                 <div class="col-lg-6">
-                                    <label for="fname" class="form-label label e-user-content"></span>First Name:</label> <br>
+                                    <label for="fname" class="form-label label e-user-content">First Name:</label> <br>
+                                    <div class="d-flex flex-direction:row">
                                     <input type="text" class="form-control rounded-0 e-details ps-0 e-user-content"
-                                        aria-label="Last Name" name="fname" value={{ $user->fname }}
+                                        aria-label="Last Name" name="fname" value="{{ $user->fname }}"
                                         aria-describedby="basic-addon1" />
+                                        <span class="bi bi-pencil e-pencil"></span>
+                                    </div>
                                 </div>
 
                                 <div class="col-lg-6">
                                     <label for="lname" class="form-label label e-user-content">Last Name:</label> <br>
+                                    <div class="d-flex flex-direction:row">
                                     <input type="text" class="form-control rounded-0 e-details ps-0 e-user-content"
-                                        aria-label="Last Name" name="lname" value={{ $user->lname }}
-                                        aria-describedby="basic-addon1" />
+                                        aria-label="Last Name" name="lname" value="{{ $user->lname }}"
+                                        aria-describedby="basic-addon1" /><span class="bi bi-pencil e-pencil"></span> </div>
                                 </div>
 
                                 <div class="col-lg-6">
                                     <label class="form-label label e-user-content">Gender:</label> <br>
-                                    <select class="form-select rounded-0  e-details ps-0" name="gender">
-                                        <option class="e-option" value={{ $user->gender }}>{{ $user->gender }}</option>
+                                    <div class="d-flex flex-direction:row">
+                                    <select class="form-select rounded-0  e-details ps-0" name="gender" >
+                                     
+                                        <option class="e-option" value="{{ $user->gender }}" selected hidden >{{ $user->gender }}</option>
                                         <option class="e-option" value="Male">Male</option>
                                         <option class="e-option" value="Female">Female</option>
-                                    </select>
+                                        <option class="e-option" value="Others">Others</option>
+                                    </select> 
+                                    <span class="bi bi-pencil e-pencil"></span>
+                                </div>
                                 </div>
 
                                 <div class="col-lg-6">
                                     <label for="nationality" class="form-label label e-user-content">Nationality:</label> <br>
+                                    <div class="d-flex flex-direction:row">
                                     <select class="form-select rounded-0 e-details ps-0"
                                         aria-label="Default select example" name="nationality" id="selectNationality">
-                                        <option selected disabled hidden class="e-option">{{ $user->nationality }}
-                                        </option>
+                                       
+                        
                                     </select>
+                                    <span class="bi bi-pencil e-pencil"></span>
+                                    </div>
                                 </div>
                             </div>
 
                             <div class="col-lg-12">
                                 <label for="email" class="form-label label e-user-content">Email Address:</label> <br>
+                                <div class="d-flex flex-direction:row">
                                 <input type="text" class="form-control rounded-0 e-details ps-0 e-user-content"
-                                    aria-label="Last Name" name="email" value={{ $user->email }}
+                                    aria-label="Last Name" name="email" value="{{ $user->email }}"
                                     aria-describedby="basic-addon1" />
+                                    <span class="bi bi-pencil e-pencil"></span>
+                                </div>
                             </div>
 
                             <div class="e-button">
                                 <button type="button" class="btn btn-dark rounded-0  e-btnEdit"
                                     onclick="btnclose()">CLOSE</button>
-                                <button type="submit" class="btn btn-dark e-btnEdit rounded-0 e-btnSave">SAVE</button>
+                                <button type="submit" class="btn btn-dark e-btnEdit rounded-0 e-btnSave" onclick="btnSave()">SAVE</button>
                                 
                             </div>
                         </div>
@@ -423,13 +440,13 @@
         ]
 
         var options = nationalityList.map(nationality => {
+            
             return `<option class="joption" value="${nationality}">${nationality}</option>`
         })
+        var selected = ''
         document.getElementById("selectNationality").innerHTML = options
 
-
-
-        $('.e-btnSave').on('click', function() {
+        function btnSave(){
             
             Swal.fire({
                 position: 'center',
@@ -437,21 +454,10 @@
                 title: 'Saved Successfully!',
                 showConfirmButton: false,
                 timer: 2000
-            })
-            }).then((result) => {
-                
-                        $.ajax({
-                            type: "POST",
-                            url: '/profile',
-                            data: {
-                                logout: true
-                            },
-                            success: function(response) {
-                                window.location.href = "/profile";
-                            }
-                        })
-                }
-            )
+        })
+   
+    }
+
     </script>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>

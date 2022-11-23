@@ -15,7 +15,7 @@ Route::get('/register', function () {
 });
 
 Route::get('/profile', function () {
-    return view('profile');
+    return view('userdetails');
 });
 
 Route::get('profile', [AccountController::class, 'getUserDetails']);
