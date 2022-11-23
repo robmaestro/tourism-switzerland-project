@@ -14,9 +14,6 @@ Route::get('/register', function () {
     return view('register', ["isWhite" => true]);
 });
 
-Route::get('/profile', function () {
-    return view('userdetails');
-});
 
 Route::get('profile', [AccountController::class, 'getUserDetails']);
 Route::post('/postProfile', [AccountController::class, 'updateUser']);
