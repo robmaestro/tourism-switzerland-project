@@ -19,7 +19,7 @@ Route::get('/profile', function () {
 });
 
 Route::get('profile', [AccountController::class, 'getUserDetails']);
-Route::post('/profile', [AccountController::class, 'updateUser']);
+Route::post('/postProfile', [AccountController::class, 'updateUser']);
 
 Route::get('/', [DestinationController::class, 'show']);
 
