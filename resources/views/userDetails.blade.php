@@ -65,9 +65,7 @@
 
                                 <div class="e-button">
                                 
-                                
-                                    
-                                        <button type="submit" class="btn btn-md rounded-0 btn-dark jregister-button mt-3" onclick="editDetails()">EDIT</button>
+                                        <button type="submit" class="btn btn-dark rounded-0  e-btnEdit " onclick="editDetails()">EDIT</button>
                                 </div>
 
 
