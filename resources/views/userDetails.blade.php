@@ -1,6 +1,6 @@
 @extends('master')
 @section('title', 'User Details')
-@section('class', 'e-container')
+@section('class', 'jbody-bg')
 @section('content')
 
     @foreach ($users as $user)
@@ -65,13 +65,9 @@
 
                                 <div class="e-button">
                                 
-                                    <form method="POST" action="deleteUser" > 
-                                        @csrf
-                           
-                                        <button type="submit" class="btn btn-dark e-btnEdit" >DELETE</button>
-                                    </form>
-                                    <button type="button" class="btn btn-dark e-btnEdit"
-                                        onclick="editDetails()">EDIT</button>
+                                
+                                    
+                                        <button type="submit" class="btn btn-md rounded-0 btn-dark jregister-button mt-3" onclick="editDetails()">EDIT</button>
                                 </div>
 
 
@@ -132,7 +128,7 @@
                                 <div class="col-lg-6">
                                     <label class="form-label label e-user-content">Gender:</label> <br>
                                     <select class="form-select rounded-0  e-details ps-0" name="gender">
-                                        <option class="e-option" value="Male">{{ $user->gender }}</option>
+                                        <option class="e-option" value={{ $user->gender }}>{{ $user->gender }}</option>
                                         <option class="e-option" value="Male">Male</option>
                                         <option class="e-option" value="Female">Female</option>
                                     </select>
@@ -156,9 +152,10 @@
                             </div>
 
                             <div class="e-button">
-                                <button type="button" class="btn btn-dark  e-btnEdit"
+                                <button type="button" class="btn btn-dark rounded-0  e-btnEdit"
                                     onclick="btnclose()">CLOSE</button>
-                                <button type="submit" class="btn btn-dark  e-btnEdit">SAVE</button>
+                                <button type="submit" class="btn btn-dark e-btnEdit rounded-0 e-btnSave">SAVE</button>
+                                
                             </div>
                         </div>
                     </div>
@@ -205,6 +202,8 @@
         })
 
         //save
+       
+       
 
 
         //editDetails
@@ -426,10 +425,35 @@
         ]
 
         var options = nationalityList.map(nationality => {
-            return `<option value="${nationality}">${nationality}</option>`
+            return `<option class="joption" value="${nationality}">${nationality}</option>`
         })
-        var test = `<option value="test">test</option>`
         document.getElementById("selectNationality").innerHTML = options
+
+
+
+        $('.e-btnSave').on('click', function() {
+            
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Saved Successfully!',
+                showConfirmButton: false,
+                timer: 2000
+            })
+            }).then((result) => {
+                
+                        $.ajax({
+                            type: "POST",
+                            url: '/profile',
+                            data: {
+                                logout: true
+                            },
+                            success: function(response) {
+                                window.location.href = "/profile";
+                            }
+                        })
+                }
+            )
     </script>
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
