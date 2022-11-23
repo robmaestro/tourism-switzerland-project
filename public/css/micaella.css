@@ -71,7 +71,17 @@
     width: 100% !important;
     text-align: center;
  }
-
+ .e-edit-username{
+  
+        background: none !important;
+        border: none !important;
+        border-bottom: 1px solid white !important;
+        color: white !important;
+        box-shadow: none !important;
+        width: 80% !important;
+        text-align: center;
+     
+ }
  .label{
     font-weight: 600;
 }
@@ -89,18 +99,36 @@
 .e-pencil{
     margin-left: -10px;
     margin-top: 5px;
-
+    color: white;
+}
+.e-username-pencil{
+    margin-left: -15px;
+    margin-top: 20px;
+    color: white;
+}
+#e-userDetails,    #e-editdetails{
+    margin-top: 150px;
+    padding-left: 200px;
+    padding-right: 200px;
 }
 @media(max-width:768px){
-.img-profile{
+.e-avatar{
     display: none;
 }
+#e-userDetails,    #e-editdetails{
+    margin-top: 0px;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+.e-pencil, .e-first, .e-username-pencil{
+    color:black;
+   }
+
 
 
 @media(max-width: 768px) and (min-width: 426px){
-    
-
-    .e-second{
+   
+    .e-second, .e-first{
         padding: 10px 0px !important;
     }
 
