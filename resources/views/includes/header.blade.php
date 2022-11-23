@@ -4,7 +4,7 @@
 <div class="header">
     <nav class="navbar navbar-expand-lg navbar-container">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ url('/') }}">
                 <div class="r-title-main">
                     @if (isset($isWhite))
                         <span style="color: white">
@@ -23,7 +23,7 @@
                 <a class="navbar-togglers d-block me-auto" data-bs-toggle="offcanvas" id='offcanvas' role="button"
                     aria-controls="offcanvasExample">
                     {{-- <span class="navbar-toggler-icon"></span> --}}
-                    <i class="bi bi-chevron-down"></i>
+                    {{-- <i class="bi bi-chevron-down"></i> --}}
                 </a>
             </a>
 
