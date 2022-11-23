@@ -48,4 +48,14 @@ class ReviewController extends Controller
             return 'rating removed successfully';
         }
     }
+
+    function addComment(Request $request){
+        $comment = DB::table('reviews')->where('user_id', $request->user_id)->where('destination_id', $request->destination_id)->get();
+        if ($comment->isEmpty()) {
+            return 'no comments made';
+        } else {
+            $review = Review::addComment($comment[0]->id, $request->userComment);
+            return 'comments added succcessfully';
+        }
+    }
 }
