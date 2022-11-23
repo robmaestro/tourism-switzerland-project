@@ -4,6 +4,7 @@
 @section('content')
 
     @foreach ($users as $user)
+    <div class="r-details-container">
         <div id="e-userDetails">
 
             <div class="e-first">
@@ -76,7 +77,7 @@
            
             </div>
         </div>
-
+    
         {{-- edit page --}}
         <div id="e-editdetails" style="display: none">
             <div class=" e-first">
@@ -177,6 +178,7 @@
                 </div>
             </form>
         </div>
+    </div>
     @endforeach
 
 @endsection
