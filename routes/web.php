@@ -18,6 +18,7 @@ Route::get('/profile', function () {
     return view('profile');
 });
 
+
 Route::get('profile', [AccountController::class, 'getUserDetails']);
 Route::post('/postProfile', [AccountController::class, 'updateUser']);
 

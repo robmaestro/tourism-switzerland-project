@@ -12,6 +12,7 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
         url(https://images.unsplash.com/photo-1578181638472-06f922fe6859?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80);
     background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .jspan-icons {
@@ -31,6 +32,7 @@ input.jinput {
     border: 0 !important;
     box-shadow: none !important;
     border-bottom: 1px solid gray !important;
+    font-size:12px;
 }
 
 input.jinput:-webkit-autofill {
@@ -53,6 +55,7 @@ select.jdropdown {
     border: 0 !important;
     box-shadow: none !important;
     border-bottom: 1px solid gray !important;
+    font-size: 12px;
 }
 
 .jlogin-title {

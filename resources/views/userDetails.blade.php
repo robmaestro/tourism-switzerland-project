@@ -4,6 +4,7 @@
 @section('content')
 
     @foreach ($users as $user)
+    <div class="r-details-container">
         <div id="e-userDetails">
 
             <div class="e-first">
@@ -76,7 +77,7 @@
            
             </div>
         </div>
-
+    
         {{-- edit page --}}
         <div id="e-editdetails" style="display: none">
             <div class=" e-first">
@@ -102,7 +103,7 @@
 
                             <div class="mt-2 d-flex justify-content-center">
                                 <input type="text" name="username" id="e-username"
-                                    class="form-control rounded-0 e-detail1 ps-0" value={{ $user->username }}>
+                                    class="form-control rounded-0 e-detail1" value={{ $user->username }}>
                             </div>
                         </div>
 
@@ -160,6 +161,7 @@
                 </div>
             </form>
         </div>
+    </div>
     @endforeach
 
 @endsection

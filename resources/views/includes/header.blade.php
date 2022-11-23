@@ -7,7 +7,7 @@
             <a class="navbar-brand" href="{{ url('/') }}">
                 <div class="r-title-main">
                     @if (isset($isWhite))
-                        <span style="color: white">
+                        <span style="color: white" class="r-title-main">
                             SWITZ
                         </span>
                         <img class="switz-logo"
@@ -37,7 +37,6 @@
                     @if (isset($user))
                         <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
                         <a class="nav-link" href="{{ url('/profile') }}">User Profile</a>
-                        <a class="nav-link" href="#">My List</a>
                         <a class="nav-link j-logout">Logout</a>
                     @else
                         <a class="nav-link active" aria-current="page" href="{{ url('/') }}">Home</a>
@@ -106,7 +105,7 @@
     @endif
 
     @if (isset($user))
-        <div class="dropdown p-2 my-auto">
+        <div class="dropdown p-2 my-auto d-none d-lg-block">
             <div class="d-flex gap-2">
                 @if (isset($isWhite))
                     <span class="d-none d-lg-block my-auto" style="color: white">Welcome {{ $user->fname }}!</span>

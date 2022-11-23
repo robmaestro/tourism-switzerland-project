@@ -12,6 +12,55 @@
 
 @section('content')
 
+<div class="mobile-container">
+    <div class="d-flex align-items-center flex-column gap-2">
+        <div class="r-image-banner">
+            <div class="r-mobile-title">
+                <span class="r-welcome">Welcome to Switzerland!</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="r-captions">
+        <span> See our popular Switzerland Tourist Destinations! </span>
+    </div>
+
+    <div class="r-content-container">
+        <div class="r-content">
+            <div class="r-content-description">
+                @foreach ($destination as $key => $dest)
+                    <div class="r-content-info" data-bs-toggle="modal" data-bs-target="#me-dest-modal"
+                        data-name='{{ $dest->dest_name }}' data-id='{{ $dest->id }}'
+                        data-desc='{{ $dest->dest_description }}' data-images='{{ json_encode($main[$key + 1]) }}'>
+                        <img class="r-content-image" src={{ $main[$key + 1][0] }}>
+                        <div class="image-overlay">
+                            <div class="image-overlay-text">
+                                {{ $dest->dest_name }}
+                            </div>
+                        </div>
+                        {{-- @foreach ($destination as $key => $dest)
+                        {{dd($key);}}
+                            <li class="col-md-3" data-bs-toggle="modal" data-bs-target="#me-dest-modal"  data-name='{{$dest->dest_name}}' data-id='{{$dest->id}}' data-desc='{{$dest->dest_description}}' data-images='{{json_encode($main[$key+1])}}'> {{ $dest->dest_name }}</li>
+                        @endforeach --}}
+                        {{-- <span class="r-content-title">
+                            {{ $dest->dest_name }}
+                        </span> --}}
+                        {{-- <div class="d-flex flex-column align-items-center px-2">
+
+                            <span class="r-content-details">
+                                {{ $dest->dest_description }}
+                            </span>
+                        </div> --}}
+                    </div>
+                @endforeach
+            </div>
+
+        </div>
+    </div>
+
+
+</div>
+
     <div class="r-title-container">
         Map of Switzerland
     </div>
@@ -311,21 +360,6 @@
                 <div class="me-location ">{{ $destination[10]->dest_name }}</div>
             </div>
         </div>
-        <div class="r-location-title d-flex">
-            Tourist Destinations
-        </div>
-        <div class="r-location-list d-flex flex-column ">
-            <ul class="row r-list-map">
-
-                @foreach ($destination as $key => $dest)
-                    {{-- {{dd($key);}} --}}
-                    <li class="col-md-3" data-bs-toggle="modal" data-bs-target="#me-dest-modal"
-                        data-name='{{ $dest->dest_name }}' data-id='{{ $dest->id }}'
-                        data-desc='{{ $dest->dest_description }}' data-images='{{ json_encode($main[$key + 1]) }}'>
-                        {{ $dest->dest_name }}</li>
-                @endforeach
-            </ul>
-        </div>
     </div>
 
     {{-- modal for destination viewing --}}
@@ -458,103 +492,70 @@
             <div class="d-none d-md-block col-md-2"></div>
         </div>
     </div>
-
-    <div class="mobile-container">
-        <div class="d-flex align-items-center flex-column gap-2">
-            <div class="r-mobile-title">
-                <span class="r-welcome">Welcome to Switzerland!</span>
-            </div>
-            <div id="banner-images" class="carousel slide" data-bs-ride="true">
-
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="https://wallpapercave.com/wp/wp6989653.jpg" class="d-block r-image-banner"
-                            alt="The Matterhorn" />
-                        <div class="r-carousel-caption">
-                            <p>The Matterhorn</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://www.planetware.com/photos-large/CH/switzerland-jungfraujoch-top-of-europe.jpg"
-                            class="d-block r-image-banner" alt="Jungfraujoch" />
-                        <div class="r-carousel-caption">
-                            <p>Jungfraujoch</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://www.planetware.com/photos-large/CH/switzerland-lucerne.jpg"
-                            class="d-block r-image-banner" alt="Lucerne" />
-                        <div class="r-carousel-caption">
-                            <p>Lucerne</p>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://images.wallpaperscraft.com/image/single/switzerland_lake_geneva_city_mountains_snow_69357_1920x1080.jpg"
-                            class="d-block r-image-banner" alt="Lake Geneva" />
-                        <div class="r-carousel-caption">
-                            <p>Lake Geneva</p>
-                        </div>
-                    </div>
-                </div>
-
-                <button class="carousel-control-prev" type="button" data-bs-target="#banner-images"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#banner-images"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
-
-            </div>
-
-        </div>
-
-        <div class="r-captions">
-            <span> See our popular Switzerland Tourist Destinations! </span>
-        </div>
-
-        <div class="r-content-container">
-            <div class="r-content">
-                <div class="r-content-description">
-                    @foreach ($destination as $key => $dest)
-                        <div class="r-content-info" data-bs-toggle="modal" data-bs-target="#me-dest-modal"
-                            data-name='{{ $dest->dest_name }}' data-id='{{ $dest->id }}'
-                            data-desc='{{ $dest->dest_description }}' data-images='{{ json_encode($main[$key + 1]) }}'>
-                            <img class="r-content-image" src={{ $main[$key + 1][0] }}>
-                            <div class="image-overlay">
-                                <div class="image-overlay-text">
-                                    {{ $dest->dest_name }}
-                                </div>
-                            </div>
-                            {{-- @foreach ($destination as $key => $dest)
-                            {{dd($key);}}
-                                <li class="col-md-3" data-bs-toggle="modal" data-bs-target="#me-dest-modal"  data-name='{{$dest->dest_name}}' data-id='{{$dest->id}}' data-desc='{{$dest->dest_description}}' data-images='{{json_encode($main[$key+1])}}'> {{ $dest->dest_name }}</li>
-                            @endforeach --}}
-                            {{-- <span class="r-content-title">
-                                {{ $dest->dest_name }}
-                            </span> --}}
-                            {{-- <div class="d-flex flex-column align-items-center px-2">
-
-                                <span class="r-content-details">
-                                    {{ $dest->dest_description }}
-                                </span>
-                            </div> --}}
-                        </div>
-                    @endforeach
-                </div>
-
-            </div>
-        </div>
-
+    <div class="footer">
         <div class="r-create-account-container">
             <div class="r-create-account-text">
                 Don't have an account? Create for <a href={{ url('/register') }}>FREE!</a>
             </div>
         </div>
+    
+        <svg id="visual" viewBox="0 0 768 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
+            <path
+                d="M0 255L33 228L67 256L100 235L134 241L167 267L200 245L234 230L267 260L301 262L334 251L367 230L401 255L434 269L467 266L501 258L534 231L568 261L601 235L634 241L668 259L701 270L735 232L768 241L768 301L735 301L701 301L668 301L634 301L601 301L568 301L534 301L501 301L467 301L434 301L401 301L367 301L334 301L301 301L267 301L234 301L200 301L167 301L134 301L100 301L67 301L33 301L0 301Z"
+                fill="#f1ffd2"></path>
+            <path
+                d="M0 246L33 260L67 241L100 243L134 272L167 237L200 269L234 237L267 247L301 243L334 264L367 274L401 269L434 250L467 264L501 255L534 266L568 257L601 256L634 242L668 256L701 257L735 238L768 268L768 301L735 301L701 301L668 301L634 301L601 301L568 301L534 301L501 301L467 301L434 301L401 301L367 301L334 301L301 301L267 301L234 301L200 301L167 301L134 301L100 301L67 301L33 301L0 301Z"
+                fill="#dbedba"></path>
+            <path
+                d="M0 275L33 273L67 247L100 249L134 255L167 272L200 273L234 273L267 271L301 265L334 257L367 277L401 278L434 250L467 266L501 257L534 277L568 269L601 245L634 249L668 261L701 260L735 277L768 256L768 301L735 301L701 301L668 301L634 301L601 301L568 301L534 301L501 301L467 301L434 301L401 301L367 301L334 301L301 301L267 301L234 301L200 301L167 301L134 301L100 301L67 301L33 301L0 301Z"
+                fill="#c5dca3"></path>
+            <path
+                d="M0 255L33 255L67 273L100 276L134 259L167 274L200 279L234 277L267 254L301 280L334 265L367 253L401 254L434 278L467 262L501 279L534 271L568 271L601 279L634 263L668 265L701 276L735 271L768 260L768 301L735 301L701 301L668 301L634 301L601 301L568 301L534 301L501 301L467 301L434 301L401 301L367 301L334 301L301 301L267 301L234 301L200 301L167 301L134 301L100 301L67 301L33 301L0 301Z"
+                fill="#aecb8d"></path>
+            <path
+                d="M0 262L33 286L67 264L100 273L134 265L167 271L200 273L234 263L267 266L301 275L334 263L367 284L401 278L434 271L467 286L501 285L534 286L568 285L601 263L634 270L668 271L701 268L735 275L768 286L768 301L735 301L701 301L668 301L634 301L601 301L568 301L534 301L501 301L467 301L434 301L401 301L367 301L334 301L301 301L267 301L234 301L200 301L167 301L134 301L100 301L67 301L33 301L0 301Z"
+                fill="#98ba77"></path>
+            <path
+                d="M0 288L33 285L67 277L100 272L134 275L167 278L200 289L234 290L267 281L301 285L334 289L367 278L401 276L434 280L467 289L501 283L534 279L568 284L601 273L634 286L668 279L701 275L735 285L768 283L768 301L735 301L701 301L668 301L634 301L601 301L568 301L534 301L501 301L467 301L434 301L401 301L367 301L334 301L301 301L267 301L234 301L200 301L167 301L134 301L100 301L67 301L33 301L0 301Z"
+                fill="#81a962"></path>
+            <path
+                d="M0 285L33 281L67 289L100 294L134 293L167 290L200 291L234 281L267 293L301 289L334 285L367 291L401 292L434 294L467 282L501 292L534 288L568 294L601 294L634 286L668 287L701 287L735 282L768 287L768 301L735 301L701 301L668 301L634 301L601 301L568 301L534 301L501 301L467 301L434 301L401 301L367 301L334 301L301 301L267 301L234 301L200 301L167 301L134 301L100 301L67 301L33 301L0 301Z"
+                fill="#6a994e"></path>
+        </svg>
+    
+        <div class="footer-container">
+            <div class="r-title-main">
+                <span>
+                    SWITZ
+                </span>
+                <img class="switz-logo" src="https://cdn.britannica.com/43/4543-004-C0D5C6F4/Flag-Switzerland.jpg">
+            </div>
+            <div class="footer-about">
+                <div class="footer-title">
+                    <span>About Us</span>
+                </div>
+                <ul>
+                    <li>Company</li>
+                    <li>Partners</li>
+                    <li>Management</li>
+                </ul>
+            </div>
+            <div class="footer-socials">
+                <div class="footer-title">
+                    <span>Socials</span>
+                </div>
+                <ul>
+                    <li><i class="bi bi-facebook"></i></li>
+                    <li><i class="bi bi-twitter"></i></li>
+                    <li><i class="bi bi-instagram"></i></li>
+                </ul>
+            </div>
+        </div>
+    
     </div>
+    
+
 
 @endsection
 
