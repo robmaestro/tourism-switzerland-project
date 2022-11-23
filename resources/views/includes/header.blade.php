@@ -7,13 +7,13 @@
             <a class="navbar-brand" href="#">
                 <div class="r-title-main">
                     @if (isset($isWhite))
-                        <span>
+                        <span style="color: white">
                             SWITZ
                         </span>
                         <img class="switz-logo"
                             src="https://cdn.britannica.com/43/4543-004-C0D5C6F4/Flag-Switzerland.jpg">
                     @else
-                        <span style="color: white">
+                        <span>
                             SWITZ
                         </span>
                         <img class="switz-logo"
