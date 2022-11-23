@@ -109,8 +109,9 @@
         <div class="dropdown p-2 my-auto">
             <div class="d-flex">
                 <span class="d-none d-lg-block my-auto">Welcome {{ $user->fname }}!</span>
-                <i class="bi bi-person-circle dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                    style="cursor: pointer;"></i>
+                 <i class=" dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                style="cursor: pointer;"> <img src="https://ui-avatars.com/api/?name={{ $user->fname }}+{{ $user->lname }}&background=random"
+                class="img-profile rounded-circle e-avatar" alt="User Image" width="25" height="25"></i>
                 <ul class="dropdown-menu rounded-0 py-0 me-2" aria-labelledby="dropdownMenuButton1" class="p-5">
                     <div class="d-flex px-3 tchHover" onclick="window.location='{{ url('/profile') }}'">
                         <span class="dropdown-menu-arrow"></span>
