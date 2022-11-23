@@ -87,7 +87,7 @@
                 </div>
             </div>
 
-            <form action="profile" method="POST">
+            <form action="postProfile" method="POST">
                 @csrf
                 <div class="e-second">
                     <div class="row">
