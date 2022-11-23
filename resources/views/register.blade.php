@@ -3,9 +3,9 @@
 @section('class', 'jbody-bg')
 
 @section('content')
-    <div class="container">
+    <div class="j-container">
         <div class="d-flex flex-column flex-md-row justify-content-evenly py-md-5 j-container">
-            <div class="px-2 px-md-0 pe-md-5 py-3 pb-md-0 ">
+            <div class="px-2 px-md-0 pe-md-5 py-3 pb-md-0 j-signup-now">
                 <h1>Sign up now!</h1>
                 <hr>
                 <p>Are you destined to travel? or do you want to appreciate nature's beautiful art? Jobs fill your personal
@@ -14,12 +14,12 @@
                 <button type="button" class="btn btn-dark  btn-md-outline-light my-3 rounded-0"
                     onclick="window.location='{{ url('/') }}'">Learn More</button>
             </div>
-            <div class="jcontainer-signup my-auto p-3" style="background-color: rgba(210, 222, 228, 0.1);">
+            <div class="jcontainer-signup p-3" style="background-color: rgba(210, 222, 228, 0.1);">
                 <div class="d-flex flex-row justify-content-center justify-content-md-start">
                     <h1 class="my-auto text-center"><i class="bi bi-person-fill me-1"></i>Registration</h1>
                 </div>
                 <hr>
-                <div class="py-4 px-md-5 j-container">
+                <div class="j-input-box-text">
                     <form method="POST" action="/register">
                         @csrf
                         <div class="row">

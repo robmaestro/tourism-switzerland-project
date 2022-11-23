@@ -15,6 +15,7 @@ Route::get('/register', function () {
 });
 
 
+
 Route::get('profile', [AccountController::class, 'getUserDetails']);
 Route::post('/postProfile', [AccountController::class, 'updateUser']);
 
