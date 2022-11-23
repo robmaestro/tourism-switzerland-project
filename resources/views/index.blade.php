@@ -377,12 +377,14 @@
                                 <i class="fas fa-star me-user-star" data-value='3'></i>
                                 <i class="fas fa-star me-user-star" data-value='4'></i>
                                 <i class="fas fa-star me-user-star" data-value='5'></i>
-                                {{-- <i type="button" id="d-remove-rating" class="bi bi-x-circle-fill mt-2"></i> --}}
                             </div>
                         </div>
                         <i type="button" id="d-remove-rating" class="mt-2">Remove</i>
-                        {{-- <button type="button" id="d-remove-rating" class="btn btn-outline-danger mt-2">Remove rating</button> --}}
-                        {{-- <div class="j-remove-rating mt-5">remove rating</div> --}}
+                        <div class="form-floating">
+                            <textarea class="form-control j-text-comment" placeholder="Leave a comment here" id="floatingTextarea" name="userComment"></textarea>
+                            <label for="floatingTextarea">Comments</label>
+                            <button type="button" class="btn btn-dark btn-md" id="j-add-comment">add comment</button>
+                        </div>
                     @endif
                 </div>
                 <div class="modal-footer">
@@ -780,7 +782,7 @@
                                     timer: 2000,
                                     icon: 'success',
                                     showConfirmButton: false,
-                                    toast:true
+                                    toast: true
                                 }),
                                 $.ajax({
                                     type: "POST",
@@ -801,6 +803,32 @@
                     })
                 })
             @endif
+
+            @if (isset($user))
+                $('#j-add-comment').on('click', function() {
+                    console.log("clicked");
+                    var id = $('.me-star-rating').data('dest');
+                    var userComment = document.getElementById("floatingTextarea").value;
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        type: "POST",
+                        url: '/addComment',
+                        data: {
+                            user_id: {{ $user->id }},
+                            destination_id: id,
+                            userComment: userComment
+                        },
+                        success: function(response) {
+                            console.log(response);
+                        }
+                    })
+                })
+            @endif
+
         });
     </script>
 @endsection
