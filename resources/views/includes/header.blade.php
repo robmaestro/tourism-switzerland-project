@@ -4,7 +4,7 @@
 <div class="header">
     <nav class="navbar navbar-expand-lg navbar-container">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ url('/') }}">
                 <div class="r-title-main">
                     @if (isset($isWhite))
                         <span style="color: white">
