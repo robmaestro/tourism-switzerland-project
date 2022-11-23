@@ -379,7 +379,8 @@
                                 <i class="fas fa-star me-user-star" data-value='5'></i>
                             </div>
                         </div>
-                        <div class="j-remove-rating mt-5">remove rating</div>
+                        <button type="button" id="d-remove-rating" class="btn btn-outline-danger">Remove rating</button>
+                        {{-- <div class="j-remove-rating mt-5">remove rating</div> --}}
                     @endif
                 </div>
                 <div class="modal-footer">
@@ -755,7 +756,7 @@
             })
 
             @if (isset($user))
-                $('.j-remove-rating').on('click', function() {
+                $('#d-remove-rating').on('click', function() {
                     var id = $('.me-star-rating').data('dest');
                     console.log("clicked");
                     $.ajaxSetup({
