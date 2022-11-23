@@ -51,15 +51,13 @@ class AccountController extends Controller
         if (Auth::check()) {
             $select = 'select * from users where id =' . $id;
             $users = DB::select($select);
-
             return view('userDetails', ['users' => $users]);
         }
-
     }
     
   public function updateUser(Request $request)
     {
-        dd('ok');
+        
         $id = Auth::id(); 
         $user = User::find($id);
         $user->username = $request->username;
@@ -69,26 +67,13 @@ class AccountController extends Controller
         $user->nationality = $request->nationality;
         $user->email = $request->email;
         // $user->password = $request->password;
-
         $user->save();
         $select = 'select * from users where id =' . $id;
         $users = DB::select($select);
-
         return view('userDetails', ['users' => $users]);
     }
 
-    public function deleteUser (Request $request) {
-       
-        // $id = Auth::id(); 
-        // $user = User::find($id);
-        // $user->destroy();
-
-        $user = User::find(Auth::user()->user_id);
-        $user = DB::delete('delete from users')->user(id);
-        return view('register');
-
-        
-    }
+   
 
   
     function logout(Request $request)

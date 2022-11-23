@@ -104,7 +104,7 @@
             <i class="bi bi-person-circle dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown"
                 style="cursor: pointer;"></i>
             <ul class="dropdown-menu rounded-0 py-0 me-2" aria-labelledby="dropdownMenuButton1" class="p-5">
-                <div class="d-flex px-3 tchHover" onclick="window.location='{{ url('/userDetails') }}'">
+                <div class="d-flex px-3 tchHover" onclick="window.location='{{ url('/profile') }}'">
                     <span class="dropdown-menu-arrow"></span>
                     <span class="input-group-text bi bi-person-circle p-0 my-2 me-2 jspan-icons-dropdown"
                         id="basic-addon1"></span>
