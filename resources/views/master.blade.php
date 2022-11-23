@@ -6,6 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" href="https://cdn.britannica.com/43/4543-004-C0D5C6F4/Flag-Switzerland.jpg">
     <title>Switz - @yield('title')</title>
     <link href={{ asset('css/robbie.css') }} rel="stylesheet" type="text/css">
     <link href={{ asset('css/john.css') }} rel="stylesheet" type="text/css">
