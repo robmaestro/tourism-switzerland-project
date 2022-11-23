@@ -5,8 +5,7 @@
 
     @foreach ($users as $user)
         <div id="e-userDetails">
-            <form action="postProfile" method="POST">
-                @csrf
+
             <div class="e-first">
                 <div>
                     <h2 class="mb-0"> <span class="bi bi-person"> </span> PROFILE</h2>
@@ -88,7 +87,8 @@
                 </div>
             </div>
 
-         
+            <form action="postProfile" method="POST">
+                @csrf
                 <div class="e-second">
                     <div class="row">
                         <div class="col-lg-4 e-col1">
