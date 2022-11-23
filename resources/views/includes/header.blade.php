@@ -4,7 +4,7 @@
 <div class="header">
     <nav class="navbar navbar-expand-lg navbar-container">
         <div class="container">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="{{ url('/') }}">
                 <div class="r-title-main">
                     @if (isset($isWhite))
                         <span style="color: white">
@@ -108,10 +108,14 @@
     @if (isset($user))
         <div class="dropdown p-2 my-auto">
             <div class="d-flex gap-2">
-                <span class="d-none d-lg-block my-auto">Welcome {{ $user->fname }}!</span>
-                 <i class=" dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                style="cursor: pointer;"> <img src="https://ui-avatars.com/api/?name={{ $user->fname }}+{{ $user->lname }}&background=random"
-                class="img-profile rounded-circle e-avatar" alt="User Image" width="30" height="30"></i>
+                @if (isset($isWhite))
+                    <span class="d-none d-lg-block my-auto" style="color: white">Welcome {{ $user->fname }}!</span>
+                @else
+                    <span class="d-none d-lg-block my-auto">Welcome {{ $user->fname }}!</span>
+                @endif
+                <i class=" dropdown-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" style="cursor: pointer;">
+                    <img src="https://ui-avatars.com/api/?name={{ $user->fname }}+{{ $user->lname }}&background=random"
+                        class="img-profile rounded-circle e-avatar" alt="User Image" width="30" height="30"></i>
                 <ul class="dropdown-menu rounded-0 py-0 me-2 mt-2" aria-labelledby="dropdownMenuButton1" class="p-5">
                     <div class="d-flex px-3 tchHover" onclick="window.location='{{ url('/profile') }}'">
                         <span class="dropdown-menu-arrow"></span>
