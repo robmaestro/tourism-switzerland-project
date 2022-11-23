@@ -5,19 +5,18 @@
 @section('content')
     <div class="container">
         <div class="d-flex flex-column flex-md-row justify-content-evenly py-md-5 j-container">
-            <div class="pe-md-5 py-3 pb-md-0 j">
+            <div class="px-2 px-md-0 pe-md-5 py-3 pb-md-0 ">
                 <h1>Sign up now!</h1>
                 <hr>
-                <p>Jobs fill your personal account, but adventures fill your soul. Let's go on an adventure and see some
-                    spectacular landscapes. Jobs fill your personal account, but adventures fill your soul. Let's go on an
-                    adventure and see some spectacular landscapes. Jobs fill your personal account, but adventures fill your
-                    soul. Let's go on an adventure and see some spectacular landscapes.</p>
-                <button type="button" class="btn btn-outline-light mt-3 rounded-0">Learn More</button>
+                <p>Are you destined to travel? or do you want to appreciate nature's beautiful art? Jobs fill your personal
+                    account, but adventures fill your soul. Let's go on an adventure and see some
+                    spectacular landscapes.</p>
+                <button type="button" class="btn btn-dark  btn-md-outline-light my-3 rounded-0"
+                    onclick="window.location='{{ url('/') }}'">Learn More</button>
             </div>
             <div class="jcontainer-signup my-auto p-3" style="background-color: rgba(210, 222, 228, 0.1);">
-                <div class="d-flex flex-row text-start justify-content-between">
+                <div class="d-flex flex-row justify-content-center justify-content-md-start">
                     <h1 class="my-auto text-center"><i class="bi bi-person-fill me-1"></i>Registration</h1>
-                    <i class="bi bi-arrow-left-circle my-auto" style="font-size: 30px;"></i>
                 </div>
                 <hr>
                 <div class="py-4 px-md-5 j-container">
@@ -26,7 +25,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="input-group mb-3">
-                                    <div class="input-group-prepend" style="border-bottom: 1px solid white">
+                                    <div class="input-group-prepend j-input-icon">
                                         <span class="input-group-text bi bi-person p-0 mx-auto jspan-icons"
                                             id="basic-addon1"></span>
                                     </div>
@@ -36,7 +35,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="input-group mb-3">
-                                    <div class="input-group-prepend" style="border-bottom: 1px solid white">
+                                    <div class="input-group-prepend j-input-icon">
                                         <span class="input-group-text bi bi-person p-0 mx-auto jspan-icons"
                                             id="basic-addon1"></span>
                                     </div>
@@ -48,7 +47,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="input-group mb-3">
-                                    <div class="input-group-prepend" style="border-bottom: 1px solid white">
+                                    <div class="input-group-prepend j-input-icon">
                                         <span class="input-group-text bi bi-gender-ambiguous p-0 mx-auto jspan-icons"
                                             id="basic-addon1"></span>
                                     </div>
@@ -63,7 +62,7 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="input-group mb-3">
-                                    <div class="input-group-prepend" style="border-bottom: 1px solid white">
+                                    <div class="input-group-prepend j-input-icon">
                                         <span class="input-group-text bi bi-flag p-0 mx-auto jspan-icons"
                                             id="basic-addon1"></span>
                                     </div>
@@ -74,7 +73,7 @@
                             </div>
                         </div>
                         <div class="input-group mb-3">
-                            <div class="input-group-prepend" style="border-bottom: 1px solid white">
+                            <div class="input-group-prepend j-input-icon">
                                 <span class="input-group-text bi bi-person p-0 mx-auto jspan-icons"
                                     id="basic-addon1"></span>
                             </div>
@@ -82,21 +81,21 @@
                                 placeholder="Username" name="username" aria-describedby="basic-addon1" />
                         </div>
                         <div class="input-group mb-3">
-                            <div class="input-group-prepend" style="border-bottom: 1px solid white">
+                            <div class="input-group-prepend j-input-icon">
                                 <span class="input-group-text bi bi-key p-0 mx-auto jspan-icons" id="basic-addon1"></span>
                             </div>
                             <input type="password" class="form-control rounded-0 jinput" aria-label="Password"
                                 placeholder="Password" name="password" aria-describedby="basic-addon1" />
                         </div>
                         <div class="input-group mb-3">
-                            <div class="input-group-prepend" style="border-bottom: 1px solid white">
+                            <div class="input-group-prepend j-input-icon">
                                 <span class="input-group-text bi bi-envelope p-0 mx-auto jspan-icons"
                                     id="basic-addon1"></span>
                             </div>
                             <input type="email" class="form-control rounded-0 jinput" aria-label="Email"
                                 placeholder="Email" name="email" aria-describedby="basic-addon1" />
                         </div>
-                        <button type="submit" class="btn btn-md rounded-0 btn-dark jregister-button">Register</button>
+                        <button type="submit" class="btn btn-md rounded-0 btn-dark jregister-button mt-3">Register</button>
                     </form>
                 </div>
             </div>
@@ -143,11 +142,6 @@
                                                 class="form__field">
                                             <label class="form__label" for="name">Password</label>
                                         </div>
-                                    </div>
-                                    <div class="cntr pt-2">
-                                        <input checked="" type="checkbox" id="cbx" class="hidden-xs-up">
-                                        <label for="cbx" class="cbx"></label>
-                                        <label>Remember</label>
                                     </div>
                                     <button type="submit"
                                         class="btn btn-md rounded-0 btn-dark jregister-button mt-4">Login</button>

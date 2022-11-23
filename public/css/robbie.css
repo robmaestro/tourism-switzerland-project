@@ -124,7 +124,7 @@ body {
 }
 
 
-@media (max-width: 768px) and (min-width: 426px) {
+@media (max-width: 1000px) and (min-width: 426px) {
     .me-cont-svg,
     .r-title-container {
         display: none;
@@ -209,8 +209,8 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        bottom:100px;
         position: relative;
+        padding: 10px
     }
 
     .r-content-info {
@@ -223,7 +223,6 @@ body {
         width: 100%;
         display: flex;
         gap: 25px;
-        padding: 0 10px;
     }
 
     .r-content-description {
@@ -284,11 +283,17 @@ body {
     }
     
     .r-create-account-container{
-        display:flex;
         flex-direction: column;
         align-items: center;
         font-size:25px;
+        top: 1350px;
+        left: 0; 
+        right: 0; 
+        position:absolute;
+        margin: auto;
+        text-align: center;
     }
+
 
     .me-carousel-image{
         height: 400px !important;
@@ -378,7 +383,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        font-size: 25px;
+        font-size: 20px;
         flex-direction: column;
     }
 
@@ -394,7 +399,7 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
-        bottom:100px;
+        padding: 5px;
         position: relative;
     }
 
@@ -405,7 +410,6 @@ body {
         justify-content: center;
         flex-direction: column;
         gap: 25px;
-        padding: 0 10px;
     }
 
     .r-image-banner {
@@ -497,10 +501,16 @@ body {
     }
     
     .r-create-account-container{
-        display:flex;
         flex-direction: column;
         align-items: center;
+        font-size:25px;
+        top: 1020px;
+        left: 0; 
+        right: 0; 
+        position:absolute;
+        margin: auto;
         font-size:16px;
+        text-align: center;
     }
 
 }
