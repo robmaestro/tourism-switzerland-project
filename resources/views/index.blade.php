@@ -234,8 +234,15 @@
                 d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
 
-        <svg class='me-gps me-gps-10' data-name='{{$destination[10]->dest_name}}' data-id='{{$destination[10]->id}}' data-desc='{{$destination[10]->dest_description}}' data-images='{{json_encode($main["11"])}}' data-bs-toggle="modal" data-bs-target="#me-dest-modal" style="position:absolute;top: 188px;bottom:0;left: 251px;right: 0; z-index:1;" transform="scale(0.1)" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_11" x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71" style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
-            <path fill="red" d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
+        <svg class='me-gps me-gps-10' data-name='{{ $destination[10]->dest_name }}'
+            data-id='{{ $destination[10]->id }}' data-desc='{{ $destination[10]->dest_description }}'
+            data-images='{{ json_encode($main['11']) }}' data-bs-toggle="modal" data-bs-target="#me-dest-modal"
+            style="position:absolute;top: 188px;bottom:0;left: 251px;right: 0; z-index:1;" transform="scale(0.1)"
+            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_11"
+            x="0px" y="0px" width="395.71px" height="395.71px" viewBox="0 0 395.71 395.71"
+            style="enable-background:new 0 0 395.71 395.71;" xml:space="preserve">
+            <path fill="red"
+                d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738   c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388   C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191   c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z" />
         </svg>
         {{-- divs for aniamtion --}}
         <div class="me-location-hider-0"
@@ -310,9 +317,12 @@
         <div class="r-location-list d-flex flex-column ">
             <ul class="row r-list-map">
 
-                @foreach ($destination as $key=>$dest)
-                {{-- {{dd($key);}} --}}
-                    <li class="col-md-3" data-bs-toggle="modal" data-bs-target="#me-dest-modal"  data-name='{{$dest->dest_name}}' data-id='{{$dest->id}}' data-desc='{{$dest->dest_description}}' data-images='{{json_encode($main[$key+1])}}'> {{ $dest->dest_name }}</li>
+                @foreach ($destination as $key => $dest)
+                    {{-- {{dd($key);}} --}}
+                    <li class="col-md-3" data-bs-toggle="modal" data-bs-target="#me-dest-modal"
+                        data-name='{{ $dest->dest_name }}' data-id='{{ $dest->id }}'
+                        data-desc='{{ $dest->dest_description }}' data-images='{{ json_encode($main[$key + 1]) }}'>
+                        {{ $dest->dest_name }}</li>
                 @endforeach
             </ul>
         </div>
@@ -369,6 +379,7 @@
                                 <i class="fas fa-star me-user-star" data-value='5'></i>
                             </div>
                         </div>
+                        <div class="j-remove-rating mt-5">remove rating</div>
                     @endif
                 </div>
                 <div class="modal-footer">
@@ -385,13 +396,13 @@
             <div class="container-fluid  d-none d-md-block col-md-4" style="background-color: transparent;">
                 <div class="modal-dialog modal-md me-0">
                     <div class="modal-content rounded-0"
-                        style="background-image: url('https://images.unsplash.com/photo-1508166093217-f35d00c95fca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'); background-size: cover; width:100%; height: 500px;">
+                        style="background-image: url('https://images.unsplash.com/photo-1508166093217-f35d00c95fca?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80'); background-size: cover; width:100%; height: 450px;">
                     </div>
                 </div>
             </div>
             <div class="container-fluid col-md-4" style="background-color: transparent;">
                 <div class="modal-dialog p-5 p-md-0 modal-md ms-md-0">
-                    <div class="modal-content rounded-0" style="height: 500px; width: 100%;">
+                    <div class="modal-content rounded-0" style="height: 450px; width: 100%;">
                         <div class="modal-header" style="border-bottom: none;">
                             <button type="button" class="btn-close" data-bs-dismiss="modal"
                                 aria-label="Close"></button>
@@ -424,7 +435,8 @@
                                     </div> --}}
                                     @if (session('status'))
                                         <div class="alert alert danger p-0 mb-0">
-                                            <span class="bi bi-exclamation-diamond" style="color: red; font-size: 12px;">{{session('status')}}</span>
+                                            <span class="bi bi-exclamation-diamond"
+                                                style="color: red; font-size: 12px;">{{ session('status') }}</span>
                                         </div>
                                     @endif
                                     <button type="submit"
@@ -551,15 +563,17 @@
         <div class="r-content-container">
             <div class="r-content">
                 <div class="r-content-description">
-                    @foreach ($destination as $key=>$dest)
-                        <div class="r-content-info" data-bs-toggle="modal" data-bs-target="#me-dest-modal"  data-name='{{$dest->dest_name}}' data-id='{{$dest->id}}' data-desc='{{$dest->dest_description}}' data-images='{{json_encode($main[$key+1])}}'>
-                            <img class="r-content-image" src={{$main[$key+1][0]}}>
+                    @foreach ($destination as $key => $dest)
+                        <div class="r-content-info" data-bs-toggle="modal" data-bs-target="#me-dest-modal"
+                            data-name='{{ $dest->dest_name }}' data-id='{{ $dest->id }}'
+                            data-desc='{{ $dest->dest_description }}' data-images='{{ json_encode($main[$key + 1]) }}'>
+                            <img class="r-content-image" src={{ $main[$key + 1][0] }}>
                             <div class="image-overlay">
-                                <div class="image-overlay-text" >
+                                <div class="image-overlay-text">
                                     {{ $dest->dest_name }}
                                 </div>
                             </div>
-                            {{-- @foreach ($destination as $key=>$dest)
+                            {{-- @foreach ($destination as $key => $dest)
                             {{dd($key);}}
                                 <li class="col-md-3" data-bs-toggle="modal" data-bs-target="#me-dest-modal"  data-name='{{$dest->dest_name}}' data-id='{{$dest->id}}' data-desc='{{$dest->dest_description}}' data-images='{{json_encode($main[$key+1])}}'> {{ $dest->dest_name }}</li>
                             @endforeach --}}
@@ -581,7 +595,7 @@
 
         <div class="r-create-account-container">
             <div class="r-create-account-text">
-                Don't have an account? Create for <a href={{url('/register')}}>FREE!</a>
+                Don't have an account? Create for <a href={{ url('/register') }}>FREE!</a>
             </div>
         </div>
     </div>
@@ -611,9 +625,9 @@
                 $('.me-modal-title').text(title)
                 $('.me-dest-description').text(body)
                 $('.me-carousel').prepend(img_cont)
-                $('.me-star-rating').data('value',id)
+                $('.me-star-rating').data('value', id)
                 console.log('clicked')
-                @if(!isset($user))
+                @if (!isset($user))
                     $.ajaxSetup({
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -778,7 +792,7 @@
                 });
             @endif
             const myOffcanvas = document.getElementById('offcanvasExample')
-            $('#offcanvas').on('click',function(){
+            $('#offcanvas').on('click', function() {
                 $('.me-cont-svg').addClass('me-negative-index');
                 const offcanvas = new bootstrap.Offcanvas(myOffcanvas);
                 offcanvas.show()
@@ -786,7 +800,32 @@
             myOffcanvas.addEventListener('hidden.bs.offcanvas', event => {
                 $('.me-cont-svg').removeClass('me-negative-index')
             })
+
+            @if (isset($user))
+                $('.j-remove-rating').on('click', function() {
+                    var id = $('.me-star-rating').data('dest');
+                    console.log("clicked");
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+
+                    $.ajax({
+                        type: "POST",
+                        url: '/deleteRating',
+                        data: {
+                            user_id:{{$user->id}},
+                            destination_id: id
+                        },
+                        success: function(response) {
+                            console.log(response);
+                            $('.me-star-rating').data("value", 0)
+                            $('.me-user-star').removeClass('me-active-star me-hover-star me-inactive-star')
+                        }
+                    })
+                })
+            @endif
         });
-        
     </script>
 @endsection

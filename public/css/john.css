@@ -18,7 +18,6 @@
     font-size: 30px !important;
     background: none !important;
     border: 0 !important;
-    color: white !important;
 }
 
 .jspan-icons-dropdown {
@@ -30,29 +29,30 @@
 input.jinput {
     background: none !important;
     border: 0 !important;
-    color: white !important;
     box-shadow: none !important;
-    border-bottom: 1px solid white !important;
+    border-bottom: 1px solid gray !important;
 }
 
 input.jinput:-webkit-autofill {
     background: none !important;
     border: 0 !important;
-    color: white !important;
     box-shadow: none !important;
-    border-bottom: 1px solid white !important;
+    border-bottom: 1px solid gray !important;
+}
+
+.j-input-icon {
+    border-bottom: 1px solid gray !important;
 }
 
 input.form-control::placeholder {
-    color: white;
+    color: black;
 }
 
 select.jdropdown {
     background: none !important;
     border: 0 !important;
-    color: white !important;
     box-shadow: none !important;
-    border-bottom: 1px solid white !important;
+    border-bottom: 1px solid gray !important;
 }
 
 .jlogin-title {
@@ -227,7 +227,7 @@ option.joption {
     background: #D3D3D3;
 }
 
-.tchHover:hover .dropdown-menu-arrow{
+.tchHover:hover .dropdown-menu-arrow {
     background: #D3D3D3;
 }
 
@@ -243,18 +243,20 @@ option.joption {
         min-width: 300px;
     }
 
-    .j-container{
-        color:black !important;
+    .j-container {
+        color: black !important;
     }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 769px) and (max-width: 991px) {
     .jcontainer-signup {
         min-width: 400px;
     }
-
-    .j-container{
-        color:black !important;
+    input.jinput, .j-container, .jspan-icons, input.jinput:-webkit-autofill, input.form-control::placeholder, select.jdropdown{
+        color: white !important;
+    }
+    .j-input-icon,select.jdropdown, input.jinput{
+        border-bottom: 1px solid white !important;
     }
 }
 
@@ -262,8 +264,10 @@ option.joption {
     .jcontainer-signup {
         min-width: 500px;
     }
-
-    .j-container{
-        color:black !important;
+    input.jinput, .j-container, .jspan-icons, input.jinput:-webkit-autofill, input.form-control::placeholder, select.jdropdown{
+        color: white !important;
+    }
+    .j-input-icon,select.jdropdown, input.jinput{
+        border-bottom: 1px solid white !important;
     }
 }
