@@ -31,3 +31,5 @@ Route::post('/editRating', [ReviewController::class, 'editRating']);
 Route::post('/getRating', [ReviewController::class, 'getRating']);
 Route::post('/getRatingAvg', [ReviewController::class, 'getRatingAvg']);
 Route::post('/deleteRating', [ReviewController::class, 'deleteRating']);
+
+Route::post('/addComment', [ReviewController::class, 'addComment']);

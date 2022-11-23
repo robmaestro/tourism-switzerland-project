@@ -27,4 +27,11 @@ class Review extends Model
         $review->save();
         return;
     }
+    public static function addComment($id, $userComment)
+    {
+        $review = Review::find($id);
+        $review->message = $userComment;
+        $review->save();
+        return;
+    }
 }
