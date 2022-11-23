@@ -39,4 +39,13 @@ class ReviewController extends Controller
             return ['avg' => 0, 'reviewCount' => 0];
         }
     }
+    function deleteRating(Request $request){
+        $rating = DB::table('reviews')->where('user_id', $request->user_id)->where('destination_id', $request->destination_id)->get();
+        if ($rating->isEmpty()) {
+            return 'no ratings made';
+        } else {
+            $review = Review::updateReview($rating[0]->id, 0);
+            return 'rating removed successfully';
+        }
+    }
 }
