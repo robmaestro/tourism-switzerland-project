@@ -1,4 +1,10 @@
-<div class="footer">
+{{-- <div class="footer">
+    <div class="r-create-account-container">
+        <div class="r-create-account-text">
+            Don't have an account? Create for <a href={{ url('/register') }}>FREE!</a>
+        </div>
+    </div>
+
     <svg id="visual" viewBox="0 0 768 300" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
         <path
@@ -53,4 +59,4 @@
         </div>
     </div>
 
-</div>
+</div> --}}

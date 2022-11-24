@@ -12,12 +12,9 @@ body {
     overflow-x: hidden;
 }
 
-.footer {
-    display: none;
-}
-
 .mobile-container {
-    display: none;
+    display: flex;
+    flex-direction: column;
 }
 
 .navbar-container {
@@ -31,6 +28,7 @@ body {
     font-size: 20px;
     gap: 5px;
     font-weight: 800;
+    color:white;
 }
 
 .switz-logo {
@@ -48,7 +46,9 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    position: sticky;
+    position: absolute;
+    height: auto;
+    color:white;
 }
 
 .bi-person-circle {
@@ -70,7 +70,7 @@ body {
     display: flex;
     justify-content: center;
     font-size: 35px;
-    padding: 15px 0px;
+    padding: 50px 0px;
 }
 
 .r-list-map {
@@ -112,40 +112,275 @@ body {
     justify-content: flex-end;
     transition: all 0.25s;
     font-size: 40px;
-    padding:10px 20px;
-}
-    
-.me-dest-body{
-    padding: 20px 20px !important; 
+    padding: 10px 20px;
 }
 
-.me-dest-header{
+.me-dest-body {
+    padding: 20px 20px !important;
+}
+
+.me-dest-header {
     padding: 25px 20px !important;
 }
 
 .me-star-rating {
-    padding-top:5px;
+    padding-top: 5px;
 }
 
+.r-mobile-title {
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+.r-image-banner {
+    min-height: 100vh;
+    width: 100%;
+    object-fit: contain;
+    background-image: url("../assets/bg.jpg");
+    background-repeat: no-repeat;
+    image-resolution: 16/9;
+    background-size: cover;
+}
+
+.r-mobile-title > .r-welcome {
+    font-size: 90px;
+    color: white;
+    position: absolute;
+    bottom: 50%;
+    font-weight: 500;
+}
+
+.r-captions {
+    background-color: #6a994e;
+    padding: 25px 50px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    flex-direction: column;
+}
+
+.spacer {
+    aspect-ratio: 960/300;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.r-content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+}
+
+.r-content-info {
+    display: flex;
+    gap: 10px;
+    position: relative;
+}
+
+.r-content {
+    width: 100%;
+    display: flex;
+    gap: 25px;
+}
+
+.r-content-description {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    text-align: justify;
+    overflow-x: auto;
+    gap: 10px;
+}
+
+.r-content-title {
+    font-weight: 500;
+    font-size: 20px;
+    position: relative;
+    right: 300px;
+    padding: 10px;
+    color: white;
+}
+
+.r-content-image {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.r-content-details {
+    font-size: 19px;
+    overflow-y: auto;
+    height: 450px;
+}
+
+.footer {
+    width: 100%;
+    position: relative;
+}
+
+.footer-title{
+    font-weight:500;
+    font-size:18px;
+}
+
+.footer-container {
+    background-color: #6a994e;
+    padding: 25px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-evenly;
+    font-size: 13px;
+}
+
+.footer-container li,
+.footer-container ul {
+    list-style: none;
+    padding: 0px;
+}
+
+.footer-socials ul {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.footer-container {
+    background-color: #6a994e;
+    padding: 25px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-evenly;
+    font-size: 13px;
+}
+
+.footer-container li,
+.footer-container ul {
+    list-style: none;
+    padding: 0px;
+}
+
+.footer-socials ul {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.footer-about a{
+    text-decoration: none;
+    color:white;
+    cursor: pointer;
+}
+
+.footer-about a:hover{
+    text-decoration: none;
+    color:rgb(215, 215, 215);
+    cursor: pointer;
+}
+
+.r-create-account-container {
+    position: absolute;
+    top:10%;
+    margin:auto;
+    width: 100%;
+    text-align: center;
+}
+
+.me-carousel-image {
+    height: 400px !important;
+    min-height: 400px !important;
+}
+
+.me-modal-title {
+    font-size: 22px;
+}
+
+.me-dest-description,
+.me-star-rating {
+    font-size: 16px;
+}
+
+.banner-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 1080px;
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.6;
+    transition: all 0.25s;
+    font-size: 40px;
+}
+
+.j-container{
+    padding: 50px;
+    height:100vh;
+}
+
+#e-userDetails, #e-editdetails{
+    height:100vh;    
+}
+
+.r-details-container{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 150px;
+}
+
+.j-signup-now{
+    max-width: 50%;
+}
+
+.jcontainer-signup{
+    height:max-content !important;
+}
+
+.e-first{
+    color:white;
+}
+
+.r-create-account-text{
+    font-size:35px;
+}
+
+.r-icon{
+    cursor: pointer;
+}
+
+.j-random-comment{
+    padding-bottom: 10px;
+}
 
 @media (max-width: 1000px) and (min-width: 426px) {
+    .header {
+        position: static;
+        background-color: rgb(242, 232, 232);
+    }
+
     .me-cont-svg,
     .r-title-container {
         display: none;
     }
 
-    body {
-        background-color: rgb(242, 232, 232) !important;
-    }
-
-    .container-fluid {
-        background-color: rgb(242, 232, 232);
-    }
-
     .navbar-container {
         width: 100%;
         display: flex !important;
-        background-color: rgb(242, 232, 232);
     }
 
     .navbar-togglers {
@@ -159,22 +394,30 @@ body {
 
     .footer {
         display: block;
-        background-color: rgb(242, 232, 232) !important;
+        width: 100%;
     }
 
     .r-mobile-title {
         display: flex;
         justify-content: center;
+        height:100%;
     }
 
     .r-image-banner {
-        min-height: 600px;
+        min-height: 100vh;
         width: 100%;
         object-fit: cover;
+        display:flex;
+        justify-content: center;
+        padding-top:10%;
     }
 
     .r-mobile-title > .r-welcome {
-        font-size: 35px;
+        font-size: 60px;
+        display: flex;
+        position: absolute;
+        font-weight: 500;
+        bottom:50%;
     }
 
     .r-carousel-caption {
@@ -214,13 +457,13 @@ body {
         flex-direction: column;
         align-items: center;
         position: relative;
-        padding: 10px
+        padding: 10px;
     }
 
     .r-content-info {
         display: flex;
         gap: 10px;
-        position:relative;
+        position: relative;
     }
 
     .r-content {
@@ -242,9 +485,9 @@ body {
         font-weight: 500;
         font-size: 20px;
         position: relative;
-        right:300px;
-        padding:10px;
-        color:white;
+        right: 300px;
+        padding: 10px;
+        color: white;
     }
 
     .r-content-image {
@@ -285,41 +528,71 @@ body {
     .bi-person-circle {
         display: none;
     }
-    
-    .r-create-account-container{
-        flex-direction: column;
-        align-items: center;
-        font-size:25px;
-        top: 1350px;
-        left: 0; 
-        right: 0; 
-        position:absolute;
-        margin: auto;
+
+    .r-create-account-container {
+        position: absolute;
+        top:10%;
+        margin:auto;
+        width: 100%;
         text-align: center;
     }
 
-
-    .me-carousel-image{
+    .me-carousel-image {
         height: 400px !important;
-        min-height:400px !important;
+        min-height: 400px !important;
     }
 
-    .me-modal-title{
-        font-size:22px;
+    .me-modal-title {
+        font-size: 22px;
     }
 
-    .me-dest-description, .me-star-rating  {
-        font-size:16px;
+    .me-dest-description,
+    .me-star-rating {
+        font-size: 16px;
     }
 
-    .e-second{
+    .e-second {
         padding: 10px 0px !important;
     }
+    
+    .j-container{
+        background-color: rgb(242, 232, 232);
+        padding:20px !important;
+        height:100vh;
+    }
 
+    #e-userDetails, #e-editdetails{
+        background-color: rgb(242, 232, 232);
+        padding:25px;
+    }
 
+    .j-input-box-text{
+        font-size:12px;
+    }
+
+    .j-signup-now{
+        max-width: 100%;
+    }
+    
+    .r-title-main{
+        color:black !important
+    }
+
+    .r-details-container{
+        margin:0;
+    }
+
+    .r-create-account-text{
+        font-size:25px;
+    }
 }
 
 @media (max-width: 425px) {
+    .header {
+        position: static;
+        background-color: rgb(242, 232, 232);
+    }
+
     .me-cont-svg,
     .r-title-container {
         display: none;
@@ -328,14 +601,17 @@ body {
     body {
         background-color: rgb(242, 232, 232) !important;
     }
-    .container-fluid {
+    .container-fluid, .j-container {
         background-color: rgb(242, 232, 232);
+    }
+
+    .j-container{
+        padding:20px;
     }
 
     .navbar-container {
         width: 100%;
         display: flex !important;
-        background-color: rgb(242, 232, 232);
     }
 
     .navbar-togglers {
@@ -358,13 +634,15 @@ body {
     }
 
     .r-image-banner {
-        min-height: 600px;
+        min-height: 100vh;
         width: 100%;
         object-fit: cover;
     }
 
     .r-mobile-title > .r-welcome {
         font-size: 30px;
+        position: absolute;
+        bottom: 50%;
     }
 
     .r-carousel-caption {
@@ -407,7 +685,6 @@ body {
         position: relative;
     }
 
-
     .r-content {
         width: 100%;
         display: flex;
@@ -417,7 +694,7 @@ body {
     }
 
     .r-image-banner {
-        min-height: 400px;
+        min-height: 100vh;
         width: 100%;
     }
 
@@ -425,7 +702,6 @@ body {
         padding-bottom: 13rem;
         font-size: 16px;
     }
-
 
     .r-content-image {
         width: 300px;
@@ -474,8 +750,8 @@ body {
         display: none;
     }
 
-    .r-content-info{
-        position:relative;
+    .r-content-info {
+        position: relative;
     }
 
     .r-content-title {
@@ -487,36 +763,50 @@ body {
         background: rgba(0, 0, 0, 0.4);
     }
 
-    .image-overlay-text{
-        font-size:25px;
+    .image-overlay-text {
+        font-size: 25px;
     }
 
-    .me-carousel-image{
+    .me-carousel-image {
         height: 350px !important;
-        min-height:350px !important;
-    }
-    
-    .me-dest-description, .me-star-rating  {
-        font-size:14px;
+        min-height: 350px !important;
     }
 
-
-
-    .me-modal-title{
-        font-size:20px;
+    .me-dest-description,
+    .me-star-rating {
+        font-size: 14px;
     }
-    
-    .r-create-account-container{
-        flex-direction: column;
-        align-items: center;
-        font-size:25px;
-        top: 950px;
-        left: 0; 
-        right: 0; 
-        position:absolute;
-        margin: auto;
-        font-size:16px;
+
+    .me-modal-title {
+        font-size: 20px;
+    }
+
+    .r-create-account-container {
+        position: absolute;
+        top:10%;
+        margin:auto;
+        width: 100%;
         text-align: center;
     }
 
+    #e-userDetails, #e-editdetails{
+        background-color: rgb(242, 232, 232);
+        padding:25px;
+    }
+
+    .j-signup-now{
+        max-width: 100%;
+    }
+
+    .r-title-main{
+        color:black !important
+    }
+
+    .r-details-container{
+        margin:0;
+    }
+
+    .r-create-account-text{
+        font-size:20px;
+    }
 }
