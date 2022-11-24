@@ -136,16 +136,18 @@ body {
 .r-image-banner {
     min-height: 100vh;
     width: 100%;
-    object-fit: cover;
-    background-image: url("../assets/1680167.png");
+    object-fit: contain;
+    background-image: url("../assets/bg.jpg");
     background-repeat: no-repeat;
+    image-resolution: 16/9;
+    background-size: cover;
 }
 
 .r-mobile-title > .r-welcome {
     font-size: 90px;
     color: white;
     position: absolute;
-    bottom: 70%;
+    bottom: 50%;
     font-weight: 500;
 }
 
@@ -221,6 +223,11 @@ body {
 .footer {
     width: 100%;
     position: relative;
+}
+
+.footer-title{
+    font-weight:500;
+    font-size:18px;
 }
 
 .footer-container {
@@ -388,8 +395,9 @@ body {
     .r-mobile-title > .r-welcome {
         font-size: 60px;
         display: flex;
-        position: relative;
+        position: absolute;
         font-weight: 500;
+        bottom:50%;
     }
 
     .r-carousel-caption {
@@ -613,6 +621,8 @@ body {
 
     .r-mobile-title > .r-welcome {
         font-size: 30px;
+        position: absolute;
+        bottom: 50%;
     }
 
     .r-carousel-caption {
