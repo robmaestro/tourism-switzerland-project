@@ -7,6 +7,7 @@
     $main = $data['images'];
     $ratings = $data['ratings'];
     $review_count = $data['review_count'];
+    
     $user = Auth::user();
 @endphp
 
@@ -377,6 +378,7 @@
                         <div class='me-stars-outer'>
                             <div class='me-stars-inner '></div>
                         </div>
+                        <div class="j-random-comment"></div>
                     @endif
                     <div id="carouselExampleIndicators" class="carousel slide me-carousel " data-bs-ride="true">
                         <div class="carousel-indicators">
@@ -414,11 +416,20 @@
                             </div>
                         </div>
                         <i type="button" id="d-remove-rating" class="mt-2">Remove</i>
+                        <hr>
+                        
                         <div class="form-floating">
-                            <textarea class="form-control j-text-comment" placeholder="Leave a comment here" id="floatingTextarea" name="userComment"></textarea>
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="resize:none; height: 150px;"></textarea>
+                            <label for="floatingTextarea">Leave your Comments here...</label>
+                            <button type="button" class="btn btn-dark btn-md mt-2" id="j-add-comment">Add comment</button>
+                          </div>
+
+                        {{-- <div class="form-floating">
+                            <textarea class="form-control j-text-comment" id="floatingTextarea" style="resize: none;" name="userComment"></textarea>
+
                             <label for="floatingTextarea">Comments</label>
-                            <button type="button" class="btn btn-dark btn-md" id="j-add-comment">add comment</button>
-                        </div>
+                            <button type="button" class="btn btn-dark btn-md mt-2" id="j-add-comment">Add comment</button>
+                        </div> --}}
                     @endif
                 </div>
                 <div class="modal-footer">
@@ -658,7 +669,25 @@
                         }
                     })
                 @endif
-
+                
+                @if (!isset($user))
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        type: "POST",
+                        url: '/getRandomMessage',
+                        data: {
+                            destination_id: id
+                        },
+                        success: function(response) {
+                            console.log(response);
+                            $('.j-random-comment').append(response)
+                        }
+                    })
+                @endif
 
             });
 
@@ -666,6 +695,7 @@
                 setTimeout(() => {
                     $('.carousel-inner').remove();
                     $('.me-user-star').removeClass('me-inactive-star me-hover-star me-active-star')
+                    $('.j-random-comment').empty()
                 }, 200);
             });
 
@@ -831,7 +861,7 @@
                 $('#j-add-comment').on('click', function() {
                     console.log("clicked");
                     var id = $('.me-star-rating').data('dest');
-                    var userComment = document.getElementById("floatingTextarea").value;
+                    var userComment = document.getElementById('floatingTextarea').value;
                     $.ajaxSetup({
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -846,12 +876,29 @@
                             userComment: userComment
                         },
                         success: function(response) {
+                            Swal.fire(
+                            'Good job!',
+                            'You added a comment!',
+                            'success'
+                            )
                             console.log(response);
                         }
                     })
                 })
             @endif
 
+
         });
+
+        // const button = document.getElementById('j-add-comment');
+
+        // button.addEventListener('click', function handleClick(event) {
+        // event.preventDefault();
+
+        // const comments = document.getElementById('floatingTextarea');
+        // console.log(comments.value);
+        // comments.value = '';
+        // });
+
     </script>
 @endsection
