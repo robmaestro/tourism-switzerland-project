@@ -538,8 +538,9 @@
                 fill="#6a994e"></path>
         </svg>
     
-        <div class="footer-container">
-            <div class="r-title-main">
+        <div class="bigger-footer">
+            <div class="footer-container">
+            <div class="r-title-main-bottom">
                 <span>
                     SWITZ
                 </span>
@@ -588,7 +589,7 @@
                 </ul>
             </div>
         </div>
-    
+        </div>
     </div>
     
 
@@ -599,7 +600,7 @@
     <script>
         $(document).ready(function() {
             $('#me-dest-modal').on('show.bs.modal', function(e) {
-
+                $('#floatingTextarea').val('')
                 var title = e.relatedTarget.getAttribute('data-name')
                 var body = e.relatedTarget.getAttribute('data-desc')
                 var id = e.relatedTarget.getAttribute('data-id')
@@ -886,10 +887,11 @@
                         },
                         success: function(response) {
                             Swal.fire(
-                            'Good job!',
-                            'You added a comment!',
+                            'Thanks for the review!',
+                            'You have successfully added your comment',
                             'success'
                             )
+                            $('#floatingTextarea').val('')
                             console.log(response);
                         }
                     })

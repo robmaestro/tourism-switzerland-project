@@ -80,7 +80,7 @@
         box-shadow: none !important;
         width: 80% !important;
         text-align: center;
-     
+
  }
  .label{
     font-weight: 600;
@@ -136,7 +136,7 @@
         color:black !important;
     }
 
-    .e-details{
+    .e-details, .e-edit-username{
         border-bottom: grey solid 1px !important;
     }
 
@@ -151,7 +151,7 @@
         color:black !important;
     }
 
-    .e-details{
+    .e-details, .e-edit-username{
         border-bottom: grey solid 1px !important;
     }
 
