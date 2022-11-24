@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Destination;
+use App\Models\destination;
 
 
 class DestinationController extends Controller
