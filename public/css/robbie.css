@@ -276,6 +276,18 @@ body {
     gap: 10px;
 }
 
+.footer-about a{
+    text-decoration: none;
+    color:white;
+    cursor: pointer;
+}
+
+.footer-about a:hover{
+    text-decoration: none;
+    color:rgb(215, 215, 215);
+    cursor: pointer;
+}
+
 .r-create-account-container {
     position: absolute;
     top:10%;
@@ -345,6 +357,10 @@ body {
 
 .r-create-account-text{
     font-size:35px;
+}
+
+.r-icon{
+    cursor: pointer;
 }
 
 @media (max-width: 1000px) and (min-width: 426px) {
