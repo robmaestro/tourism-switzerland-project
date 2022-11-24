@@ -702,7 +702,7 @@
                 setTimeout(() => {
                     $('.carousel-inner').remove();
                     $('.me-user-star').removeClass('me-inactive-star me-hover-star me-active-star')
-                }, 200);
+                }, 100);
                 $('.j-random-comment').empty()
             });
             

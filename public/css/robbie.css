@@ -363,6 +363,10 @@ body {
     cursor: pointer;
 }
 
+.j-random-comment{
+    padding-bottom: 10px;
+}
+
 @media (max-width: 1000px) and (min-width: 426px) {
     .header {
         position: static;
