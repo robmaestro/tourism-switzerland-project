@@ -547,12 +547,34 @@
             </div>
             <div class="footer-about">
                 <div class="footer-title">
+                    <span>Menu</span>
+                </div>
+                <ul>
+                    <li><a href="{{ url('/') }}">Home</a></li>
+                    <li><a data-bs-toggle="modal" data-bs-target="#loginModal" href="">Login</a></li>
+                    <li><a href="{{ url('/profile') }}">Profile</a></li>
+                </ul>
+            </div>
+            <div class="footer-about">
+                <div class="footer-title">
                     <span>About Us</span>
                 </div>
                 <ul>
-                    <li>Company</li>
-                    <li>Partners</li>
-                    <li>Management</li>
+                    <li><a href="">Company</a></li>
+                    <li><a href="">Partners</a></li>
+                    <li><a href="">Management</a></li>
+                    <li><a href="">Adress</a></li>
+                </ul>
+            </div>
+            <div class="footer-about">
+                <div class="footer-title">
+                    <span>Legal Information</span>
+                </div>
+                <ul>
+                    <li><a href="">Terms of Use</a></li>
+                    <li><a href="">Data Protection</a></li>
+                    <li><a href="">Imprint</a></li>
+                    <li><a href="">Cookies</a></li>
                 </ul>
             </div>
             <div class="footer-socials">
@@ -560,9 +582,9 @@
                     <span>Socials</span>
                 </div>
                 <ul>
-                    <li><i class="bi bi-facebook"></i></li>
-                    <li><i class="bi bi-twitter"></i></li>
-                    <li><i class="bi bi-instagram"></i></li>
+                    <li><i class="bi bi-facebook r-icon" href=""></i></li>
+                    <li><i class="bi bi-twitter r-icon" href=""></i></li>
+                    <li><i class="bi bi-instagram r-icon" href=""></i></li>
                 </ul>
             </div>
         </div>
