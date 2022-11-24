@@ -378,7 +378,8 @@
                         <div class='me-stars-outer'>
                             <div class='me-stars-inner '></div>
                         </div>
-                        <div class="j-random-comment"></div>
+                        <div><h6>User Experience</h6></div>
+                            <i><div class="j-random-comment ps-2"></div></i>
                     @endif
                     <div id="carouselExampleIndicators" class="carousel slide me-carousel " data-bs-ride="true">
                         <div class="carousel-indicators">
@@ -415,7 +416,7 @@
                                 <i class="fas fa-star me-user-star" data-value='5'></i>
                             </div>
                         </div>
-                        <i type="button" id="d-remove-rating" class="mt-2">Remove</i>
+                        <i type="button" id="d-remove-rating" class="mt-2">Remove rating</i>
                         <hr>
                         
                         <div class="form-floating">
@@ -684,7 +685,13 @@
                         },
                         success: function(response) {
                             console.log(response);
-                            $('.j-random-comment').append(response)
+                            if(response == "No comments yet."){
+                                $('.j-random-comment').append(response)
+                            }else{
+                                $('.j-random-comment').append('"'+response+'"')
+                            }
+
+                            // $('.j-random-comment').append(response)
                         }
                     })
                 @endif
@@ -695,9 +702,10 @@
                 setTimeout(() => {
                     $('.carousel-inner').remove();
                     $('.me-user-star').removeClass('me-inactive-star me-hover-star me-active-star')
-                    $('.j-random-comment').empty()
                 }, 200);
+                $('.j-random-comment').empty()
             });
+            
 
             function getRating(rating) {
                 let default_p = "0%";
@@ -719,7 +727,8 @@
                 Swal.fire({
                     title: 'Do you want to Logout?',
                     showCancelButton: true,
-                    confirmButtonText: 'Logout'
+                    confirmButtonText: 'Logout',
+                    confirmButtonColor: 'red',
                 }).then((result) => {
                     if (result.isConfirmed) {
                         Swal.fire({
