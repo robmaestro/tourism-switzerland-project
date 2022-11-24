@@ -7,6 +7,7 @@
     $main = $data['images'];
     $ratings = $data['ratings'];
     $review_count = $data['review_count'];
+    
     $user = Auth::user();
 @endphp
 
@@ -377,6 +378,7 @@
                         <div class='me-stars-outer'>
                             <div class='me-stars-inner '></div>
                         </div>
+                        <div class="j-random-comment"></div>
                     @endif
                     <div id="carouselExampleIndicators" class="carousel slide me-carousel " data-bs-ride="true">
                         <div class="carousel-indicators">
@@ -424,6 +426,7 @@
 
                         {{-- <div class="form-floating">
                             <textarea class="form-control j-text-comment" id="floatingTextarea" style="resize: none;" name="userComment"></textarea>
+
                             <label for="floatingTextarea">Comments</label>
                             <button type="button" class="btn btn-dark btn-md mt-2" id="j-add-comment">Add comment</button>
                         </div> --}}
@@ -644,7 +647,25 @@
                         }
                     })
                 @endif
-
+                
+                @if (!isset($user))
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        type: "POST",
+                        url: '/getRandomMessage',
+                        data: {
+                            destination_id: id
+                        },
+                        success: function(response) {
+                            console.log(response);
+                            $('.j-random-comment').append(response)
+                        }
+                    })
+                @endif
 
             });
 
@@ -652,6 +673,7 @@
                 setTimeout(() => {
                     $('.carousel-inner').remove();
                     $('.me-user-star').removeClass('me-inactive-star me-hover-star me-active-star')
+                    $('.j-random-comment').empty()
                 }, 200);
             });
 
@@ -842,6 +864,7 @@
                     })
                 })
             @endif
+
 
         });
 
