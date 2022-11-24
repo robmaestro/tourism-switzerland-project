@@ -31,9 +31,6 @@
                                     </div>
                                     <input type="text" class="form-control rounded-0 jinput" aria-label="First Name"
                                         name="fname" placeholder="First Name" aria-describedby="basic-addon1" />
-                                    @error('fname')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -44,9 +41,6 @@
                                     </div>
                                     <input type="text" class="form-control rounded-0 jinput" aria-label="Last Name"
                                         name="lname" placeholder="Last Name" aria-describedby="basic-addon1" />
-                                    @error('lname')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
                                 </div>
                             </div>
                         </div>
@@ -64,9 +58,6 @@
                                         <option class="joption" value="Female">Female</option>
                                         <option class="joption" value="Others">Others</option>
                                     </select>
-                                    @error('gender')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -78,9 +69,6 @@
                                     <select class="form-select rounded-0 jdropdown pe-0" aria-label="Default select example"
                                         name="nationality" id="selectNationality">
                                     </select>
-                                    @error('nationality')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
                                 </div>
                             </div>
                         </div>
@@ -91,9 +79,6 @@
                             </div>
                             <input type="text" class="form-control rounded-0 jinput" aria-label="Username"
                                 placeholder="Username" name="username" aria-describedby="basic-addon1" />
-                            @error('username')
-                                <p class="text-danger">{{ $message }}</p>
-                            @enderror
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend j-input-icon">
@@ -101,9 +86,6 @@
                             </div>
                             <input type="password" class="form-control rounded-0 jinput" aria-label="Password"
                                 placeholder="Password" name="password" aria-describedby="basic-addon1" />
-                            @error('password')
-                                <p class="text-danger">{{ $message }}</p>
-                            @enderror
                         </div>
                         <div class="input-group mb-3">
                             <div class="input-group-prepend j-input-icon">
@@ -112,12 +94,17 @@
                             </div>
                             <input type="email" class="form-control rounded-0 jinput" aria-label="Email"
                                 placeholder="Email" name="email" aria-describedby="basic-addon1" />
-                            @error('email')
-                                <p class="text-danger">{{ $message }}</p>
-                            @enderror
                         </div>
-                        <button type="submit"
-                            class="btn btn-md rounded-0 btn-dark jregister-button mt-3">Register</button>
+                        @if ($errors->any())
+                            <div class="alert alert-danger rounded-0">
+                                <ul class="j-error-list mb-0">
+                                    @foreach ($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        <button type="submit" class="btn btn-md rounded-0 btn-dark jregister-button mt-3">Register</button>
                     </form>
                 </div>
             </div>
@@ -192,7 +179,8 @@
             Swal.fire({
                 title: 'Do you want to Logout?',
                 showCancelButton: true,
-                confirmButtonText: 'Logout'
+                confirmButtonText: 'Logout',
+                confirmButtonColor: 'red'
             }).then((result) => {
                 if (result.isConfirmed) {
                     Swal.fire({
