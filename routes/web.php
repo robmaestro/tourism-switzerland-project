@@ -33,3 +33,4 @@ Route::post('/getRatingAvg', [ReviewController::class, 'getRatingAvg']);
 Route::post('/deleteRating', [ReviewController::class, 'deleteRating']);
 
 Route::post('/addComment', [ReviewController::class, 'addComment']);
+Route::post('/getRandomMessage', [ReviewController::class, 'getRandomComment']);
