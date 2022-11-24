@@ -136,16 +136,18 @@ body {
 .r-image-banner {
     min-height: 100vh;
     width: 100%;
-    object-fit: cover;
-    background-image: url("../assets/1680167.png");
+    object-fit: contain;
+    background-image: url("../assets/bg.jpg");
     background-repeat: no-repeat;
+    image-resolution: 16/9;
+    background-size: cover;
 }
 
 .r-mobile-title > .r-welcome {
     font-size: 90px;
     color: white;
     position: absolute;
-    bottom: 70%;
+    bottom: 50%;
     font-weight: 500;
 }
 
@@ -223,27 +225,9 @@ body {
     position: relative;
 }
 
-.footer-container {
-    background-color: #6a994e;
-    padding: 25px;
-    color: white;
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    justify-content: space-evenly;
-    font-size: 13px;
-}
-
-.footer-container li,
-.footer-container ul {
-    list-style: none;
-    padding: 0px;
-}
-
-.footer-socials ul {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
+.footer-title{
+    font-weight:500;
+    font-size:18px;
 }
 
 .footer-container {
@@ -267,6 +251,41 @@ body {
     display: flex;
     flex-direction: row;
     gap: 10px;
+}
+
+.footer-container {
+    background-color: #6a994e;
+    padding: 25px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-evenly;
+    font-size: 13px;
+}
+
+.footer-container li,
+.footer-container ul {
+    list-style: none;
+    padding: 0px;
+}
+
+.footer-socials ul {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.footer-about a{
+    text-decoration: none;
+    color:white;
+    cursor: pointer;
+}
+
+.footer-about a:hover{
+    text-decoration: none;
+    color:rgb(215, 215, 215);
+    cursor: pointer;
 }
 
 .r-create-account-container {
@@ -340,6 +359,14 @@ body {
     font-size:35px;
 }
 
+.r-icon{
+    cursor: pointer;
+}
+
+.j-random-comment{
+    padding-bottom: 10px;
+}
+
 @media (max-width: 1000px) and (min-width: 426px) {
     .header {
         position: static;
@@ -388,8 +415,9 @@ body {
     .r-mobile-title > .r-welcome {
         font-size: 60px;
         display: flex;
-        position: relative;
+        position: absolute;
         font-weight: 500;
+        bottom:50%;
     }
 
     .r-carousel-caption {
@@ -613,6 +641,8 @@ body {
 
     .r-mobile-title > .r-welcome {
         font-size: 30px;
+        position: absolute;
+        bottom: 50%;
     }
 
     .r-carousel-caption {

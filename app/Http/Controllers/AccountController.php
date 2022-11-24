@@ -19,8 +19,8 @@ class AccountController extends Controller
                 'lname' => 'required',
                 'gender' => 'required',
                 'nationality' => 'required',
-                'username' => 'required',
-                'password' => 'required',
+                'username' => 'required|min:5',
+                'password' => 'required|min:5',
                 'email' => 'required'
             ],
             [

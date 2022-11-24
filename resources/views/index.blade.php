@@ -378,7 +378,8 @@
                         <div class='me-stars-outer'>
                             <div class='me-stars-inner '></div>
                         </div>
-                        <div class="j-random-comment"></div>
+                        <div><h6>User Experience</h6></div>
+                            <i><div class="j-random-comment ps-2"></div></i>
                     @endif
                     <div id="carouselExampleIndicators" class="carousel slide me-carousel " data-bs-ride="true">
                         <div class="carousel-indicators">
@@ -415,7 +416,7 @@
                                 <i class="fas fa-star me-user-star" data-value='5'></i>
                             </div>
                         </div>
-                        <i type="button" id="d-remove-rating" class="mt-2">Remove</i>
+                        <i type="button" id="d-remove-rating" class="mt-2">Remove rating</i>
                         <hr>
                         
                         <div class="form-floating">
@@ -546,12 +547,34 @@
             </div>
             <div class="footer-about">
                 <div class="footer-title">
+                    <span>Menu</span>
+                </div>
+                <ul>
+                    <li><a href="{{ url('/') }}">Home</a></li>
+                    <li><a data-bs-toggle="modal" data-bs-target="#loginModal" href="">Login</a></li>
+                    <li><a href="{{ url('/profile') }}">Profile</a></li>
+                </ul>
+            </div>
+            <div class="footer-about">
+                <div class="footer-title">
                     <span>About Us</span>
                 </div>
                 <ul>
-                    <li>Company</li>
-                    <li>Partners</li>
-                    <li>Management</li>
+                    <li><a href="">Company</a></li>
+                    <li><a href="">Partners</a></li>
+                    <li><a href="">Management</a></li>
+                    <li><a href="">Adress</a></li>
+                </ul>
+            </div>
+            <div class="footer-about">
+                <div class="footer-title">
+                    <span>Legal Information</span>
+                </div>
+                <ul>
+                    <li><a href="">Terms of Use</a></li>
+                    <li><a href="">Data Protection</a></li>
+                    <li><a href="">Imprint</a></li>
+                    <li><a href="">Cookies</a></li>
                 </ul>
             </div>
             <div class="footer-socials">
@@ -559,9 +582,9 @@
                     <span>Socials</span>
                 </div>
                 <ul>
-                    <li><i class="bi bi-facebook"></i></li>
-                    <li><i class="bi bi-twitter"></i></li>
-                    <li><i class="bi bi-instagram"></i></li>
+                    <li><i class="bi bi-facebook r-icon" href=""></i></li>
+                    <li><i class="bi bi-twitter r-icon" href=""></i></li>
+                    <li><i class="bi bi-instagram r-icon" href=""></i></li>
                 </ul>
             </div>
         </div>
@@ -662,7 +685,13 @@
                         },
                         success: function(response) {
                             console.log(response);
-                            $('.j-random-comment').append(response)
+                            if(response == "No comments yet."){
+                                $('.j-random-comment').append(response)
+                            }else{
+                                $('.j-random-comment').append('"'+response+'"')
+                            }
+
+                            // $('.j-random-comment').append(response)
                         }
                     })
                 @endif
@@ -673,9 +702,10 @@
                 setTimeout(() => {
                     $('.carousel-inner').remove();
                     $('.me-user-star').removeClass('me-inactive-star me-hover-star me-active-star')
-                    $('.j-random-comment').empty()
-                }, 200);
+                }, 100);
+                $('.j-random-comment').empty()
             });
+            
 
             function getRating(rating) {
                 let default_p = "0%";
@@ -697,7 +727,8 @@
                 Swal.fire({
                     title: 'Do you want to Logout?',
                     showCancelButton: true,
-                    confirmButtonText: 'Logout'
+                    confirmButtonText: 'Logout',
+                    confirmButtonColor: 'red',
                 }).then((result) => {
                     if (result.isConfirmed) {
                         Swal.fire({
