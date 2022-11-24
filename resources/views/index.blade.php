@@ -414,11 +414,19 @@
                             </div>
                         </div>
                         <i type="button" id="d-remove-rating" class="mt-2">Remove</i>
+                        <hr>
+                        
                         <div class="form-floating">
-                            <textarea class="form-control j-text-comment" placeholder="Leave a comment here" id="floatingTextarea" name="userComment"></textarea>
+                            <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="resize:none; height: 150px;"></textarea>
+                            <label for="floatingTextarea">Leave your Comments here...</label>
+                            <button type="button" class="btn btn-dark btn-md mt-2" id="j-add-comment">Add comment</button>
+                          </div>
+
+                        {{-- <div class="form-floating">
+                            <textarea class="form-control j-text-comment" id="floatingTextarea" style="resize: none;" name="userComment"></textarea>
                             <label for="floatingTextarea">Comments</label>
-                            <button type="button" class="btn btn-dark btn-md" id="j-add-comment">add comment</button>
-                        </div>
+                            <button type="button" class="btn btn-dark btn-md mt-2" id="j-add-comment">Add comment</button>
+                        </div> --}}
                     @endif
                 </div>
                 <div class="modal-footer">
@@ -809,12 +817,17 @@
                 $('#j-add-comment').on('click', function() {
                     console.log("clicked");
                     var id = $('.me-star-rating').data('dest');
-                    var userComment = document.getElementById("floatingTextarea").value;
+                    var userComment = document.getElementById('floatingTextarea').value;
                     $.ajaxSetup({
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         }
                     });
+                    Swal.fire(
+                    'Good job!',
+                    'You added a comment!',
+                    'success'
+                    )
                     $.ajax({
                         type: "POST",
                         url: '/addComment',
@@ -831,5 +844,16 @@
             @endif
 
         });
+
+        // const button = document.getElementById('j-add-comment');
+
+        // button.addEventListener('click', function handleClick(event) {
+        // event.preventDefault();
+
+        // const comments = document.getElementById('floatingTextarea');
+        // console.log(comments.value);
+        // comments.value = '';
+        // });
+
     </script>
 @endsection
