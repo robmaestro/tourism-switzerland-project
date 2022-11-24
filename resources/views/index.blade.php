@@ -845,11 +845,6 @@
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         }
                     });
-                    Swal.fire(
-                    'Good job!',
-                    'You added a comment!',
-                    'success'
-                    )
                     $.ajax({
                         type: "POST",
                         url: '/addComment',
@@ -859,6 +854,11 @@
                             userComment: userComment
                         },
                         success: function(response) {
+                            Swal.fire(
+                            'Good job!',
+                            'You added a comment!',
+                            'success'
+                            )
                             console.log(response);
                         }
                     })
