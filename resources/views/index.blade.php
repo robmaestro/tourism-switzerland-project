@@ -705,7 +705,8 @@
                 Swal.fire({
                     title: 'Do you want to Logout?',
                     showCancelButton: true,
-                    confirmButtonText: 'Logout'
+                    confirmButtonText: 'Logout',
+                    confirmButtonColor: 'red',
                 }).then((result) => {
                     if (result.isConfirmed) {
                         Swal.fire({
