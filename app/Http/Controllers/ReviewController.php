@@ -39,4 +39,37 @@ class ReviewController extends Controller
             return ['avg' => 0, 'reviewCount' => 0];
         }
     }
+    function deleteRating(Request $request)
+    {
+        $rating = DB::table('reviews')->where('user_id', $request->user_id)->where('destination_id', $request->destination_id)->get();
+        if ($rating->isEmpty()) {
+            return 'no ratings made';
+        } else {
+            $review = Review::updateReview($rating[0]->id, 0);
+            return 'rating removed successfully';
+        }
+    }
+
+    function addComment(Request $request)
+    {
+        $comment = DB::table('reviews')->where('user_id', $request->user_id)->where('destination_id', $request->destination_id)->get();
+        // dd($comment[0]);
+        if (!$comment->isEmpty()) {
+            $review = Review::addComment($comment[0]->id, $request->userComment);
+            return 'comments added successfully';
+        } else{
+            $review = Review::createReview(0, $request->userComment, $request->user_id, $request->destination_id);
+        }
+    }
+    function getRandomComment(Request $request)
+    {
+        $randomComments = DB::table('reviews')->where('destination_id', $request->destination_id)->value('message');
+        if($randomComments != ''){
+            return $randomComments;
+        }else{
+            return "No comments yet.";
+        }
+        // dd($randomComments);
+        // return $randomComments;
+    }
 }

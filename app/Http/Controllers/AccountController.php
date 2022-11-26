@@ -13,8 +13,36 @@ class AccountController extends Controller
 {
     function register(Request $request)
     {
+        $credentials = $request->validate(
+            [
+                'fname' => 'required',
+                'lname' => 'required',
+                'gender' => 'required',
+                'nationality' => 'required',
+                'username' => 'required|min:5',
+                'password' => 'required|min:5',
+                'email' => 'required'
+            ],
+            [
+                'fname.required' => 'first name field is required.',
+                'lname.required' => 'last name field is required.',
+                'gender.required' => 'gender field is required.',
+                'nationality.required' => 'nationality field is required.',
+                'username.required' => 'username field is required.',
+                'password.required' => 'password field is required.',
+                'email.required' => 'email field is required.',
+            ]
+        );
+        
         $user = User::createUser($request->fname, $request->lname, $request->gender, $request->nationality, $request->username, $request->password, $request->email);
-        return redirect()->action([DestinationController::class, 'show']);
+            return redirect()->action([DestinationController::class, 'show']);
+
+        // $registerAttempt = Auth::attempt($credentials);
+        // if (!$registerAttempt) {
+            
+        // } else {
+        //     return back()->with(['error' => 'Please fill all the fields']);
+        // }
     }
 
     function login(Request $request)
@@ -51,16 +79,14 @@ class AccountController extends Controller
         if (Auth::check()) {
             $select = 'select * from users where id =' . $id;
             $users = DB::select($select);
-
             return view('userDetails', ['users' => $users]);
         }
-
     }
-    
-  public function updateUser(Request $request)
+
+    public function updateUser(Request $request)
     {
-        dd('ok');
-        $id = Auth::id(); 
+
+        $id = Auth::id();
         $user = User::find($id);
         $user->username = $request->username;
         $user->fname = $request->fname;
@@ -69,28 +95,15 @@ class AccountController extends Controller
         $user->nationality = $request->nationality;
         $user->email = $request->email;
         // $user->password = $request->password;
-
         $user->save();
         $select = 'select * from users where id =' . $id;
         $users = DB::select($select);
-
         return view('userDetails', ['users' => $users]);
     }
 
-    public function deleteUser (Request $request) {
-       
-        // $id = Auth::id(); 
-        // $user = User::find($id);
-        // $user->destroy();
 
-        $user = User::find(Auth::user()->user_id);
-        $user = DB::delete('delete from users')->user(id);
-        return view('register');
 
-        
-    }
 
-  
     function logout(Request $request)
     {
         auth()->logout();

@@ -1,3 +1,13 @@
 .d-z-index {
     z-index: 10;
 }
+
+#d-remove-rating {
+    box-shadow: 10px;
+    color: gray;
+    transition-duration: 0.4s;
+
+}
+#d-remove-rating:hover {
+    color: red;
+  }
