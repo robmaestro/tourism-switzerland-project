@@ -373,6 +373,7 @@
                 </div>
                 <div class="modal-body me-dest-body">
                     <p class="me-dest-description ">Modal body text goes here.</p>
+                    <div class="read-more">Read More</div>
                     @if (!isset($user))
                         <div class='me-reviews '></div>
                         <div class='me-stars-outer'>
@@ -423,7 +424,7 @@
                             <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea" style="resize:none; height: 150px;"></textarea>
                             <label for="floatingTextarea">Leave your Comments here...</label>
                             <button type="button" class="btn btn-dark btn-md mt-2" id="j-add-comment">Add comment</button>
-                          </div>
+                        </div>
 
                         {{-- <div class="form-floating">
                             <textarea class="form-control j-text-comment" id="floatingTextarea" style="resize: none;" name="userComment"></textarea>
@@ -599,6 +600,16 @@
 @section('script')
     <script>
         $(document).ready(function() {
+            $('.read-more').on('click',function(){
+                if($(this).text() == 'Read More'){
+                    $('.me-dest-description')[0].style.height = 'auto'
+                    $(this).text('Read Less');
+                }else{
+                    $('.me-dest-description')[0].style.height = '3em'
+                    $(this).text('Read More');
+                }
+                
+            });
             $('#me-dest-modal').on('show.bs.modal', function(e) {
                 $('#floatingTextarea').val('')
                 var title = e.relatedTarget.getAttribute('data-name')
@@ -704,6 +715,8 @@
                     $('.carousel-inner').remove();
                     $('.me-user-star').removeClass('me-inactive-star me-hover-star me-active-star')
                 }, 100);
+                $('.me-dest-description')[0].style.height = '3em'
+                $('.read-more').text('Read More');
                 $('.j-random-comment').empty()
             });
             

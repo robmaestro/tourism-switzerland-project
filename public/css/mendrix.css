@@ -127,3 +127,8 @@
 .me-negative-index {
     z-index: -10;
 }
+
+.me-dest-description{
+    height:3em;
+    overflow:hidden;
+}
