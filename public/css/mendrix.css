@@ -128,7 +128,21 @@
     z-index: -10;
 }
 
-.me-dest-description{
-    height:3em;
-    overflow:hidden;
+.me-dest-description {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.me-green-link {
+    color: green;
+}
+
+.me-green-link:hover {
+    color: rgb(59, 168, 59);
+}
+
+.me-green-link:active {
+    color: rgb(5, 71, 5);
 }

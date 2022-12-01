@@ -302,55 +302,55 @@
             </div>
         </div>
         <div class="me-location-hider-1"
-            style="top: -530px;bottom: 0;left: 470px;right: 0;position:relative;display:inline-block;overflow:hidden;">
+            style="top: -530px;bottom: 0;left: 467px;right: 0;position:relative;display:inline-block;overflow:hidden;">
             <div class="me-location-cont me-hover-right" style="position:relative;left: -120px;">
                 <div class="me-location ">{{ $destination[1]->dest_name }}</div>
             </div>
         </div>
         <div class="me-location-hider-2"
-            style="top: -221px;bottom: 0;left: 58px;right: 0;position:relative;display:inline-block;overflow:hidden;">
+            style="top: -221px;bottom: 0;left: 55px;right: 0;position:relative;display:inline-block;overflow:hidden;">
             <div class="me-location-cont me-hover-right" style="position:relative;left: -122px;">
                 <div class="me-location ">{{ $destination[2]->dest_name }}</div>
             </div>
         </div>
         <div class="me-location-hider-3"
-            style="top: -424px;bottom: 0;left: 244px;right: 0;position:relative;display:inline-block;overflow:hidden;">
+            style="top: -424px;bottom: 0;left: 241px;right: 0;position:relative;display:inline-block;overflow:hidden;">
             <div class="me-location-cont me-hover-right" style="position:relative;left: -119px;">
                 <div class="me-location ">{{ $destination[3]->dest_name }}</div>
             </div>
         </div>
         <div class="me-location-hider-4"
-            style="top: -309px;bottom: 0;left: 40px;right: 0;position:relative;display:inline-block;overflow:hidden;">
+            style="top: -309px;bottom: 0;left: 38px;right: 0;position:relative;display:inline-block;overflow:hidden;">
             <div class="me-location-cont me-hover-right" style="position:relative;left: -119px;">
                 <div class="me-location ">{{ $destination[4]->dest_name }}</div>
             </div>
         </div>
         <div class="me-location-hider-5"
-            style="top: -232px;bottom: 0;left: 390px;right: 0;position:relative;display:inline-block;overflow:hidden;">
+            style="top: -232px;bottom: 0;left: 387px;right: 0;position:relative;display:inline-block;overflow:hidden;">
             <div class="me-location-cont me-hover-right" style="position:relative;left: -119px;">
                 <div class="me-location ">{{ $destination[5]->dest_name }}</div>
             </div>
         </div>
         <div class="me-location-hider-6"
-            style="top: -404px;bottom: 0;left: -236px;right: 0;position:relative;display:inline-block;overflow:hidden;">
+            style="top: -404px;bottom: 0;left: -257px;right: 0;position:relative;display:inline-block;overflow:hidden;">
             <div class="me-location-cont me-hover-right" style="position:relative;left: -119px;">
                 <div class="me-location ">{{ $destination[6]->dest_name }}</div>
             </div>
         </div>
         <div class="me-location-hider-7"
-            style="top: -83px;bottom: 0;left: -264px;right: 0;position:relative;display:inline-block;overflow:hidden;">
+            style="top: -83px;bottom: 0;left: -284px;right: 0;position:relative;display:inline-block;overflow:hidden;">
             <div class="me-location-cont me-hover-right" style="position:relative;left: -119px;">
                 <div class="me-location ">{{ $destination[7]->dest_name }}</div>
             </div>
         </div>
         <div class="me-location-hider-8"
-            style="top: -153px;bottom: 0;left: -699px;right: 0;position:relative;display:inline-block;overflow:hidden;">
+            style="top: -153px;bottom: 0;left: -718px;right: 0;position:relative;display:inline-block;overflow:hidden;">
             <div class="me-location-cont me-hover-right" style="position:relative;left: -119px;">
                 <div class="me-location ">{{ $destination[8]->dest_name }}</div>
             </div>
         </div>
         <div class="me-location-hider-9"
-            style="position: relative;display:inline-block;overflow:hidden;top: -303px;bottom: 0;left: 93px;right: 0;">
+            style="position: relative;display:inline-block;overflow:hidden;top: -304px;bottom: 0;left: 74px;right: 0;">
             <div class="me-location-cont me-hover-right" style="position:relative;left: -121px;">
                 <div class="me-location ">Swiss Park</div>
             </div>
@@ -384,14 +384,7 @@
                     @endif
                     <div id="carouselExampleIndicators" class="carousel slide me-carousel " data-bs-ride="true">
                         <div class="carousel-indicators">
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
-                                class="active" aria-current="true" aria-label="Slide 1"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
-                                aria-label="Slide 2"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
-                                aria-label="Slide 3"></button>
-                            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
-                                aria-label="Slide 4"></button>
+                           {{-- mapping butotn indicators --}}
                         </div>
                         {{-- mapping for carousel --}}
                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -510,7 +503,7 @@
     <div class="footer">
         <div class="r-create-account-container">
             <div class="r-create-account-text">
-                Don't have an account? Create for <a href={{ url('/register') }}>FREE!</a>
+                Don't have an account? Create for <a class='me-green-link' href={{ url('/register') }}>FREE!</a>
             </div>
         </div>
     
@@ -602,10 +595,14 @@
         $(document).ready(function() {
             $('.read-more').on('click',function(){
                 if($(this).text() == 'Read More'){
-                    $('.me-dest-description')[0].style.height = 'auto'
+                    $('.me-dest-description')[0].style.webkitLineClamp = 'unset'
+                    console.log($('.me-dest-description')[0].style.webkitLineClamp)
+                    console.log('if')
                     $(this).text('Read Less');
                 }else{
-                    $('.me-dest-description')[0].style.height = '3em'
+                    $('.me-dest-description')[0].style.webkitLineClamp = '3'
+                    console.log($('.me-dest-description')[0].style.webkitLineClamp)
+                    console.log('else')
                     $(this).text('Read More');
                 }
                 
@@ -618,20 +615,23 @@
                 var images = JSON.parse(e.relatedTarget.getAttribute('data-images'))
                 var review_count = e.relatedTarget.getAttribute('data-review')
                 var rating = 0;
+
                 var img_cont = '<div class="carousel-inner"><div class="carousel-item active"><img src="' +
                     images[0] + '" class="d-block w-100 me-carousel-image" alt=""></div>'
-
-                images.slice(1).forEach(function(item) {
+                $('.carousel-indicators').append('<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>')
+                
+                images.slice(1).forEach(function(item,index) {
                     img_cont += '<div class="carousel-item"><img src="' + item +
                         '" class="d-block w-100 me-carousel-image" alt=""></div>'
+                    $('.carousel-indicators').append('<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="'+ String(index+1) +'" aria-label="Slide '+ String(index+2) +'"></button>')
                 })
                 img_cont += '</div>'
-
                 $('.me-modal-title').text(title)
                 $('.me-dest-description').text(body)
                 $('.me-carousel').prepend(img_cont)
                 $('.me-star-rating').data('value', id)
                 console.log('clicked')
+
                 @if (!isset($user))
                     $.ajaxSetup({
                         headers: {
@@ -714,8 +714,10 @@
                 setTimeout(() => {
                     $('.carousel-inner').remove();
                     $('.me-user-star').removeClass('me-inactive-star me-hover-star me-active-star')
+                    $('.carousel-indicators').children().remove()
                 }, 100);
-                $('.me-dest-description')[0].style.height = '3em'
+                // $('.me-dest-description')[0].style.height = '3em'
+                $('.me-dest-description')[0].style.webkitLineClamp = '3';
                 $('.read-more').text('Read More');
                 $('.j-random-comment').empty()
             });
